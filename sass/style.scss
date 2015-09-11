@@ -8,7 +8,7 @@
 // @import "compass/tilities";
 /*-------------------------------------css--------------------------------------------*/
 html,body,.Wrap,.Main{@extend %wh100; font-size:$Font-Size12;font-family:"黑体";}
-body{width:900px;@extend %center-block;height:$Height;}
+body{width:640px;@extend %center-block;height:$Height;}
 .Wrap{@include position();}
 .Main{@include position();}
 .Position{position:absolute;} 
