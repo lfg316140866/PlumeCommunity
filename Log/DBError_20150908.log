@@ -1,0 +1,66 @@
+/*******************************************************************************************************
+* DateTime: 2015/9/8 9:40:13		IP: 180.174.147.31()		Brower: Unknown  Chrome42
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/Interface.aspx?method=GetWorkListOrderDateDesc&CurPage=1&PageSize=2
+错误的SQL语句： select count(*) from (select w.WorkID,DATEDIFF(s ,w.cmn_CreateDate,getDate()) SendTime ,w.cmn_CreateDate,u.UserID,u.UserName,u.NickName,u.WorkCount,u.RealName,u.HeadImgUrl,case '' when uf.UserID then '0' when uf.FollowedUserID then '1' else '2' end FollowState,up.PraiseID,uc.CollectID,w.PicPath,w.PraiseCount,w.ColloctCount
+                            from dbo.usr_Works w 
+                                left join dbo.usr_Users u 
+                                on w.UserID=u.UserID
+                                left join dbo.usr_Follow uf
+                                on uf.FollowedUserID=w.UserID
+                                left join usr_Praise up
+                                on up.WorkID=w.WorkID and up.UserID=
+                                left join usr_Collect uc
+                                on uc.WorkID=w.WorkID and uc.UserID= ) cmn_MainTable   错误信息：关键字 'join' 附近有语法错误。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/8 9:40:13		IP: 180.174.147.31()		Brower: Unknown  Chrome42
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/Interface.aspx?method=GetWorkListOrderDateDesc&CurPage=1&PageSize=2
+错误的SQL语句：select w.WorkID,DATEDIFF(s ,w.cmn_CreateDate,getDate()) SendTime ,w.cmn_CreateDate,u.UserID,u.UserName,u.NickName,u.WorkCount,u.RealName,u.HeadImgUrl,case '' when uf.UserID then '0' when uf.FollowedUserID then '1' else '2' end FollowState,up.PraiseID,uc.CollectID,w.PicPath,w.PraiseCount,w.ColloctCount
+                            from dbo.usr_Works w 
+                                left join dbo.usr_Users u 
+                                on w.UserID=u.UserID
+                                left join dbo.usr_Follow uf
+                                on uf.FollowedUserID=w.UserID
+                                left join usr_Praise up
+                                on up.WorkID=w.WorkID and up.UserID=
+                                left join usr_Collect uc
+                                on uc.WorkID=w.WorkID and uc.UserID=
+                            order by w.cmn_CreateDate desc  错误信息：关键字 'join' 附近有语法错误。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/8 9:40:13		IP: 180.174.147.31()		Brower: Unknown  Chrome42
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/Interface.aspx?method=GetWorkListOrderDateDescByFollow&CurPage=1&PageSize=2
+错误的SQL语句： select count(*) from (select w.WorkID,DATEDIFF(s ,w.cmn_CreateDate,getDate()) SendTime ,w.cmn_CreateDate,u.UserID,u.UserName,u.NickName,u.WorkCount,u.RealName,u.HeadImgUrl,case '' when uf.UserID then '0' when uf.FollowedUserID then '1' else '2' end FollowState,up.PraiseID,uc.CollectID,w.PicPath,w.PraiseCount,w.ColloctCount
+                            from dbo.usr_Works w 
+                                left join dbo.usr_Users u 
+                                on w.UserID=u.UserID
+                                left join dbo.usr_Follow uf
+                                on uf.FollowedUserID=w.UserID
+                                left join usr_Praise up
+                                on up.WorkID=w.WorkID and up.UserID=
+                                left join usr_Collect uc
+                                on uc.WorkID=w.WorkID and uc.UserID=
+                            where w.UserID in (select FollowedUserID  from usr_Follow where UserID=) or  w.UserID= ) cmn_MainTable   错误信息：关键字 'join' 附近有语法错误。
+')' 附近有语法错误。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/8 9:40:13		IP: 180.174.147.31()		Brower: Unknown  Chrome42
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/Interface.aspx?method=GetWorkListOrderDateDescByFollow&CurPage=1&PageSize=2
+错误的SQL语句：select w.WorkID,DATEDIFF(s ,w.cmn_CreateDate,getDate()) SendTime ,w.cmn_CreateDate,u.UserID,u.UserName,u.NickName,u.WorkCount,u.RealName,u.HeadImgUrl,case '' when uf.UserID then '0' when uf.FollowedUserID then '1' else '2' end FollowState,up.PraiseID,uc.CollectID,w.PicPath,w.PraiseCount,w.ColloctCount
+                            from dbo.usr_Works w 
+                                left join dbo.usr_Users u 
+                                on w.UserID=u.UserID
+                                left join dbo.usr_Follow uf
+                                on uf.FollowedUserID=w.UserID
+                                left join usr_Praise up
+                                on up.WorkID=w.WorkID and up.UserID=
+                                left join usr_Collect uc
+                                on uc.WorkID=w.WorkID and uc.UserID=
+                            where w.UserID in (select FollowedUserID  from usr_Follow where UserID=) or  w.UserID=
+                            order by w.cmn_CreateDate desc  错误信息：关键字 'join' 附近有语法错误。
+')' 附近有语法错误。
+*******************************************************************************************************/
+

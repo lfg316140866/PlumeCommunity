@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="YuQianMaster.master.cs" Inherits="YuQianMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+     <meta name="viewport" content="width=device-width,user-scalable=no;" />
+    <link href="../css/load.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/public.css" rel="stylesheet" />
+    <link href="../css/font-awesome.css" rel="stylesheet" />
+    <script src="Js/ThirdLib/jquery.js"></script>
+    <script src="Js/jquery.easing.min.js"></script>
+    <script src="Js/Cmn.js"></script>
+    <script src="Js/CmnAjax.js"></script>
+    <script src="Js/jquery.mCustomScrollbar.js"></script>
+    <script src="Js/CmnFuncExd.js"></script>
+    <script src="Js/jquery.cycle.all.js"></script>
+    <script src="Js/CmnTools/WechatShare.js"></script>
+    <script src="Js/SiteJs/Site.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+     <div class="header-box">
+        <div class="return-btn"><a href="javascript:void(0)"><i class="icon-chevron-left"></i></a></div>
+        <div class="search-btn"><a href="javascript:void(0)"><i class="icon-search"></i></a></div>
+    </div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    <div class="footer-box" style="position: fixed;">
+        <ul class="footer-nav">
+            <li><a href="javascript:void(0)" class="select"><i class="icons-home icons-sprite"></i><span>首页</span></a></li>
+            <li><a href="javascript:void(0)"><i class="icons-heart icons-sprite"></i><span>热门</span></a></li>
+            <li><a href="javascript:void(0)" class="update"><em class="bar-bg"><i class="icon-circle-blank"></i></em></a></li>
+            <li><a href="javascript:void(0)"><i class="icons-volume-down icons-sprite"></i><span>通知</span></a></li>
+            <li><a href="javascript:void(0)"><i class="icons-user icons-sprite"></i><span>我的</span></a></li>
+        </ul>
+    </div>
+    <script>
+        Cmn.Func.MobileAdaptive(640, "", "images/AdviseVertical.png", Cmn.Func.MobileAdaptiveMode.Width);
+    </script>
+</body>
+</html>

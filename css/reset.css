@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/* CSS reset */
+/* line 3, ../sass/reset.scss */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; }
+
+/* line 4, ../sass/reset.scss */
+fieldset, img {
+  border: 0;
+  border: none;
+  padding: 0;
+  margin: 0px;
+  font-size: 0; }
+
+/* line 5, ../sass/reset.scss */
+:focus {
+  outline: 0; }
+
+/* line 6, ../sass/reset.scss */
+address, caption, cite, code, dfn, em, strong, th, var, optgroup {
+  font-style: normal;
+  font-weight: normal; }
+
+/* line 7, ../sass/reset.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+  font-family: "Microsoft YaHei"; }
+
+/* line 8, ../sass/reset.scss */
+abbr, acronym {
+  border: 0;
+  font-variant: normal; }
+
+/* line 9, ../sass/reset.scss */
+code, kbd, samp, tt {
+  font-size: 100%; }
+
+/* line 10, ../sass/reset.scss */
+input, button, textarea, select {
+  *font-size: 100%;
+  border: none; }
+
+/* line 11, ../sass/reset.scss */
+body {
+  background: #fff;
+  color: #5e5e5e;
+  font: 14px/2em "黑体",SimSun,Arial; }
+
+/* line 12, ../sass/reset.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 13, ../sass/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 14, ../sass/reset.scss */
+caption, th {
+  text-align: left; }
+
+/* line 15, ../sass/reset.scss */
+sup, sub {
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 16, ../sass/reset.scss */
+:link, :visited, ins {
+  text-decoration: none; }
+
+/* line 17, ../sass/reset.scss */
+blockquote, q {
+  quotes: none; }
+
+/* line 18, ../sass/reset.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+/* line 19, ../sass/reset.scss */
+a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -moz-user-select: none;
+  -webkit-user-select: none; }
+
+/* line 20, ../sass/reset.scss */
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+/* line 21, ../sass/reset.scss */
+.clearfix {
+  *zoom: 1; }
+
+/* line 22, ../sass/reset.scss */
+.fl {
+  float: left; }
+
+/* line 23, ../sass/reset.scss */
+.fr {
+  float: right; }
+
+/* line 24, ../sass/reset.scss */
+.clear {
+  height: 0;
+  overflow: hidden;
+  clear: both; }

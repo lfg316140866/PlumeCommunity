@@ -1,0 +1,684 @@
+@charset "UTF-8";
+/* line 3, ../sass/user/_custom.scss */
+.footer-box .footer-nav, .footer-bar .footer-item, .signature-box .signature-con, .fill-name-box .fill-name-con {
+  width: 100%;
+  height: 100%; }
+
+/* line 4, ../sass/user/_custom.scss */
+.papercut-float .papercut-bar {
+  -webkit-overflow-scrolling: touch;
+  -moz-overflow-scrolling: touch;
+  -o-overflow-scrolling: touch;
+  overflow-scrolling: touch; }
+
+/*-------------------------------------css--------------------------------------------*/
+/* line 22, ../sass/tobe/core/_mixin.scss */
+.header-box i, .header-search i, .header-search .search-submit a i, .footer-box .footer-nav li a i, .footer-bar .footer-item li a, .footer-box .footer-nav li a .bar-bg, .register-finish-float .sex-select span, .register-finish-float .sex-select span a, .register-finish-float .sex-select span i, .register-finish-float .verify-name, .gender-box > div, .gender-box i, .papercut-float .papercut-bar .papercut-nav li a, .papercut-float .papercut-bar .papercut-nav li a span {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+/* line 32, ../sass/tobe/core/_mixin.scss */
+.info-box, .info-float .float-submit-btn, .answers-float .float-submit-btn {
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 7, ../sass/public.scss */
+.header-box i, .header-search i, .header-search .search-submit a i, .footer-box .footer-nav li a i, .footer-bar .footer-item li a {
+  vertical-align: middle; }
+
+/* line 8, ../sass/public.scss */
+.register-finish-float .verify-name {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%; }
+
+/* line 9, ../sass/public.scss */
+.header-search .search-submit, .footer-box .footer-nav li, .footer-bar .footer-item li, .info-box, h1.tip-box, .register-finish-float small, .info-float .float-submit-btn, .answers-float .float-submit-btn, .gender-box > div, .fill-name-box .fill-name-con, .answers-float p, .papercut-float .papercut-bar .papercut-nav li a {
+  text-align: center; }
+
+/* line 10, ../sass/public.scss */
+.icons-sprite {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACG8AAABCCAMAAADU6pn/AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAMAUExURUxpcf9vVP9vVP9vVPDQy/9vVP9vVP9vVP///5mZmf9vVP9vVP////9vVP9vVP////////9vVP9vVP9vVP9vVP////////////////9vVP9vVP9vVP9vVP7+/v9vVP9vVP////9vVP39/f////////39/f9vVP9vVP9vVP7+/v///4uLi/////////9vVP///5mZmf////z8/P///5qamv9vVJaWlv9vVImJif////39/f9vVHV0dHh4eJaWlv9vVP9vVP9vVJmZmf////9vVP9vVP////9vVP////r6+v////9vVP////39/f7+/v///////////3p6ev////9vVP9vVP9vVP9vVP///5mZmZmZmf9vVP9vVPv7+4SEhP////9vVP9vVP///3p5ef///5mZmYGBgf9vVJmZmf9vVHBvb/////////z8/JmZmZmZmf///////////3Bvb/////9vVP///4GBgf///4GBgYGBgfz8/JmZmZmZme7u7nBvb/j4+P9vVO7u7pmZmf///4GBgZmZmZmZmZmZmf///4GBgXBvb+/v7////97e3u7u7v///4GBgXBvb/j4+IGBgXBvb5mZmZmZmZmZmZmZmfj4+JGRkf9vVIGBgYGBgf9vVJmZmbu6unBvb7u6uu/v77u6upmZmZCPj+vr63Bvb87OznBvb728vMHBwb28vIGBgf///+7u7ru6uru6urq5uYmJiePj47u6us7Ozu7u7u/v7+7u7u7u7u7u7v///8/Pz7u6uru6uru6uq+vr//z8JOTk/39/f9vVP///+7u7pmZmf+Vgru6uioqKv/+/vj4+P+ZhoCAgJ6env+8sLq6uu3t7f9yWKurq9vb287Ozq+vr6ioqJycnP/Z0v/t6ujo6P/6+f+ikf/Qx9TU1P/19P/k3rW1tZOTk/+Ebf+zpf+snf+ejP95YHBvb//HvIhIPP92XDguLP+AZ6Ojo/+nlv/q5v+Sff+Ldf/f2f/x7jg4OL6+vjU1NcbGxsLCwjc3Nz7eIGkAAADHdFJOUwC/70AC0H8JCQr+r/zg+w5/EI4wcL9A9PIO9/PYS1BhLyAEr18VBUproY4i4CCgcfxR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') no-repeat; }
+
+/* line 11, ../sass/public.scss */
+.footer-box, .footer-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  height: 115px; }
+
+/*********************顶部菜单************************/
+/* line 13, ../sass/public.scss */
+.header-box, .header-search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: 66px;
+  background-color: #000;
+  *zoom: 1;
+  width: 100%; }
+  /* line 22, C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+  .header-box:after, .header-search:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+  /* line 14, ../sass/public.scss */
+  .header-box .return-btn, .header-search .return-btn {
+    float: left;
+    display: inline;
+    margin-left: 18px;
+    width: 65px;
+    height: 65px; }
+    /* line 15, ../sass/public.scss */
+    .header-box .return-btn .icons-return, .header-search .return-btn .icons-return {
+      width: 19px;
+      height: 32px;
+      background-position: -211px 0px; }
+  /* line 17, ../sass/public.scss */
+  .header-box p, .header-search p {
+    color: #fff;
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 15px; }
+  /* line 18, ../sass/public.scss */
+  .header-box .search-btn, .header-search .search-btn {
+    float: right;
+    display: inline;
+    width: 105px;
+    height: 65px;
+    margin-right: 15px;
+    text-align: right; }
+    /* line 19, ../sass/public.scss */
+    .header-box .search-btn i.icons-seach, .header-search .search-btn i.icons-seach {
+      width: 37px;
+      height: 36px;
+      background-position: -238px 0px; }
+    /* line 20, ../sass/public.scss */
+    .header-box .search-btn i.icons-correct, .header-search .search-btn i.icons-correct {
+      width: 35px;
+      height: 29px;
+      background-position: -106px 0px; }
+  /* line 22, ../sass/public.scss */
+  .header-box a, .header-search a {
+    font-size: 26px;
+    line-height: 1.5;
+    color: #fff;
+    font-weight: normal;
+    line-height: 66px; }
+
+/*********************顶部搜索************************/
+/* line 28, ../sass/public.scss */
+.header-search {
+  display: block;
+  height: 90px; }
+  /* line 29, ../sass/public.scss */
+  .header-search .search-input {
+    float: left;
+    display: inline;
+    width: 502px;
+    height: 66px;
+    margin-left: 12px;
+    margin-top: 12px; }
+    /* line 30, ../sass/public.scss */
+    .header-search .search-input input {
+      border: none;
+      font-size: 30px;
+      color: #000;
+      height: 66px;
+      line-height: 66px;
+      outline: none;
+      padding-left: 36px;
+      width: 466px; }
+  /* line 32, ../sass/public.scss */
+  .header-search .search-submit {
+    float: right;
+    display: inline;
+    width: 125px;
+    height: 90px; }
+    /* line 33, ../sass/public.scss */
+    .header-search .search-submit a {
+      font-size: 22px;
+      line-height: 1.5;
+      color: #fff;
+      font-weight: normal;
+      line-height: 90px; }
+      /* line 34, ../sass/public.scss */
+      .header-search .search-submit a i {
+        width: 37px;
+        height: 36px;
+        background-position: -238px 0px; }
+
+/*********************底部导航************************/
+/* line 42, ../sass/public.scss */
+.footer-box {
+  z-index: 10; }
+  /* line 43, ../sass/public.scss */
+  .footer-box .footer-nav {
+    *zoom: 1; }
+    /* line 22, C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+    .footer-box .footer-nav:after {
+      content: "\0020";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    /* line 44, ../sass/public.scss */
+    .footer-box .footer-nav li {
+      float: left;
+      display: inline;
+      width: 20%;
+      height: 100%; }
+      /* line 45, ../sass/public.scss */
+      .footer-box .footer-nav li a {
+        color: #fff; }
+        /* line 46, ../sass/public.scss */
+        .footer-box .footer-nav li a i {
+          width: 55px;
+          height: 55px;
+          margin-top: 15px; }
+        /* line 47, ../sass/public.scss */
+        .footer-box .footer-nav li a span {
+          font-size: 20px;
+          line-height: 1.5;
+          font-weight: normal;
+          display: block;
+          margin-top: 10px;
+          letter-spacing: 2px; }
+        /* line 48, ../sass/public.scss */
+        .footer-box .footer-nav li a .bar-bg {
+          background-color: #838383;
+          width: 110px;
+          height: 70px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          border-radius: 10px;
+          line-height: 70px; }
+          /* line 49, ../sass/public.scss */
+          .footer-box .footer-nav li a .bar-bg i {
+            margin-top: -15px; }
+      /* line 52, ../sass/public.scss */
+      .footer-box .footer-nav li a.update {
+        padding-top: 15px;
+        font-size: 55px;
+        color: #ff6f54; }
+    /* line 67, ../sass/public.scss */
+    .footer-box .footer-nav li:nth-child(1) a i {
+      background-position: -1314px 0px; }
+    /* line 70, ../sass/public.scss */
+    .footer-box .footer-nav li:nth-child(1) a.select i {
+      background-position: -1566px 0px; }
+    /* line 67, ../sass/public.scss */
+    .footer-box .footer-nav li:nth-child(2) a i {
+      background-position: -1377px 0px; }
+    /* line 70, ../sass/public.scss */
+    .footer-box .footer-nav li:nth-child(2) a.select i {
+      background-position: -1629px 0px; }
+    /* line 56, ../sass/public.scss */
+    .footer-box .footer-nav li:nth-child(3) a i {
+      background: none; }
+    /* line 60, ../sass/public.scss */
+    .footer-box .footer-nav li:nth-child(4) a i {
+      background-position: -1440px 0px; }
+    /* line 63, ../sass/public.scss */
+    .footer-box .footer-nav li:nth-child(4) a.select i {
+      background-position: -1692px 0px; }
+    /* line 60, ../sass/public.scss */
+    .footer-box .footer-nav li:nth-child(5) a i {
+      background-position: -1503px 0px; }
+    /* line 63, ../sass/public.scss */
+    .footer-box .footer-nav li:nth-child(5) a.select i {
+      background-position: -1755px 0px; }
+
+/*********************发布底部导航************************/
+/* line 80, ../sass/public.scss */
+.footer-bar {
+  z-index: 1000000; }
+  /* line 81, ../sass/public.scss */
+  .footer-bar .footer-item {
+    *zoom: 1; }
+    /* line 22, C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+    .footer-bar .footer-item:after {
+      content: "\0020";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    /* line 82, ../sass/public.scss */
+    .footer-bar .footer-item li {
+      float: left;
+      display: inline;
+      width: 20%;
+      height: 100%;
+      line-height: 90px; }
+      /* line 83, ../sass/public.scss */
+      .footer-bar .footer-item li a {
+        width: 46px;
+        height: 46px; }
+    /* line 86, ../sass/public.scss */
+    .footer-bar .footer-item li:nth-child(1) a {
+      background-position: -698px 0px; }
+    /* line 89, ../sass/public.scss */
+    .footer-bar .footer-item li:nth-child(1) a.select {
+      background-position: -969px 0px; }
+    /* line 86, ../sass/public.scss */
+    .footer-bar .footer-item li:nth-child(2) a {
+      background-position: -752px 0px; }
+    /* line 89, ../sass/public.scss */
+    .footer-bar .footer-item li:nth-child(2) a.select {
+      background-position: -1023px 0px; }
+    /* line 86, ../sass/public.scss */
+    .footer-bar .footer-item li:nth-child(3) a {
+      background-position: -806px 0px; }
+    /* line 89, ../sass/public.scss */
+    .footer-bar .footer-item li:nth-child(3) a.select {
+      background-position: -1077px 0px; }
+    /* line 86, ../sass/public.scss */
+    .footer-bar .footer-item li:nth-child(4) a {
+      background-position: -860px 0px; }
+    /* line 89, ../sass/public.scss */
+    .footer-bar .footer-item li:nth-child(4) a.select {
+      background-position: -1131px 0px; }
+    /* line 86, ../sass/public.scss */
+    .footer-bar .footer-item li:nth-child(5) a {
+      background-position: -914px 0px; }
+    /* line 89, ../sass/public.scss */
+    .footer-bar .footer-item li:nth-child(5) a.select {
+      background-position: -1185px 0px; }
+    /* line 93, ../sass/public.scss */
+    .footer-bar .footer-item li:nth-child(1) a {
+      width: 45px;
+      height: 45px; }
+    /* line 94, ../sass/public.scss */
+    .footer-bar .footer-item li:nth-child(2) a {
+      height: 49px; }
+    /* line 95, ../sass/public.scss */
+    .footer-bar .footer-item li:nth-child(5) a {
+      width: 48px; }
+
+/*********************浮层************************/
+/* line 101, ../sass/public.scss */
+.pop-float {
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 99999;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+/* line 102, ../sass/public.scss */
+.info-box {
+  width: 476px; }
+  /* line 103, ../sass/public.scss */
+  .info-box .pub-input {
+    border: none;
+    font-size: 30px;
+    color: #999999;
+    height: 76px;
+    line-height: 76px;
+    outline: none;
+    padding-left: 20px;
+    width: 456px;
+    margin-bottom: 25px; }
+  /* line 104, ../sass/public.scss */
+  .info-box button {
+    background-color: #ff6f54;
+    border: none;
+    font-size: 36px;
+    color: #fff;
+    height: 100px;
+    line-height: 100px;
+    outline: none;
+    width: 476px; }
+  /* line 105, ../sass/public.scss */
+  .info-box .forget-password {
+    font-size: 32px;
+    line-height: 1.5;
+    color: #cfcfcf;
+    font-weight: normal;
+    margin-top: 65px;
+    text-align: right; }
+
+/* line 107, ../sass/public.scss */
+h1.tip-box {
+  font-size: 50px;
+  line-height: 1.5;
+  color: #fff;
+  font-weight: normal;
+  margin-top: 212px;
+  margin-bottom: 88px; }
+
+/*************登录**************/
+/* line 110, ../sass/public.scss */
+.land-float {
+  display: none; }
+
+/*************注册**************/
+/* line 113, ../sass/public.scss */
+.register-float, .verify-identity-float {
+  display: none; }
+  /* line 114, ../sass/public.scss */
+  .register-float input, .verify-identity-float input {
+    font-size: 26px !important; }
+  /* line 115, ../sass/public.scss */
+  .register-float .get-code, .verify-identity-float .get-code {
+    background-color: #717171;
+    color: #fff !important;
+    text-indent: -20px;
+    margin-bottom: 50px !important;
+    display: block; }
+  /* line 116, ../sass/public.scss */
+  .register-float .code-time, .verify-identity-float .code-time {
+    font-size: 36px;
+    line-height: 1.5;
+    color: #5b5b5b;
+    font-weight: normal;
+    position: absolute;
+    margin: 10px 0px 0px -70px; }
+  /* line 117, ../sass/public.scss */
+  .register-float .code-box, .verify-identity-float .code-box {
+    display: none; }
+
+/*************注册完成**************/
+/* line 121, ../sass/public.scss */
+.register-finish-float {
+  display: none; }
+  /* line 122, ../sass/public.scss */
+  .register-finish-float h1 {
+    margin-bottom: 0; }
+  /* line 123, ../sass/public.scss */
+  .register-finish-float small {
+    font-size: 26px;
+    line-height: 1.5;
+    color: #fff;
+    font-weight: normal;
+    display: block;
+    margin-bottom: 60px; }
+  /* line 124, ../sass/public.scss */
+  .register-finish-float .sex-select {
+    margin: 30px 0px 55px 0px; }
+    /* line 125, ../sass/public.scss */
+    .register-finish-float .sex-select span {
+      font-size: 32px;
+      line-height: 1.5;
+      color: #fff;
+      font-weight: normal; }
+      /* line 126, ../sass/public.scss */
+      .register-finish-float .sex-select span a {
+        vertical-align: -6px; }
+      /* line 127, ../sass/public.scss */
+      .register-finish-float .sex-select span a.sex-man {
+        width: 44px;
+        height: 44px;
+        background-position: -1870px 0px; }
+      /* line 128, ../sass/public.scss */
+      .register-finish-float .sex-select span a.sex-wonmen {
+        width: 33px;
+        height: 45px;
+        background-position: -2015px 0px; }
+      /* line 129, ../sass/public.scss */
+      .register-finish-float .sex-select span i {
+        font-style: normal;
+        margin-right: 10px; }
+    /* line 131, ../sass/public.scss */
+    .register-finish-float .sex-select span.select a.sex-man {
+      background-position: -1922px 0px; }
+    /* line 132, ../sass/public.scss */
+    .register-finish-float .sex-select span.select a.sex-wonmen {
+      background-position: -2056px 0px; }
+    /* line 133, ../sass/public.scss */
+    .register-finish-float .sex-select span:nth-last-child(1) {
+      margin-left: 20px; }
+    /* line 134, ../sass/public.scss */
+    .register-finish-float .sex-select span:nth-last-child(2) {
+      margin-right: 20px; }
+  /* line 136, ../sass/public.scss */
+  .register-finish-float .verify-name {
+    position: absolute;
+    width: 31px;
+    height: 31px;
+    background-color: #ff6f54;
+    color: #fff;
+    margin: -80px 0px 0px 190px;
+    font-size: 22px; }
+    /* line 138, ../sass/public.scss */
+    .register-finish-float .verify-name .error {
+      display: none; }
+
+/*************重置密码**************/
+/* line 143, ../sass/public.scss */
+.reset-password-float {
+  display: none; }
+
+/*************验证身份**************/
+/* line 146, ../sass/public.scss */
+.verify-identity-float {
+  display: none; }
+  /* line 147, ../sass/public.scss */
+  .verify-identity-float .code-identity {
+    display: none; }
+  /* line 148, ../sass/public.scss */
+  .verify-identity-float .id-code {
+    display: block; }
+
+/*************发布成功浮层**************/
+/* line 153, ../sass/public.scss */
+.success-float {
+  display: none; }
+  /* line 154, ../sass/public.scss */
+  .success-float .success-arrow {
+    top: 50px;
+    right: 65px;
+    position: absolute; }
+  /* line 155, ../sass/public.scss */
+  .success-float .success-tip {
+    position: absolute;
+    top: 205px;
+    left: 50%;
+    margin-left: -121px;
+    width: 242px; }
+  /* line 156, ../sass/public.scss */
+  .success-float .success-text {
+    position: absolute;
+    top: 310px;
+    left: 50%;
+    margin-left: -227px;
+    width: 454px; }
+
+/*************修改个人信息浮层**************/
+/* line 160, ../sass/public.scss */
+.info-float, .answers-float {
+  display: none;
+  position: absolute;
+  top: 360px;
+  left: 50%;
+  margin-left: -245px;
+  width: 490px;
+  background-color: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px; }
+  /* line 161, ../sass/public.scss */
+  .info-float .float-submit-btn, .answers-float .float-submit-btn {
+    width: 114px;
+    height: 48px;
+    margin-bottom: 40px; }
+    /* line 162, ../sass/public.scss */
+    .info-float .float-submit-btn a, .answers-float .float-submit-btn a {
+      font-size: 22px;
+      line-height: 1.5;
+      color: #fff;
+      background-color: #ff6f54;
+      font-weight: normal;
+      line-height: 48px; }
+  /* line 164, ../sass/public.scss */
+  .info-float .float-close-btn, .answers-float .float-close-btn {
+    top: -15px;
+    right: -15px;
+    position: absolute; }
+    /* line 165, ../sass/public.scss */
+    .info-float .float-close-btn a, .answers-float .float-close-btn a {
+      width: 34px;
+      height: 34px;
+      background-position: -367px 0px; }
+
+/*******性别********/
+/* line 170, ../sass/public.scss */
+.gender-box {
+  display: none;
+  margin-top: 75px;
+  font-size: 0;
+  margin-bottom: 60px; }
+  /* line 172, ../sass/public.scss */
+  .gender-box .gender-man {
+    margin-left: 156px; }
+  /* line 173, ../sass/public.scss */
+  .gender-box .gender-wonmen {
+    margin-left: 104px; }
+  /* line 175, ../sass/public.scss */
+  .gender-box i.set-man {
+    width: 44px;
+    height: 44px;
+    background-position: -1870px 0px; }
+  /* line 176, ../sass/public.scss */
+  .gender-box i.set-wonmen {
+    width: 33px;
+    height: 45px;
+    background-position: -2015px 0px; }
+  /* line 177, ../sass/public.scss */
+  .gender-box a.select i.set-man {
+    background-position: -1922px 0px; }
+  /* line 178, ../sass/public.scss */
+  .gender-box a.select i.set-wonmen {
+    background-position: -2056px 0px; }
+  /* line 179, ../sass/public.scss */
+  .gender-box span {
+    font-size: 26px;
+    line-height: 1.5;
+    color: #2c2c2c;
+    font-weight: normal;
+    display: block; }
+
+/*******个性签名********/
+/* line 184, ../sass/public.scss */
+.signature-box {
+  display: none;
+  margin-top: 22px;
+  height: 175px;
+  margin-bottom: 27px; }
+  /* line 186, ../sass/public.scss */
+  .signature-box .signature-con textarea {
+    font-size: 22px;
+    line-height: 1.5;
+    color: #999999;
+    font-weight: normal;
+    padding: 15px;
+    width: 460px;
+    height: 145px;
+    background-color: #f7f7f7; }
+
+/*******填写姓名********/
+/* line 192, ../sass/public.scss */
+.fill-name-box {
+  display: none;
+  margin-top: 35px;
+  margin-bottom: 73px; }
+  /* line 193, ../sass/public.scss */
+  .fill-name-box .fill-name-con {
+    margin-bottom: 35px; }
+    /* line 194, ../sass/public.scss */
+    .fill-name-box .fill-name-con input {
+      font-size: 26px;
+      line-height: 1.5;
+      color: #282828;
+      font-weight: normal;
+      padding-left: 25px;
+      width: 440px;
+      height: 54px;
+      background-color: #f7f7f7; }
+  /* line 196, ../sass/public.scss */
+  .fill-name-box p {
+    font-size: 22px;
+    line-height: 1.5;
+    color: #999999;
+    font-weight: normal;
+    margin-left: 25px; }
+
+/*******问答提交********/
+/* line 202, ../sass/public.scss */
+.answers-float p {
+  margin: 80px 0px; }
+
+/*******发布弹出浮层********/
+/* line 207, ../sass/public.scss */
+.tag-float {
+  display: none; }
+
+/*************剪纸选择浮层**************/
+/* line 212, ../sass/public.scss */
+.papercut-float {
+  display: none;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 99999;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  /* line 213, ../sass/public.scss */
+  .papercut-float .papercut-box {
+    width: 100%;
+    height: 620px; }
+  /* line 214, ../sass/public.scss */
+  .papercut-float .papercut-bar {
+    width: 100%;
+    overflow-x: auto; }
+    /* line 215, ../sass/public.scss */
+    .papercut-float .papercut-bar .papercut-nav {
+      padding: 20px;
+      *zoom: 1;
+      width: 20000px; }
+      /* line 22, C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+      .papercut-float .papercut-bar .papercut-nav:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        clear: both;
+        overflow: hidden;
+        visibility: hidden; }
+      /* line 216, ../sass/public.scss */
+      .papercut-float .papercut-bar .papercut-nav li {
+        float: left;
+        display: inline;
+        width: 130px;
+        margin-right: 10px; }
+        /* line 218, ../sass/public.scss */
+        .papercut-float .papercut-bar .papercut-nav li a img {
+          display: block;
+          width: 130px; }
+        /* line 219, ../sass/public.scss */
+        .papercut-float .papercut-bar .papercut-nav li a span {
+          width: 130px;
+          height: 43px;
+          font-size: 22px;
+          line-height: 1.5;
+          color: #000;
+          font-weight: normal;
+          line-height: 43px; }
+        /* line 221, ../sass/public.scss */
+        .papercut-float .papercut-bar .papercut-nav li a.select span {
+          background: #ff6f54;
+          color: #fff; }

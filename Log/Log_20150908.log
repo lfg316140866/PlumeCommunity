@@ -1,0 +1,12 @@
+/*******************************************************************************************************
+* DateTime: 2015/9/8 9:40:13		IP: 180.174.147.31()		Brower: Unknown  Chrome42
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/Interface.aspx?method=GetWorkListOrderDateDesc&CurPage=1&PageSize=2
+函数SqlToJson在转换CurPage或PageSize到int的时候报错！错误明细：Input string was not in a correct format.
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/8 9:40:13		IP: 180.174.147.31()		Brower: Unknown  Chrome42
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/Interface.aspx?method=GetWorkListOrderDateDescByFollow&CurPage=1&PageSize=2
+函数SqlToJson在转换CurPage或PageSize到int的时候报错！错误明细：Input string was not in a correct format.
+*******************************************************************************************************/
+

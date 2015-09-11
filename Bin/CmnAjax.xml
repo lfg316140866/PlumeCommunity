@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CmnAjax</name>
+    </assembly>
+    <members>
+        <member name="T:Cmn.PageDataTable">
+            <summary>
+            翻页的时候用的DataTable
+            </summary>
+        </member>
+        <member name="F:Cmn.PageDataTable.RecCount">
+            <summary>
+            记录总数量
+            </summary>
+        </member>
+        <member name="T:Cmn.AjaxJson">
+            <summary>
+            用于ajax的json类
+            </summary>
+        </member>
+        <member name="M:Cmn.AjaxJson.WriteData(System.Data.DataTable)">
+            <summary>
+            写入数据
+            </summary>
+            <param name="dt">DataTable</param>
+        </member>
+        <member name="M:Cmn.AjaxJson.WriteData(System.Data.DataTable,System.Int32,System.Int32)">
+            <summary>
+            写入数据
+            </summary>
+            <param name="dt">DataTable</param>
+            <param name="curPage">当前页</param>
+            <param name="pageSize">每页的记录数</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:Cmn.AjaxJson.WriteData(System.String)">
+            <summary>
+            写入数据
+            </summary>
+            <param name="sql">sql语句</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:Cmn.AjaxJson.StartData">
+            <summary>
+            开始data数组
+            </summary>
+        </member>
+        <member name="M:Cmn.AjaxJson.EndData">
+            <summary>
+            结束(关闭)data数组
+            </summary>
+        </member>
+        <member name="M:Cmn.AjaxJson.DataTableToJson(System.Data.DataTable,Cmn.JObjectItf)">
+            <summary>
+            DataTable中的数据转换成json字符串
+            </summary>
+            <param name="dt">DataTable</param>
+            <param name="joItf">json对象</param>
+            <returns>json字符串</returns>
+        </member>
+        <member name="M:Cmn.AjaxJson.SqlToJson(System.String,Cmn.JObjectItf)">
+            <summary>
+            用sql语句获取数据并转换成json字符串
+            </summary>
+            <param name="sql">sql语句</param>
+            <param name="joItf">JObjectItf对象</param>
+            <returns>json字符串</returns>
+        </member>
+        <member name="M:Cmn.AjaxJson.SqlToJson(System.String,System.Int32,System.Int32,Cmn.JObjectItf)">
+            <summary>
+            用sql语句获取数据并转换成json字符串
+            </summary>
+            <param name="sql">sql语句</param>
+            <param name="curPage">当前页码</param>
+            <param name="pageSize">每页的记录数</param>
+            <param name="joItf">JObjectItf对象</param>
+            <returns>json格式的数据</returns>
+        </member>
+        <member name="M:Cmn.AjaxJson.SqlToJson(System.String,System.String,System.Int32)">
+            <summary>
+            用sql语句获取数据并转换成json字符串
+            </summary>
+            <param name="sql">sql语句</param>
+            <param name="cacheKey">缓存key</param>
+            <param name="cacheTime">缓存时间（秒）</param>
+            <returns>json字符串</returns>
+        </member>
+        <member name="M:Cmn.AjaxJson.SqlToJson(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            用sql语句获取数据并转换成json字符串
+            </summary>
+            <param name="sql">sql语句</param>
+            <param name="cacheKey">缓存key</param>
+            <param name="cacheTime">缓存时间，秒</param>
+            <param name="curPage">当前页码</param>
+            <param name="pageSize">每页的记录数</param>
+            <returns>json格式的数据</returns>
+        </member>
+        <member name="M:Cmn.AjaxJson.GetDataTable(System.String)">
+            <summary>
+            获取DataTable(如果有分页请求的话取到的是当前页的数据)
+            </summary>
+            <param name="sql">sql语句</param>
+            <returns>DataTable</returns>
+        </member>
+    </members>
+</doc>

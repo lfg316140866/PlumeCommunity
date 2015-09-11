@@ -1,0 +1,84 @@
+/*******************************************************************************************************
+* DateTime: 2015/9/6 15:31:15		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=GetSqlData&ItfName=AddFollow
+错误的SQL语句：insert into usr_Follow (FollowedUserID,UserID) values ('1',)  错误信息：')' 附近有语法错误。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/6 15:44:15		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=DBGetResultSet
+错误的SQL语句：insert into usr_Follow (FollowedUserID,UserID) values ('1',)  错误信息：')' 附近有语法错误。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/6 15:44:26		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=DBGetResultSet
+错误的SQL语句：insert into usr_Follow (FollowedUserID,UserID) values ('1','')  错误信息：INSERT 语句与 FOREIGN KEY 约束"FK_usr_Follow_usr_ Users"冲突。该冲突发生于数据库"yuqian"，表"dbo.usr_Users", column 'UserID'。
+语句已终止。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/6 16:09:34		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=DBGetResultSet
+错误的SQL语句：insert into usr_Follow (FollowedUserID,UserID) values ('1','')  错误信息：INSERT 语句与 FOREIGN KEY 约束"FK_usr_Follow_usr_ Users"冲突。该冲突发生于数据库"yuqian"，表"dbo.usr_Users", column 'UserID'。
+语句已终止。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/6 16:09:36		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=GetSqlData&ItfName=AddFollow
+错误的SQL语句：insert into usr_Follow (FollowedUserID,UserID) values ('1','')  错误信息：INSERT 语句与 FOREIGN KEY 约束"FK_usr_Follow_usr_ Users"冲突。该冲突发生于数据库"yuqian"，表"dbo.usr_Users", column 'UserID'。
+语句已终止。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/6 17:23:13		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=DBGetResultSet
+错误的SQL语句：delete usr_Follow where FollowedUserID=1 and UserID=  错误信息：'=' 附近有语法错误。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/6 17:45:29		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=GetSqlData&ItfName=DelFollowByID
+错误的SQL语句：delete usr_Follow where FollowedUserID=1 and UserID=  错误信息：'=' 附近有语法错误。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/6 17:46:16		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=GetSqlData&ItfName=DelFollowByID
+错误的SQL语句：delete usr_Follow where FollowedUserID=1 and UserID=  错误信息：'=' 附近有语法错误。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/6 17:51:49		IP: 180.174.147.31()		Brower: Unknown  Safari8
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=GetSqlData&ItfName=DelFollowByID
+错误的SQL语句：delete usr_Follow where FollowedUserID=4 and UserID=  错误信息：'=' 附近有语法错误。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/6 17:51:49		IP: 180.174.147.31()		Brower: Unknown  Safari8
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=GetSqlData&ItfName=DelFollowByID
+错误的SQL语句：delete usr_Follow where FollowedUserID=4 and UserID=  错误信息：'=' 附近有语法错误。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/6 20:12:00		IP: 180.174.147.31()		Brower: Unknown  Chrome42
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=GetSqlData&ItfName=AddFollow
+错误的SQL语句：delete usr_Follow where FollowedUserID=3 and UserID=
+insert into usr_Follow (FollowedUserID,UserID) values ('3','')  错误信息：关键字 'insert' 附近有语法错误。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/6 20:12:01		IP: 180.174.147.31()		Brower: Unknown  Chrome42
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=GetSqlData&ItfName=AddFollow
+错误的SQL语句：delete usr_Follow where FollowedUserID=3 and UserID=
+insert into usr_Follow (FollowedUserID,UserID) values ('3','')  错误信息：关键字 'insert' 附近有语法错误。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/6 20:12:02		IP: 180.174.147.31()		Brower: Unknown  Chrome42
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=GetSqlData&ItfName=AddFollow
+错误的SQL语句：delete usr_Follow where FollowedUserID=3 and UserID=
+insert into usr_Follow (FollowedUserID,UserID) values ('3','')  错误信息：关键字 'insert' 附近有语法错误。
+*******************************************************************************************************/
+

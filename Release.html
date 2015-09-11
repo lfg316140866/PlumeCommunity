@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no;" />
+    <link href="css/load.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/public.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <script src="Js/ThirdLib/jquery.js"></script>
+    <script src="Js/jquery.easing.min.js"></script>
+    <script src="Js/Cmn.js"></script>
+    <script src="Js/CmnAjax.js"></script>
+    <script src="Js/animate/AnimateMan.js"></script>
+    <script src="Js/animate/ScenesSwitch.js"></script>
+    <script src="Js/animate/Scenes.js"></script>
+    <script src="Js/animate/AnimateFrame.js"></script>
+    <script src="Js/animate/BasAnimate.js"></script>
+    <script src="Js/jquery.mCustomScrollbar.js"></script>
+    <script src="Js/CmnFuncExd.js"></script>
+    <script src="Js/jquery.cycle.all.js"></script>
+    <script src="Js/CmnTools/WechatShare.js"></script>
+    <script src="Js/SiteJs/Site.js"></script>
+    <script src="Js/Public.js"></script>
+    <title>羽茜社区</title>
+</head>
+<body>
+
+    <div class="Wrap cmn-AnimteFrameContainer">
+        <div class="Main cmn-ScenesContainer">
+
+            <!--发布(选择形式)-->
+            <div class="cmn-Scenes PublicScenes release" id="release">
+                <div class="Inner">
+                    <div class="release-tip"><h2>选择你的发布形式</h2></div>
+                    <div class="release-form">
+                        <ul class="release-form-nav">
+                            <li><a href="javascript:void(0)" class="btn-sprite"><input type="file"/></a></li>
+                            <li><a href="javascript:void(0)" class="btn-sprite"></a></li>
+                            <li><a href="javascript:void(0)" class="btn-sprite"></a></li>
+                            <li><a href="javascript:void(0)" class="btn-sprite"></a></li>
+                        </ul>
+                    </div>
+                    <button class="release-btn">发布</button>
+                </div>
+            </div>
+
+            <!--发布(滤镜选择)-->
+            <div class="cmn-Scenes PublicScenes release-filter" id="release-filter">
+                <div class="Inner">
+                    <div class="filter-des"><img  src="images/filter-des-img.png" /></div>
+                    <div class="filter-bar">
+                        <ul class="filter-nav">
+                            <!--选中滤镜添加a标签select-->
+                            <li><a href="javascript:void(0)" class="select"><img  src="images/filter-color.png" /><span>原图</span></a></li>
+                            <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>原图</span></a></li>
+                            <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>原图</span></a></li>
+                            <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>原图</span></a></li>
+                            <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>原图</span></a></li>
+                            <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>原图</span></a></li>
+                            <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>原图</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--发布(自定义标签)-->
+            <div class="cmn-Scenes PublicScenes release-tag" id="release-tag">
+                <div class="Inner">
+                    <div class="filter-des"><img  src="images/filter-des-img.png" /></div>
+                    <div class="release-tag-box">
+                        <div class="tag-des-1 tag-des"><a href="javascript:void(0)">不旅行会死星人</a></div>
+                        <div class="tag-des-2 tag-des"><a href="javascript:void(0)">大红唇敢不敢</a></div>
+                        <div class="tag-des-3 tag-des"><a href="javascript:void(0)">怪咖闯江湖</a></div>
+                        <div class="tag-des-4 tag-des"><a href="javascript:void(0)">开脑洞并没有那么难</a></div>
+                    </div>
+                    <div class="tag-btn"><a href="javascript:void(0)">+自定义标签</a></div>
+                </div>
+            </div>
+
+
+            <!--发布(@了谁)-->
+            <div class="cmn-Scenes PublicScenes release-who" id="release-who">
+                <div class="Inner">
+                    <div class="header-search">
+                        <div class="search-input"><input type="text" placeholder="中国美女"/></div>
+                        <div class="search-submit"><a href="javascript:void(0)"><i class="icons-seach icons-sprite"></i></a></div>
+                    </div>
+                    <div class="release-whos pub-notice pub-call">
+                        <ul class="notice-praise-nav pub-call-nav">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="praise-left">
+                                        <img  src="images/individual-box.png" />
+                                        <strong>寻找你的存在</strong>
+                                        <em class="icon-tages">C</em>
+                                    </div>
+                                    <div class="praise-right">
+                                        <!--@谁选中以后添加select，@标签p事件，i便签区域太小-->
+                                        <p><i class="icons-sprite icons-who"></i></p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="praise-left">
+                                        <img  src="images/individual-box.png" />
+                                        <strong>寻找你的存在</strong>
+                                    </div>
+                                    <div class="praise-right">
+                                        <!--@谁选中以后添加select，@标签p事件，i便签区域太小-->
+                                        <p><i class="icons-sprite icons-who select"></i></p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="praise-left">
+                                        <img  src="images/individual-box.png" />
+                                        <strong>寻找你的存在</strong>
+                                    </div>
+                                    <div class="praise-right">
+                                        <!--@谁选中以后添加select，@标签p事件，i便签区域太小-->
+                                        <p><i class="icons-sprite icons-who"></i></p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div><!--Main_end-->
+    </div><!--Wrap_end-->
+    <!---------------顶部菜单(在发布(@了谁这个场景时隐藏))-------------------->
+    <div class="header-box">
+        <div class="return-btn"><a href="javascript:void(0)"><i class="icons-return icons-sprite"></i></a></div>
+        <div class="search-btn">
+                <a href="javascript:void(0)"><i class="icons-correct icons-sprite"></i></a>
+        </div>
+    </div>
+
+    <!---------------浮层-------------------->
+    <div class="pop-float">
+        <!-----------发布弹出浮层---------->
+        <div class="tag-float">
+            <div class="header-search">
+                <div class="search-input"><input type="text" placeholder="中国美女"/></div>
+                <div class="search-submit"><a href="javascript:void(0)">确定</a></div>
+            </div>
+        </div>
+        <!-----------发布成功浮层---------->
+        <div class="success-float">
+            <div class="success-arrow"><img  src="images/load.png" lazypath="images/success-arrow.png" /></div>
+            <div class="success-tip"><img  src="images/load.png" lazypath="images/success-tip.png" /></div>
+            <div class="success-text"><img  src="images/load.png" lazypath="images/success-text.png" /></div>
+        </div>
+        <!-------修改个人信息浮层-------->
+        <div class="info-float">
+            <!-----------性别-------------->
+            <div class="gender-box">
+                <div class="gender-man">
+                    <a  href="javascript:void(0)">
+                        <i class="set-man icons-sprite"></i>
+                        <span>男</span>
+                    </a>
+                </div>
+                <div class="gender-wonmen">
+                    <a  href="javascript:void(0)">
+                        <i class="set-wonmen icons-sprite"></i>
+                        <span>女</span>
+                    </a>
+                </div>
+            </div>
+            <!-----------个性签名-------------->
+            <div class="signature-box">
+                <div class="signature-con">
+                    <textarea>输入你的个人简介</textarea>
+                </div>
+                <div class="float-close-btn"><a  href="javascript:void(0)"><i class="icon-remove"></i></a></div>
+            </div>
+            <!-----------填写姓名-------------->
+            <div class="fill-name-box">
+                <div class="fill-name-con">
+                    <input type="text" name="请输入姓名" placeholder="请输入姓名"/>
+                </div>
+                <p class="">听说酷炫的名字与你更配哟!</p>
+            </div>
+            <div class="float-submit-btn"><a  href="javascript:void(0)">确定</a></div>
+            <div class="float-close-btn"><a  href="javascript:void(0)" class="btn-sprite"></a></div>
+        </div>
+        <!-------登陆-------->
+        <div class="land-float">
+            <h1 class="tip-box">与中国美的不期而遇</h1>
+            <div class="land-box info-box">
+                <input type="text" name="" placeholder="请输入您的手机号" class="land-phone pub-input"/>
+                <input type="password" name="" placeholder="请输入您的密码" class="land-password pub-input"/>
+                <button class="">登录</button>
+                <a href="javascript:void(0)" class="forget-password">忘记密码？</a>
+            </div>
+        </div>
+        <!-------注册-------->
+        <div class="register-float">
+            <h1 class="tip-box">注册账号</h1>
+            <div class="register-box info-box">
+                <input type="text" name="" placeholder="手机号 / 只适用中国大陆手机号" class="register-phone pub-input"/>
+                <input type="password" name="" placeholder="6-14位密码、建议数字、字母、符号" class="register-password pub-input"/>
+                <input type="text" name="" placeholder="输入验证码" class="register-code pub-input code-box"/><span class="code-time code-box">60s</span>
+                <a href="javascript:void(0)" class="pub-input get-code">获取验证码</a>
+                <button class="">注&nbsp;&nbsp;&nbsp;&nbsp;册</button>
+            </div>
+        </div>
+        <!-------注册完成-------->
+        <div class="register-finish-float">
+            <h1 class="tip-box">注册完成</h1>
+            <small>请完善你的个人基本信息</small>
+            <div class="register-finish-box info-box">
+                <input type="text" name="" placeholder="李小冉" class="register-phone pub-input"/>
+                <!-------验证用户名是否被用-------->
+                <em class="verify-name">
+                    <i class="icon-ok correct validation"></i>
+                    <i class="icon-remove validation error"></i>
+                </em>
+                <p class="sex-select">
+                    <!-------选中男女span标签添加select-------->
+                    <span class="select"><i>男</i><a href="javascript:void(0)" class="sex-man"></a></span>
+                    <span><i>女</i><a href="javascript:void(0)" class="sex-wonmen"></a></span>
+                </p>
+                <button class="">完&nbsp;&nbsp;&nbsp;&nbsp;成</button>
+            </div>
+        </div>
+        <!-------重置密码-------->
+        <div class="reset-password-float">
+            <h1 class="tip-box">重设密码</h1>
+            <div class="reset-password-box info-box">
+                <input type="text" name="" placeholder="请输入您的新密码" class="reset-password pub-input"/>
+                <input type="password" name="" placeholder="请确认您的新密码" class="reset-password pub-input"/>
+                <button class="">完&nbsp;&nbsp;&nbsp;&nbsp;成</button>
+            </div>
+        </div>
+        <!-------验证身份-------->
+        <div class="verify-identity-float">
+            <h1 class="tip-box">验证身份</h1>
+            <div class="verify-identity-box info-box">
+                <input type="text" name="" placeholder="手机号 / 只适用中国大陆手机号" class="register-phone pub-input"/>
+                <input type="text" name="" placeholder="输入验证码" class="register-code pub-input code-box code-identity"/><span class="code-time code-box">60s</span>
+                <a href="javascript:void(0)" class="pub-input get-code id-code">获取验证码</a>
+                <button class="">下一步</button>
+            </div>
+        </div>
+        <!-------问答提交-------->
+        <div class="answers-float">
+            <p class="general-font">感谢您的宝贵意见</p>
+            <div class="float-submit-btn"><a  href="javascript:void(0)">确定</a></div>
+        </div>
+    </div>
+
+
+    <!---------------剪纸选择浮层-------------------->
+   <div class="papercut-float">
+       <div class="papercut-box">
+
+       </div>
+       <div class="papercut-bar">
+           <ul class="papercut-nav">
+               <li><a href="javascript:void(0)" class="select"><img  src="images/filter-color.png" /><span>的萨达粉丝</span></a></li>
+               <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>的萨达粉丝</span></a></li>
+               <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>的萨达粉丝</span></a></li>
+               <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>的萨达粉丝</span></a></li>
+               <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>的萨达粉丝</span></a></li>
+               <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>的萨达粉丝</span></a></li>
+               <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>的萨达粉丝</span></a></li>
+               <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>的萨达粉丝</span></a></li>
+           </ul>
+       </div>
+   </div>
+    <!---------------底部导航-------------------->
+    <div class="footer-bar">
+        <ul class="footer-item">
+            <!-------选中添加select---------->
+            <li><a href="javascript:void(0)" class="icons-sprite select"></a></li>
+            <li><a href="javascript:void(0)" class="icons-sprite"></a></li>
+            <li><a href="javascript:void(0)" class="icons-sprite"></a></li>
+            <li><a href="javascript:void(0)" class="icons-sprite"></a></li>
+            <li><a href="javascript:void(0)" class="icons-sprite"></a></li>
+        </ul>
+    </div>
+    <script>
+        Cmn.Func.MobileAdaptive(640,1008, "images/AdviseVertical.png", Cmn.Func.MobileAdaptiveMode.WidthHeight);
+    </script>
+</body>
+</html>
+

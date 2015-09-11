@@ -1,0 +1,617 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CmnMis</name>
+    </assembly>
+    <members>
+        <member name="M:Cmn.Mis.DBItf.ExeSql(Cmn.JObjectItf)">
+            <summary>
+            执行sql
+            </summary>
+            <returns>json字符串</returns>
+        </member>
+        <member name="M:Cmn.Mis.DBItf.GetFieldValue(Cmn.JObjectItf)">
+            <summary>
+            获取字段值
+            </summary>
+            <returns>json字符串</returns>
+        </member>
+        <member name="M:Cmn.Mis.DBItf.GetResultSet(Cmn.JObjectItf)">
+            <summary>
+            获取结果集
+            </summary>
+            <returns>json字符串</returns>
+        </member>
+        <member name="T:Cmn.Mis.ItfFunc">
+            <summary>
+            接口类库中通用的函数
+            </summary>
+        </member>
+        <member name="M:Cmn.Mis.ItfFunc.GetUserID">
+            <summary>
+            获取当前登录用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Mis.ItfFunc.SetUserID(System.String)">
+            <summary>
+            设置当前登录用户
+            </summary>
+            <param name="userID"></param>
+        </member>
+        <member name="M:Cmn.Mis.ItfFunc.IsHasRight(System.String,Cmn.JObjectItf)">
+            <summary>
+            判断当前用户是否有权限调用接口
+            </summary>
+            <param name="userID">用户代码</param>
+            <param name="joItf">用于接口返回的json对象</param>
+            <returns>是否有权限</returns>
+        </member>
+        <member name="M:Cmn.Mis.ItfFunc.IsHasRight(Cmn.JObjectItf)">
+            <summary>
+            判断当前用户是否有权限调用接口
+            </summary>
+            <param name="joItf">用于接口返回的json对象</param>
+            <returns>是否有权限</returns>
+        </member>
+        <member name="M:Cmn.Mis.ItfFunc.FormatFieldName(System.String,System.String)">
+            <summary>
+            处理sql中带中括号的字段(字段加上化名前缀后替换原先的字段)
+            </summary>
+            <param name="sql">sql语句</param>
+            <param name="sqlClause">sql子句</param>
+            <returns>替换好字段的sql子句</returns>
+        </member>
+        <member name="M:Cmn.Mis.ItfFunc.FormatAutoCompleteSql(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            autocomplete 格式化function
+            </summary>
+            <param name="controlCfg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Mis.ItfFunc.GetColumnInfoByUserFormID(System.String,Cmn.JObjectItf)">
+            <summary>
+            获取字段信息记录
+            </summary>
+            <param name="userFormId">用户表单代码</param>
+            <param name="joItf">json对象</param>
+            <returns name="string">json字符串</returns>
+        </member>
+        <member name="M:Cmn.Mis.ItfFunc.ResponseCsvFile(System.String)">
+            <summary>
+            抛出文件到页面
+            </summary>
+            <param name="filePath">文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="T:Cmn.Mis.StrAuthcode">
+            <summary>
+            加密解密
+            </summary>
+        </member>
+        <member name="M:Cmn.Mis.StrAuthcode.Authcode(System.String,System.String,System.String)">
+            <summary>
+            字符串加密解密
+            </summary>
+            <param name="str"></param>
+            <param name="operation"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cmn.Mis.Cache">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="M:Cmn.Mis.Cache.set(System.String,System.Object,System.Int32)">
+            <summary>
+            添加缓存
+            </summary>
+            <param name="key">缓存主键</param>
+            <param name="obj">缓存内容</param>
+            <param name="cacheTime">缓存时间</param>
+        </member>
+        <member name="M:Cmn.Mis.Cache.get(System.String)">
+            <summary>
+            获取cache
+            </summary>
+            <param name="key">婚车主键</param>
+            <returns></returns>
+        </member>
+        <member name="T:Cmn.Controls.Paging.Paging">
+            <summary>
+            分页控件 Build by Sulgar at 2012/12
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.Paging.PageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.Paging.PageSize">
+            <summary>
+            每页的记录数量
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.Paging._CurPage">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.Paging._ANumberLoc">
+            <summary>
+            ANumber(数字控件)在控件列表中的位置
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.Paging._BaseUrl">
+            <summary>
+            用于拼接链接的基本Url
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.Paging._OriginalSql">
+            <summary>
+            原始的Sql语句
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.Paging._CurSql">
+            <summary>
+            取当前分页数据的Sql语句
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.Paging._ShowNumberCount">
+            <summary>
+            显示页码的数量默认为5（即显示多少个数字）
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.Paging._SmartHideButton">
+            <summary>
+            是否智能隐藏首页、上一页、下一页和最后一页等按钮（默认为是，就是例如在第一的时候，不显示首页和上一次按钮）
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.Paging._ParamName">
+            <summary>
+            Url中的当前页的参数名称（如果一个页面上有多个分页控件，必须设置成不一样，否则会冲突）
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.Paging._ControlIsDescOrder">
+            <summary>
+            控件是否是倒排（例如Float:right）
+            </summary>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.RenderControl(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            控件Render事件
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.OnInit(System.EventArgs)">
+            <summary>
+            初始化函数
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.OnLoad(System.EventArgs)">
+            <summary>
+            OnLoad事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Render事件
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.SetANumber(Cmn.Controls.Paging.PageControl,System.Int32)">
+            <summary>
+            设置页码文本中的数字
+            </summary>
+            <param name="aNumber">A对象</param>
+            <param name="pageNo">页码数字</param>
+            <returns>是否设置成功</returns>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.SetCurPage(System.Int32)">
+            <summary>
+            设置当前页
+            </summary>
+            <param name="curPage">当前页</param>        
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.GetCurPage">
+            <summary>
+             获取当前页
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.SetBaseUrl(System.String)">
+            <summary>
+            设置用于拼接链接的BaseUrl
+            </summary>
+            <param name="url">BaseUrl</param>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.Goto(System.Int32)">
+            <summary>
+            跳转到指定页面
+            </summary>
+            <param name="pageNo"></param>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.InitSql(System.String,System.String,System.Int32)">
+            <summary>
+            初始化分页控件（如果Sql语句不改变，一般调用一次就可以）
+            </summary>
+            <param name="sql">获取数据的sql语句</param>
+            <param name="keyFieldName">分页所用的主键字段名</param>
+            <param name="pageSize">每页的记录条数</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.InitSql(System.String,System.Int32)">
+            <summary>
+            初始化分页控件（如果Sql语句不改变，一般调用一次就可以）
+            </summary>
+            <param name="sql">获取数据的sql语句（select中第一个字段必须是分页主键字段）</param>        
+            <param name="pageSize">每页的记录条数</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.BindRepeater(System.Web.UI.WebControls.Repeater)">
+            <summary>
+            绑定Repeater并显示数据
+            </summary>
+            <param name="repeater">Repeater</param>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.GetDataTable">
+            <summary>
+            获取当前页对应的数据
+            </summary>
+            <returns>当前页对应的数据DataTable</returns>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.SetPageCount(System.Int32,System.Int32)">
+            <summary>
+            设置PageCount
+            </summary>
+            <param name="pageSize">pageSize</param>
+            <param name="recCount">记录总数</param>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.GetAjaxMethodName">
+            <summary>
+            获取Ajax跳转页面的函数名
+            </summary>
+            <returns>Ajax跳转页面的函数名</returns>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Paging.GetToPageUrl(System.String)">
+            <summary>
+            获取跳转到某一页的Url
+            </summary>
+            <param name="toPageNo">跳转到哪一页的页码</param>
+            <returns>跳转到某一页的Url</returns>
+        </member>
+        <member name="P:Cmn.Controls.Paging.Paging.ShowNumberCount">
+            <summary>
+            显示页码的数量默认为5（即显示多少个数字）
+            </summary>
+        </member>
+        <member name="P:Cmn.Controls.Paging.Paging.SmartHideButton">
+            <summary>
+            是否智能隐藏首页、上一页、下一页和最后一页等按钮（默认为是，就是例如在第一的时候，不显示首页和上一次按钮）
+            </summary>
+        </member>
+        <member name="P:Cmn.Controls.Paging.Paging.ParamName">
+            <summary>
+            Url中的当前页的参数名称（如果一个页面上有多个分页控件，必须设置成不一样，否则会冲突）
+            </summary>
+        </member>
+        <member name="P:Cmn.Controls.Paging.Paging.ControlIsDescOrder">
+            <summary>
+            控件是否是倒排（例如Float:right）
+            </summary>
+        </member>
+        <member name="P:Cmn.Controls.Paging.Paging.DataContainerID">
+            <summary>
+            显示记录数据的前台控件代码（用于Ajax翻页时填充记录数据）
+            </summary>
+        </member>
+        <member name="P:Cmn.Controls.Paging.Paging.PagingContainerID">
+            <summary>
+            显示翻页控件的前台控件代码（用于Ajax翻页时填充翻页）
+            </summary>
+        </member>
+        <member name="T:Cmn.Controls.Paging.AType">
+            <summary>
+            A标签的类型
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.AType.FirstPage">
+            <summary>
+            首页
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.AType.LastPage">
+            <summary>
+            最后一页
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.AType.PreviousPage">
+            <summary>
+            上一页
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.AType.NextPage">
+            <summary>
+            下一页
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.AType.Number">
+            <summary>
+            数字（第几页）
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.AType.More">
+            <summary>
+            更多（一般是省略号）
+            </summary>
+        </member>
+        <member name="T:Cmn.Controls.Paging.PageControl">
+            <summary>
+            分页控件中的控件基类
+            </summary>
+        </member>
+        <member name="F:Cmn.Controls.Paging.PageControl.IsActive">
+            <summary>
+            是否是Active
+            </summary>
+        </member>
+        <member name="M:Cmn.Controls.Paging.PageControl.OnLoad(System.EventArgs)">
+            <summary>
+            OnLoad事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Cmn.Controls.Paging.PageControl.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Render事件
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Cmn.Controls.Paging.PageControl.AddParsedSubObject(System.Object)">
+            <summary>
+            增加子对象
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Cmn.Controls.Paging.PageControl.Clone">
+            <summary>
+            复制一个对象
+            </summary>
+            <returns>复制后的对象</returns>
+        </member>
+        <member name="M:Cmn.Controls.Paging.PageControl.Clone(Cmn.Controls.Paging.PageControl)">
+            <summary>
+            把当前对象的数据复制到传过来的对象
+            </summary>
+            <param name="pageControl">pageControl对象</param>
+            <returns>复制好数据的对象</returns>
+        </member>
+        <member name="P:Cmn.Controls.Paging.PageControl.Text">
+            <summary>
+            A标签中的文本内容
+            </summary>
+        </member>
+        <member name="P:Cmn.Controls.Paging.PageControl.Type">
+            <summary>
+            A标签类型
+            </summary>
+        </member>
+        <member name="P:Cmn.Controls.Paging.PageControl.ActiveClass">
+            <summary>
+            Active样式名称
+            </summary>
+        </member>
+        <member name="P:Cmn.Controls.Paging.PageControl.InactiveClass">
+            <summary>
+            Inactive样式名称
+            </summary>
+        </member>
+        <member name="P:Cmn.Controls.Paging.PageControl.Href">
+            <summary>
+            链接
+            </summary>
+        </member>
+        <member name="P:Cmn.Controls.Paging.PageControl.OnClick">
+            <summary>
+            OnClick事件
+            </summary>
+        </member>
+        <member name="P:Cmn.Controls.Paging.PageControl.ToPageNo">
+            <summary>
+            跳转到哪一页
+            </summary>
+        </member>
+        <member name="P:Cmn.Controls.Paging.PageControl.AjaxMethodName">
+            <summary>
+            用于Ajax刷新的Js函数名
+            </summary>
+        </member>
+        <member name="T:Cmn.Controls.Paging.A">
+            <summary>
+            分页控件中的A标签
+            </summary>
+        </member>
+        <member name="M:Cmn.Controls.Paging.A.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Render事件
+            </summary>
+            <param name="writer">writer</param>
+        </member>
+        <member name="M:Cmn.Controls.Paging.A.Clone">
+            <summary>
+            复制一个对象
+            </summary>
+            <returns>复制后的对象</returns>
+        </member>
+        <member name="T:Cmn.Controls.Paging.Label">
+            <summary>
+            分页控件中的Label标签，只显示文本
+            </summary>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Label.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Render事件
+            </summary>
+            <param name="writer">writer</param>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Label.Clone">
+            <summary>
+            复制一个对象
+            </summary>
+            <returns>复制后的对象</returns>
+        </member>
+        <member name="T:Cmn.Controls.Paging.Repeater">
+            <summary>
+            Repeater控件主要用于翻页控件
+            </summary>
+        </member>
+        <member name="M:Cmn.Controls.Paging.Repeater.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Render事件
+            </summary>
+            <param name="writer">writer</param>
+        </member>
+        <member name="P:Cmn.Controls.Paging.Repeater.PagingControl">
+            <summary>
+            对应的分页控件
+            </summary>
+        </member>
+        <member name="T:Cmn.Mis.UserFormProcessItf">
+            <summary>
+            接口类
+            </summary>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.AddRec(Cmn.JObjectItf)">
+            <summary>
+            增加表记录
+            </summary>
+            <returns name="string">json字符串</returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.DeleteRec(Cmn.JObjectItf)">
+            <summary>
+            删除表记录
+            </summary>
+            <returns name="string">json字符串</returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.UpdateRec(Cmn.JObjectItf)">
+            <summary>
+            修改表记录
+            </summary>
+            <returns name="string">json字符串</returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.GetRecList(Cmn.JObjectItf)">
+            <summary>
+            查询表记录
+            </summary>
+            <returns name="string">json字符串</returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.GetColumnInfo(Cmn.JObjectItf)">
+            <summary>
+            获取字段信息记录接口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.GetUserFormInfo(Cmn.JObjectItf)">
+            <summary>
+            获取用户表单信息记录
+            </summary>
+            <returns name="string">json字符串</returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.GetMenu(Cmn.JObjectItf)">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns name="string">json字符串</returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.GetSysCfg(Cmn.JObjectItf)">
+            <summary>
+            获取配置信息
+            </summary>
+            <returns name="string">json字符串</returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.Login(Cmn.JObjectItf)">
+            <summary>
+            登录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.ExitLogin(Cmn.JObjectItf)">
+            <summary>
+            退出登录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.GetLoginUserName(Cmn.JObjectItf)">
+            <summary>
+            获取当前登录用户名 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.AuthSql(Cmn.JObjectItf)">
+            <summary>
+            加密Sql语句
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.ExecSql(Cmn.JObjectItf)">
+            <summary>
+            执行加密sql语句 返回json
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.GetSqlData(Cmn.JObjectItf)">
+            <summary>
+            获取接口配置中sql接口对应的数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.HasRight(Cmn.JObjectItf)">
+            <summary>
+            是否有某个权限
+            </summary>
+            <returns>是否有权限</returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.UploadBase64Img(Cmn.JObjectItf)">
+            <summary>
+            上传base64的图片，主要用于xheditor
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.GetUserID(Cmn.JObjectItf)">
+            <summary>
+            获取当前登录用户代码
+            </summary>
+            <param name="joItf">json对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.GetCSV(Cmn.JObjectItf)">
+            <summary>
+            下载csv文件
+            </summary>
+            <param name="joItf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.Translate(Cmn.JObjectItf)">
+            <summary>
+            翻译文本（从语言库中并根据当前语言获取获取）
+            </summary>
+            <param name="joItf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cmn.Mis.UserFormProcessItf.GetCurLanguageType(Cmn.JObjectItf)">
+            <summary>
+            获取当前语言类型
+            </summary>
+            <param name="joItf"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

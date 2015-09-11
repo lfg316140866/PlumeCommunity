@@ -1,0 +1,225 @@
+@charset "utf-8";
+@import "tobe/base";   //引入sass的tade模块
+@import "compass/typography";  //引入compasss五大模块
+@import "compass/css3";
+@import "compass/layout";
+@import "compass/support";
+%vertically{@extend %inline-block;vertical-align:middle;}
+%round{@include prefixer(border-radius,50%);}
+%center{text-align:center;}
+.icons-sprite{background: inline_image('icon/synthesis-s8306d3e6d6.png') no-repeat;}
+%footer-navbar{position:fixed;left:0;bottom:0;width:$Width;background:rgba(0,0,0,0.85);height:115px;}
+/*********************顶部菜单************************/
+.header-box{position:fixed;top:0;left:0;z-index:100;height:66px;background-color:$Color-Black;@include legacy-pie-clearfix();width:$Width;
+  .return-btn{@include float();margin-left:18px;width:65px;height:65px;
+    .icons-return{width: 19px;height:32px;background-position:-211px 0px;}
+  }
+   p{color:$Color-White;position:absolute;margin-left:250px;margin-top:15px;}
+  .search-btn{@include float(right);width:105px;height:65px;margin-right:15px;text-align:right;
+    i.icons-seach{width:37px;height:36px;background-position:-238px 0px;}
+    i.icons-correct{width:35px;height:29px;background-position:-106px 0px;}
+  }
+  a{@include font-style($Font-Size,$Color-White,null);line-height:66px;}
+  i{@extend %vertically;}
+}
+
+
+/*********************顶部搜索************************/
+.header-search{@extend .header-box; display:block;height:90px;
+  .search-input{@include float();width:502px;height:66px;margin-left:12px;margin-top:12px;
+     input{@include form-box(30px,66px,36px,$Color-Black);width:466px;}
+  }
+  .search-submit{@include float(right);width:125px;height:90px;@extend %center;
+    a{@include font-style($Text-Font-Size,$Color-White,null);line-height:90px;
+      i{width:37px;height:36px;background-position:-238px 0px;@extend %vertically;}
+    }
+  }
+}
+
+
+
+/*********************底部导航************************/
+.footer-box{z-index:10;@extend %footer-navbar;
+  .footer-nav{@extend %wh100;@include legacy-pie-clearfix();
+    li{@include float();width:20%;height:$Height;@extend %center;
+      a{color:$Color-White;
+        i{width:55px;height:55px;@extend %vertically;margin-top:15px;}
+        span{@include font-style(20px,null,null);display:block;margin-top:10px;letter-spacing:2px;}
+        .bar-bg{background-color:lighten($Color-Black,51.37255%);width:110px;height:70px;@include prefixer(border-radius,10px);@extend %inline-block;line-height:70px;
+           i{margin-top:-15px;}
+        }
+      }
+      a.update{padding-top:15px;font-size:55px;color:$Bg-Btn;}
+    }
+    @for $i from 1 through 5{
+      @if $i ==3 {
+        li:nth-child(#{$i}) a i{
+          background:none;
+        }
+      }@else if $i>3 {
+        li:nth-child(#{$i}) a i{
+          background-position:(1251+(($i)-1)*63px)*(-1) 0px;
+        }
+        li:nth-child(#{$i}) a.select i{
+          background-position:(1503+(($i)-1)*63px)*(-1) 0px;
+        }
+      }@else {
+        li:nth-child(#{$i}) a i{
+          background-position:(1251+$i*63px)*(-1) 0px;
+        }
+        li:nth-child(#{$i}) a.select i{
+          background-position:(1503+$i*63px)*(-1) 0px;
+        }
+      }
+    }
+  }
+}
+
+
+/*********************发布底部导航************************/
+.footer-bar{z-index:1000000;@extend %footer-navbar;
+  .footer-item{@extend %wh100;@include legacy-pie-clearfix();
+    li{@include float();width:20%;height:$Height;@extend %center;line-height:90px;
+      a{width:46px;height:46px; @extend %vertically;}
+    }
+    @for $i from 1 through 5{
+      li:nth-child(#{$i}) a{
+        background-position:(644+$i*54px)*(-1) 0px;
+      }
+      li:nth-child(#{$i}) a.select{
+        background-position:(915+$i*54px)*(-1) 0px;
+      }
+    }
+    li:nth-child(1) a{width:45px;height:45px;}
+    li:nth-child(2) a{height:49px;}
+    li:nth-child(5) a{width:48px;}
+  }
+}
+
+
+/*********************浮层************************/
+.pop-float{@include pop(0.7);}
+.info-box{width:476px;@extend %center;@extend %center-block;
+   .pub-input{@include form-box(30px,76px,20px,$Color-Primary);width:456px;margin-bottom:25px;}
+   button{background-color:$Bg-Btn;@include form-box($TextSize,100px,null,$Color-White);width:476px;}
+   .forget-password{@include font-style($Main-Font-Size,lighten($Color-Black,81.17647%),null);margin-top:65px;text-align:right;}
+}
+h1.tip-box{@include font-style(50px,$Color-White,null);margin-top:212px;@extend %center;margin-bottom:88px;}
+
+/*************登录**************/
+.land-float{display:none;}
+
+/*************注册**************/
+.register-float{display:none;
+    input{font-size:$Font-Size!important;}
+    .get-code{background-color:$Btn-Color;color:$Color-White!important;text-indent:-20px;margin-bottom:50px!important;display:block;}
+    .code-time{@include font-style($TextSize,lighten($Color-Black,35.88235%),null);position: absolute;margin: 10px 0px 0px -70px;}
+    .code-box{display: none;}
+}
+
+/*************注册完成**************/
+.register-finish-float{display:none;
+  h1{margin-bottom:0;}
+  small{@include font-style($Font-Size,$Color-White,null);@extend %center;display:block;margin-bottom: 60px;}
+  .sex-select{margin: 30px 0px 55px 0px;
+    span{@include font-style($Main-Font-Size,$Color-White,null);@extend %inline-block;
+      a{@extend %inline-block;vertical-align: -6px;}
+      a.sex-man{width: 44px;height: 44px;background-position: -1870px 0px;}
+      a.sex-wonmen{width: 33px;height: 45px;background-position: -2015px 0px;}
+      i{@extend %inline-block;font-style: normal;margin-right: 10px;}
+    }
+    span.select a.sex-man{background-position:-1922px 0px;}
+    span.select a.sex-wonmen{background-position:-2056px 0px;}
+    span:nth-last-child(1){margin-left:20px;}
+    span:nth-last-child(2){margin-right:20px;}
+  }
+  .verify-name{@extend %inline-block;position:absolute;width:31px;height:31px;background-color:$Bg-Btn;@extend %round;color:$Color-White;margin:-80px 0px 0px 190px;font-size:$Text-Font-Size;
+     .correct{}
+     .error{display:none;}
+  }
+}
+
+/*************重置密码**************/
+.reset-password-float{display:none;}
+
+/*************验证身份**************/
+.verify-identity-float{@extend .register-float;display:none;
+     .code-identity{display:none;}
+     .id-code{display: block;}
+}
+
+
+/*************发布成功浮层**************/
+.success-float{display:none;
+  .success-arrow{@include position-right(50px,65px);}
+  .success-tip{@include horizontal-center(205px,242px);}
+  .success-text{@include horizontal-center(310px,454px)}
+}
+
+/*************修改个人信息浮层**************/
+.info-float{display:none;@include horizontal-center(360px,490px);background-color: $Color-White;@include prefixer(border-radius,10px);
+  .float-submit-btn{@extend %center;width:114px;height:48px;@extend %center-block;margin-bottom:40px;
+    a{@include font-style($Text-Font-Size,$Color-White,$Bg-Btn);line-height:48px;}
+  }
+  .float-close-btn{@include position-right(-15px,-15px);
+    a{width: 34px;height: 34px;background-position:-367px 0px;}
+  }
+}
+
+/*******性别********/
+.gender-box{display:none;margin-top:75px;font-size: 0;margin-bottom: 60px;
+  >div{@extend %inline-block;@extend %center;}
+  .gender-man{margin-left: 156px;}
+  .gender-wonmen{margin-left: 104px;}
+  i{@extend %inline-block;}
+  i.set-man{width:44px;height:44px;background-position:-1870px 0px;}
+  i.set-wonmen{width: 33px;height: 45px;background-position:-2015px 0px;}
+  a.select i.set-man{background-position:-1922px 0px;}
+  a.select i.set-wonmen{background-position:-2056px 0px;}
+  span{@include font-style($Font-Size,lighten($Color-Black,17.2549%),null);display: block;}
+}
+
+
+/*******个性签名********/
+.signature-box{display:none;margin-top:22px;height:175px;margin-bottom:27px;
+  .signature-con{@extend %wh100;
+    textarea{@include font-style($Text-Font-Size,$Color-Primary,null);padding: 15px;width: 460px;height: 145px;background-color:lighten($Color-Black,96.86275%);}
+  }
+}
+
+
+/*******填写姓名********/
+.fill-name-box{display:none;margin-top:35px;margin-bottom:73px;
+  .fill-name-con{@extend %wh100;margin-bottom:35px;@extend %center;
+    input{@include font-style($Font-Size,lighten($Color-Black,15.68627%),null);padding-left:25px;width:440px;height:54px;background-color:lighten($Color-Black,96.86275%);}
+  }
+  p{@include font-style($Text-Font-Size,$Color-Primary,null);margin-left:25px;}
+}
+
+
+/*******问答提交********/
+.answers-float{@extend .info-float;
+  p{@extend %center;margin:80px 0px;}
+}
+
+
+/*******发布弹出浮层********/
+.tag-float{display:none;}
+
+
+
+/*************剪纸选择浮层**************/
+.papercut-float{@include pop(0.85,none,$Color-White);
+   .papercut-box{width: $Width;height: 620px;}
+   .papercut-bar{width:$Width;overflow-x:auto;@extend %scrolling;
+    .papercut-nav{padding: 20px;@include legacy-pie-clearfix;width:20000px;
+      li{@include float();width:130px;margin-right:10px;
+        a{@extend %inline-block;@extend %center;
+          img{display:block;width:130px;}
+          span{width:130px;height:43px;@include font-style($Text-Font-Size,$Color-Black,null);@extend %inline-block;line-height:43px;}
+        }
+        a.select span{background:$Bg-Btn;color:$Color-White;}
+      }
+    }
+  }
+}

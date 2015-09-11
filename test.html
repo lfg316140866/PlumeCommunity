@@ -1,0 +1,257 @@
+﻿
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no;" />
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="Js/jquery-1.9.1.min.js"></script>
+    <script src="Js/jquery.easing.min.js"></script>
+    <script src="Js/Cmn.js"></script>
+    <script src="Js/CmnAjax.js"></script>
+    <script src="Js/CmnFuncExd.js"></script>
+    <script src="js/Dx.js"></script>
+    <title>投米网</title>
+</head>
+
+<body>
+
+
+<div class="Wrap cmn-AnimteFrameContainer">
+    <div class="Main cmn-ScenesContainer">
+        <!--摇一摇-->
+        <div class="cmn-Scenes PublicScenes Shake" id="Shake">
+            <div class="Bg"><img src="images/load.png" lazypath="images/bg/public_bj.jpg" /></div>
+            <div class="Inner">
+                <!--开始摇一摇-->
+                <div class="BeginShakeBox PublicShakeBox JscStartBox">
+                    <div class="PublicLeftBell JscTime">
+                        <!--时间-->
+                        <span class="Jsc30sStart">60</span>
+                        <span>”</span>
+                    </div>
+                    <div class="BeginRightPrompt">
+                        <div class="BeginRightPromptInner">
+                            <img src="images/public/shouji.png" />
+                        </div>
+                    </div>
+                </div>
+                <!--结束摇一摇-->
+                <div class="EndShakeBox PublicShakeBox JscEndBox">
+                    <div class="PublicLeftBell">
+                        <!--时间-->
+                        <span>00</span>
+                        <span>”</span>
+                    </div>
+                    <div class="EndRightPrompt">
+                        <div class="BeginRightPromptInner">
+                            <img src="images/public/shouji.png" />
+                        </div>
+                        <!--摇了多少秒-->
+                        <div class="EndRightPromptTime">
+                            <span >60</span><span>秒</span>
+                        </div>
+                        <!--摇了多少次-->
+                        <div class="EndRightPromptFrequency">
+                            <span>摇了</span><span class="JscShakeNum">0</span><span>&nbsp;&nbsp;次</span>
+                        </div>
+                    </div>
+                </div>
+                <!--线-->
+                <div class="ShakeLine">
+
+                </div>
+                <!--复制-->
+                <div class="bottom_box">
+                    <div class="sty_1 JscTOP" user_id="" shakenum="" >
+                        <div class="hd_pic4 ">
+                            <img class="JscTOPImg" src=""/>
+                        </div>
+                        <div class="pub_name ">
+                            <input type="text" class="hd_name JscTOPName" placeholder="姓名" size="6" disabled="disabled"/>
+                        </div>
+
+                        <div class="pub_bg">
+                            <img src="images/wx_interact/hd_xiantiao.png">
+                            <div class="subpic_box">
+                                <div class="hd_subpic JscTOPW" style="width: 0%;">
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="hd_nic">
+                                <span class="hd_nic_1 JscTOPText">0</span>
+                            </div>
+                            <div class="hd_one">
+                                <img src="images/wx_interact/hd_one.png">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="sty_1 JscTOP" user_id="" shakenum="">
+                        <div class="hd_pic4">
+                            <img class="JscTOPImg" src="images/wx_interact/hd_watch.png"/>
+                        </div>
+                        <div class="pub_name ">
+                            <input type="text" class="hd_name JscTOPName" placeholder="姓名" size="6" disabled="disabled"/>
+                        </div>
+
+                        <div class="pub_bg">
+                            <img src="images/wx_interact/hd_xiantiao.png">
+                            <div class="subpic_box">
+                                <div class="hd_subpic JscTOPW">
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="hd_nic">
+                                <span class="hd_nic_1 JscTOPText">999</span>
+                            </div>
+                            <div class="hd_one">
+                                <img src="images/wx_interact/hd_two.png">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="sty_1 JscTOP" user_id="" shakenum="">
+                        <div class="hd_pic4">
+                            <img class="JscTOPImg" src="images/wx_interact/hd_watch.png"/>
+                        </div>
+                        <div class="pub_name ">
+                            <input type="text" class="hd_name JscTOPName" placeholder="姓名" size="6" disabled="disabled"/>
+                        </div>
+
+                        <div class="pub_bg">
+                            <img src="images/wx_interact/hd_xiantiao.png">
+                            <div class="subpic_box">
+                                <div class="hd_subpic JscTOPW">
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="hd_nic">
+                                <span class="hd_nic_1 JscTOPText">999</span>
+                            </div>
+                            <div class="hd_one">
+                                <img src="images/wx_interact/hd_three.png">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="sty_1 JscTOP" user_id="" shakenum="">
+                        <div class="hd_pic4">
+                            <img class="JscTOPImg" src="images/wx_interact/hd_watch.png">
+                        </div>
+                        <div class="pub_name ">
+                            <input type="text" class="hd_name JscTOPName" placeholder="姓名" size="6" disabled="disabled"/>
+                        </div>
+
+                        <div class="pub_bg">
+                            <img src="images/wx_interact/hd_xiantiao.png"/>
+                            <div class="subpic_box">
+                                <div class="hd_subpic JscTOPW">
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="hd_nic">
+                                <span class="hd_nic_1 JscTOPText">999</span>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="sty_1 JscTOP" user_id="" shakenum="">
+                        <div class="hd_pic4">
+                            <img class="JscTOPImg" src="images/wx_interact/hd_watch.png">
+                        </div>
+                        <div class="pub_name ">
+                            <input type="text" class="hd_name JscTOPName" placeholder="姓名" size="6" disabled="disabled"/>
+                        </div>
+
+                        <div class="pub_bg">
+                            <img src="images/wx_interact/hd_xiantiao.png"/>
+                            <div class="subpic_box">
+                                <div class="hd_subpic JscTOPW">
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="hd_nic">
+                                <span class="hd_nic_1 JscTOPText">999</span>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="sty_1 JscTOP" user_id="" shakenum="">
+                        <div class="hd_pic4">
+                            <img class="JscTOPImg" src="images/wx_interact/hd_watch.png"/>
+                        </div>
+                        <div class="pub_name ">
+                            <input type="text" class="hd_name JscTOPName" placeholder="姓名" size="6" disabled="disabled"/>
+                        </div>
+                        <div class="pub_bg">
+                            <img src="images/wx_interact/hd_xiantiao.png"/>
+                            <div class="subpic_box">
+                                <div class="hd_subpic JscTOPW">
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="hd_nic">
+                                <span class="hd_nic_1 JscTOPText">999</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--云-->
+                <div class="Shake_Cloud1">
+                    <img src="images/public/shake_yun1.png" />
+                </div>
+                <div class="Shake_Cloud2">
+                    <img src="images/public/shake_yun2.png" />
+                </div>
+            </div>
+        </div>
+        <!--精彩回顾-精彩视频-精彩照片-->
+        <div class="cmn-Scenes PublicScenes WonderfulReviewVideoPhoto" id="WonderfulReviewVideoPhoto">
+            <div class="Bg"><img src="images/load.png" lazypath="images/bg/public_bj.jpg" /></div>
+            <div class="Inner">
+                <!--精彩回顾-->
+                <div class="WonderfulReview_Title">
+                    <img src="images/public/wonderfulreview_title.png" />
+                </div>
+                <!--精彩视频-->
+                <div class="WonderfulReviewVideoBox">
+                    <!--视频-->
+                    <div class="WonderfulReviewVideo JscVideo">
+                        <img src="images/public/wonderfulreview_videobtn.png" />
+                    </div>
+                </div>
+                <!--精彩照片-->
+                <div class="WonderfulReviewPhotoBox">
+                    <!--照片-->
+                    <div class="WonderfulReviewPhoto JscPhoto">
+                        <img src="images/public/wonderfulreview_photoimg.png" />
+                    </div>
+                </div>
+                <!--logo-->
+                <div class="WonderfulReviewVideoPhotoLogo">
+                    <img src="images/public/activities_logo.png" />
+                </div>
+            </div>
+        </div>
+    </div><!--Main_end-->
+</div><!--Wrap_end-->
+<div id="HDUID" style="display:none">40</div>
+</body>
+<script>
+    Cmn.Func.MobileAdaptive(640, 1000, "images/AdviseVertical.png", Cmn.Func.MobileAdaptiveMode.WidthHeight);
+</script>
+</html>
+

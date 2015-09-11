@@ -1,0 +1,107 @@
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:49:06		IP: 180.174.147.31()		Brower: WinNT  Chrome46
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select top 10 WorkID ,WorkID ,min(SortField) SortField from (select   top 10  WorkID,WorkID,0 as SortField from usr_Works  where  (WorkID like '%1%'  and WorkID like '%1%' )  union  select   top 10  WorkID,WorkID,1 as SortField from usr_Works  where  (WorkID like '%1%'  and WorkID like '%1%' ) ) autocompleteTemp group by WorkID ,WorkID  order by SortField asc  错误信息：多次为 'autocompleteTemp' 指定了列 'WorkID'。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:49:07		IP: 180.174.147.31()		Brower: WinNT  Chrome46
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select   top 10  WorkID,WorkID from usr_Works order by WorkID  错误信息：列名 'WorkID' 不明确。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:49:08		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select top 10 WorkID ,WorkID ,min(SortField) SortField from (select   top 10  WorkID,WorkID,0 as SortField from usr_Works  where  (WorkID like '%1%'  and WorkID like '%1%' )  union  select   top 10  WorkID,WorkID,1 as SortField from usr_Works  where  (WorkID like '%1%'  and WorkID like '%1%' ) ) autocompleteTemp group by WorkID ,WorkID  order by SortField asc  错误信息：多次为 'autocompleteTemp' 指定了列 'WorkID'。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:49:09		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select   top 10  WorkID,WorkID from usr_Works order by WorkID  错误信息：列名 'WorkID' 不明确。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:49:10		IP: 180.174.147.31()		Brower: WinNT  Chrome46
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select   top 10  WorkID,WorkID from usr_Works order by WorkID  错误信息：列名 'WorkID' 不明确。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:49:11		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select   top 10  WorkID,WorkID from usr_Works order by WorkID  错误信息：列名 'WorkID' 不明确。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:49:12		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select   top 10  WorkID,WorkID from usr_Works order by WorkID  错误信息：列名 'WorkID' 不明确。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:56:24		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select WorkID from usr_Work order by WordID  错误信息：对象名 'usr_Work' 无效。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:56:40		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select WorkID from usr_Work order by WordID  错误信息：对象名 'usr_Work' 无效。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:57:04		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select WorkID from usr_Work order by WordID  错误信息：对象名 'usr_Work' 无效。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:57:24		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select WorkID from usr_Work order by WordID  错误信息：对象名 'usr_Work' 无效。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:58:03		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select WorkID,WorkID WorkDesc from usr_Work order by WordID  错误信息：对象名 'usr_Work' 无效。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:58:09		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select WorkID,WorkID WorkDesc from usr_Work order by WordID  错误信息：对象名 'usr_Work' 无效。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:59:12		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select WorkID,WorkID WorkDesc from usr_Works order by WordID  错误信息：列名 'WordID' 无效。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:59:14		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select WorkID,WorkID WorkDesc from usr_Works order by WordID  错误信息：列名 'WordID' 无效。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 17:59:31		IP: 180.174.147.31()		Brower: WinNT  Chrome44
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/CmnMisItf.aspx?method=ExecSql
+错误的SQL语句：select WorkID,WorkID WorkDesc from usr_Works order by WordID  错误信息：列名 'WordID' 无效。
+*******************************************************************************************************/
+
+/*******************************************************************************************************
+* DateTime: 2015/9/5 20:45:51		IP: 180.174.147.31()		Brower: Unknown  Safari8
+* Url : http://yuqian.nn.cagoe.com/Itf/CSharp/Interface.aspx?method=GetWorkLabelByWorkID
+错误的SQL语句：select ybl.LabelID,ybl.Contents,ybl.WorkCount,wl.LabeLeft,wl.LabeTop,wl.Direction
+                         from usr_WorkLabelRel wl
+                             left join dbo.yq_bas_Label ybl
+                             on wl.LabelID=ybl.LabelID
+                         where wl.WorkID=4  错误信息：列名 'LabeLeft' 无效。
+列名 'LabeTop' 无效。
+*******************************************************************************************************/
+
