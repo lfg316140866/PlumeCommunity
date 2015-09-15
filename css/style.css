@@ -5,7 +5,7 @@ html, body, .Wrap, .Main, .PublicScenes, .Bg, .carousel-box .carousel-bar, .caro
   height: 100%; }
 
 /* line 4, ../sass/user/_custom.scss */
-.filter-bar {
+.filter-bar .filter-nav {
   -webkit-overflow-scrolling: touch;
   -moz-overflow-scrolling: touch;
   -o-overflow-scrolling: touch;
@@ -13,7 +13,7 @@ html, body, .Wrap, .Main, .PublicScenes, .Bg, .carousel-box .carousel-bar, .caro
 
 /*-------------------------------------css--------------------------------------------*/
 /* line 22, ../sass/tobe/core/_mixin.scss */
-.attention-box .attention-bar .attention-footer .attention-footer-number .icons-edits, .desc-box .con-box .con-des .choose-desc .choose-desc-round .round, .list .list-box .comment-input .expression, .release-form .release-form-nav li a, .release-whos p, .release-whos p .icons-who, .notice-msg .notice-msg-nav li a i, .notice-msg .notice-msg-nav li a span, .pub-call ul li a img, .pub-call ul li a .praise-right .icon-concern, .pub-call ul li a .praise-right .icon-correct, .indal-btn a, .indal-btn span, .search-con-list .praise-right img, .more-land ul li, .attention-box .attention-bar .attention-footer .attention-footer-user .user-avatar, .attention-desc .choose-desc-box .attention-desc-text, .desc-box .con-box .con-des .choose-desc .choose-desc-box .attention-desc-text, .attention-desc .choose-desc-round .drop, .desc-box .con-box .con-des .choose-desc .choose-desc-round .drop, .carousel-box .carousel-click a, .desc-box .tip-box .tabs-btn, .desc-box .con-box .con-tip .contract-right .icons-attention, .desc-box .con-box .con-features .con-nav li, .desc-box .con-box .con-features .con-nav li a, .desc-box .con-box .comment-list .list-desc .comment-face, .filter-bar .filter-nav li a, .filter-bar .filter-nav li a span, .pub-call ul li a .praise-left b, .indal-box .indal-body .indal-info .indal-name span, .indal-box .personal-btn a, .indal-box .others-btn a, .info-editor-btn a, .search-nav a {
+.attention-box .attention-bar .attention-footer .attention-footer-number .icons-edits, .desc-box .con-box .con-des .choose-desc .choose-desc-round .round, .list .list-box .comment-input .expression, .release-form .release-form-nav li a, .choice-btn a i, .choice-btn a span, .release-whos p, .release-whos p .icons-who, .notice-msg .notice-msg-nav li a i, .notice-msg .notice-msg-nav li a span, .pub-call ul li a img, .pub-call ul li a .praise-right .icon-concern, .pub-call ul li a .praise-right .icon-correct, .indal-btn a, .indal-btn span, .search-con-list .praise-right img, .more-land ul li, .attention-box .attention-bar .attention-footer .attention-footer-user .user-avatar, .attention-desc .choose-desc-box .attention-desc-text, .desc-box .con-box .con-des .choose-desc .choose-desc-box .attention-desc-text, .attention-desc .choose-desc-round .drop, .desc-box .con-box .con-des .choose-desc .choose-desc-round .drop, .carousel-box .carousel-click a, .desc-box .con-box .con-tip .contract-right .icons-attention, .desc-box .con-box .con-features .con-nav li a, .desc-box .con-box .comment-list .list-desc .comment-face, .filter-bar .filter-nav li a, .filter-bar .filter-nav li a span, .pub-call ul li a .praise-left b, .indal-box .indal-body .indal-info .indal-name span, .indal-box .indal-body .indal-info .indal-name .indal-sex, .indal-box .personal-btn a, .indal-box .others-btn a, .info-editor-btn label, .info-editor-btn div, .update-load i, .search-nav a {
   display: inline-block;
   *display: inline;
   *zoom: 1; }
@@ -101,7 +101,7 @@ body {
   display: table-cell; }
 
 /* line 23, ../sass/style.scss */
-.attention-box .attention-bar .attention-footer .attention-footer-number .icons-edits, .desc-box .con-box .con-des .choose-desc .choose-desc-round .round, .list .list-box .comment-input .expression, .release-form .release-form-nav li a, .release-whos p, .release-whos p .icons-who, .notice-msg .notice-msg-nav li a i, .notice-msg .notice-msg-nav li a span, .pub-call ul li a img, .pub-call ul li a .praise-right .icon-concern, .pub-call ul li a .praise-right .icon-correct, .indal-btn a, .indal-btn span, .search-con-list .praise-right img {
+.attention-box .attention-bar .attention-footer .attention-footer-number .icons-edits, .desc-box .con-box .con-des .choose-desc .choose-desc-round .round, .list .list-box .comment-input .expression, .release-form .release-form-nav li a, .choice-btn a i, .choice-btn a span, .release-whos p, .release-whos p .icons-who, .notice-msg .notice-msg-nav li a i, .notice-msg .notice-msg-nav li a span, .pub-call ul li a img, .pub-call ul li a .praise-right .icon-concern, .pub-call ul li a .praise-right .icon-correct, .indal-btn a, .indal-btn span, .search-con-list .praise-right img {
   vertical-align: middle; }
 
 /* line 24, ../sass/style.scss */
@@ -112,7 +112,7 @@ body {
   border-radius: 50%; }
 
 /* line 25, ../sass/style.scss */
-.landed-btn, .register-btn, .more-land, .recommend-tip, .skip-btn, .carousel-box .carousel-click, .desc-box .con-box .con-features .con-nav li, .list .list-box .comment-input .reviews-btn, .release-tip, .release-btn, .filter-bar .filter-nav li a, .release-tag-box .tag-des, .tag-btn, .pub-call ul li a .praise-left .icon-tages, .indal-box, .indal-box .indal-top .indal-portrait .icon-tagss, .indal-box .personal-btn, .info-editor-btn, .search-nav a {
+.landed-btn, .register-btn, .more-land, .recommend-tip, .skip-btn, .carousel-box .carousel-click, .desc-box .con-box .con-des, .desc-box .con-box .con-features .con-nav li, .list .list-box .comment-input .reviews-btn, .release-tip, .release-btn, .choice-btn a, .filter-bar .filter-nav li a, .release-tag-box .tag-des, .tag-btn, .pub-call ul li a .praise-left .icon-tages, .indal-box, .indal-box .indal-top .indal-portrait .icon-tagss, .indal-box .personal-btn, .info-editor-btn, .search-nav a {
   text-align: center; }
 
 /* line 26, ../sass/style.scss */
@@ -236,12 +236,14 @@ body {
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         -ms-border-radius: 5px;
-        border-radius: 5px; }
+        border-radius: 5px;
+        height: 480px;
+        display: block; }
     /* line 56, ../sass/style.scss */
     .attention-box .attention-bar .attention-footer {
       left: 0;
       position: absolute;
-      bottom: 0px;
+      bottom: -100px;
       width: 436px;
       height: 149px;
       background: url('../images/master-bg.png?1441700365') no-repeat;
@@ -364,7 +366,7 @@ body {
       color: #f3f3f3;
       font-weight: normal;
       line-height: 40px;
-      padding: 0px 21px; }
+      padding: 0px 20px; }
   /* line 77, ../sass/style.scss */
   .attention-desc .choose-desc-round, .desc-box .con-box .con-des .choose-desc .choose-desc-round {
     float: right;
@@ -454,22 +456,34 @@ body {
   .desc-box .tip-box {
     height: 86px;
     background-color: #f7f7f7;
-    font-size: 0; }
+    *zoom: 1; }
+    /* line 22, C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+    .desc-box .tip-box:after {
+      content: "\0020";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
     /* line 104, ../sass/style.scss */
     .desc-box .tip-box .topics-btn {
-      text-align: right; }
+      text-align: right;
+      float: left;
+      display: inline; }
       /* line 105, ../sass/style.scss */
       .desc-box .tip-box .topics-btn a {
         padding-right: 50px; }
     /* line 107, ../sass/style.scss */
     .desc-box .tip-box .concern-btn {
-      text-align: left; }
+      text-align: left;
+      float: right;
+      display: inline; }
       /* line 108, ../sass/style.scss */
       .desc-box .tip-box .concern-btn a {
         padding-left: 50px; }
     /* line 110, ../sass/style.scss */
     .desc-box .tip-box .tabs-btn {
-      height: 100%;
+      height: 86px;
       width: 50%; }
     /* line 111, ../sass/style.scss */
     .desc-box .tip-box .tabs-btn.select a {
@@ -500,7 +514,16 @@ body {
       margin-top: 13px;
       float: left;
       display: inline;
-      width: 80%; }
+      width: 80%;
+      *zoom: 1; }
+      /* line 22, C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+      .desc-box .con-box .con-tip .avatar-left:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        clear: both;
+        overflow: hidden;
+        visibility: hidden; }
       /* line 117, ../sass/style.scss */
       .desc-box .con-box .con-tip .avatar-left p {
         width: 85px;
@@ -527,7 +550,7 @@ body {
         float: left;
         display: inline;
         margin-top: 40px;
-        margin-left: -106px; }
+        margin-left: -75px; }
     /* line 123, ../sass/style.scss */
     .desc-box .con-box .con-tip .contract-right {
       float: right;
@@ -557,10 +580,46 @@ body {
     position: relative; }
     /* line 132, ../sass/style.scss */
     .desc-box .con-box .con-des .choose-desc .choose-desc-box.select ~ .choose-desc-round {
-      margin-left: 5px; }
+      margin-left: 50px; }
     /* line 133, ../sass/style.scss */
     .desc-box .con-box .con-des .choose-desc .choose-desc-round {
-      margin-top: 5px; }
+      margin-top: 5px;
+      -webkit-animation: desc-round 1000ms 800ms linear infinite both;
+      -moz-animation: desc-round 1000ms 800ms linear infinite both;
+      -ms-animation: desc-round 1000ms 800ms linear infinite both;
+      animation: desc-round 1000ms 800ms linear infinite both; }
+@-webkit-keyframes desc-round {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); } }
+@keyframes desc-round {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95); }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); } }
       /* line 134, ../sass/style.scss */
       .desc-box .con-box .con-des .choose-desc .choose-desc-round .round {
         width: 14px;
@@ -572,10 +631,20 @@ body {
     margin: 30px 0px; }
     /* line 139, ../sass/style.scss */
     .desc-box .con-box .con-features .con-nav {
-      font-size: 0; }
+      *zoom: 1; }
+      /* line 22, C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+      .desc-box .con-box .con-features .con-nav:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        clear: both;
+        overflow: hidden;
+        visibility: hidden; }
       /* line 140, ../sass/style.scss */
       .desc-box .con-box .con-features .con-nav li {
-        width: 25%; }
+        width: 25%;
+        float: left;
+        display: inline; }
         /* line 141, ../sass/style.scss */
         .desc-box .con-box .con-features .con-nav li a {
           width: 63px;
@@ -789,20 +858,74 @@ body {
   left: 50%;
   margin-left: -183px; }
 
-/*******发布(滤镜选择)********/
+/*******发布(选择)********/
 /* line 213, ../sass/style.scss */
+.choice-btn {
+  margin-top: 65px;
+  *zoom: 1; }
+  /* line 22, C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+  .choice-btn:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+  /* line 214, ../sass/style.scss */
+  .choice-btn a {
+    width: 265px;
+    height: 90px;
+    background: #ff6f54;
+    line-height: 80px; }
+    /* line 215, ../sass/style.scss */
+    .choice-btn a i {
+      width: 45px;
+      height: 45px;
+      margin-right: 10px; }
+    /* line 216, ../sass/style.scss */
+    .choice-btn a i.icons-template {
+      background-position: -2278px 0px; }
+    /* line 217, ../sass/style.scss */
+    .choice-btn a i.icons-sticker {
+      background-position: -2225px 0px; }
+    /* line 218, ../sass/style.scss */
+    .choice-btn a span {
+      font-size: 32px;
+      line-height: 1.5;
+      color: #fff;
+      font-weight: normal; }
+  /* line 220, ../sass/style.scss */
+  .choice-btn a:nth-child(1) {
+    float: left;
+    display: inline;
+    margin-left: 40px; }
+  /* line 221, ../sass/style.scss */
+  .choice-btn a:nth-child(2) {
+    float: right;
+    display: inline;
+    margin-right: 40px; }
+
+/*******发布(滤镜选择)********/
+/* line 225, ../sass/style.scss */
 .filter-des {
   margin-top: 66px; }
+  /* line 226, ../sass/style.scss */
+  .filter-des img {
+    display: block; }
 
-/* line 214, ../sass/style.scss */
+/* line 228, ../sass/style.scss */
 .filter-bar {
-  margin-top: 18px;
+  margin-top: 10px;
   width: 100%;
-  overflow-x: auto; }
-  /* line 215, ../sass/style.scss */
+  height: 175px; }
+  /* line 229, ../sass/style.scss */
   .filter-bar .filter-nav {
     *zoom: 1;
-    width: 20000px; }
+    width: 20000px;
+    overflow-x: auto;
+    margin-left: 150px;
+    position: absolute;
+    max-width: 490px; }
     /* line 22, C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
     .filter-bar .filter-nav:after {
       content: "\0020";
@@ -811,16 +934,16 @@ body {
       clear: both;
       overflow: hidden;
       visibility: hidden; }
-    /* line 216, ../sass/style.scss */
+    /* line 230, ../sass/style.scss */
     .filter-bar .filter-nav li {
       float: left;
       display: inline;
       width: 130px;
       margin-left: 10px; }
-      /* line 218, ../sass/style.scss */
+      /* line 232, ../sass/style.scss */
       .filter-bar .filter-nav li a img {
         display: block; }
-      /* line 219, ../sass/style.scss */
+      /* line 233, ../sass/style.scss */
       .filter-bar .filter-nav li a span {
         font-size: 22px;
         line-height: 1.5;
@@ -829,34 +952,34 @@ body {
         width: 130px;
         height: 43px;
         line-height: 43px; }
-      /* line 221, ../sass/style.scss */
+      /* line 235, ../sass/style.scss */
       .filter-bar .filter-nav li a.select span {
         background: #ff6f54;
         color: #fff; }
 
 /*******发布(@了谁)********/
-/* line 228, ../sass/style.scss */
+/* line 242, ../sass/style.scss */
 .release-whos {
   margin-top: 90px !important; }
-  /* line 229, ../sass/style.scss */
+  /* line 243, ../sass/style.scss */
   .release-whos p {
     width: 100px;
     height: 100px;
     text-align: right;
     margin-right: -22px; }
-    /* line 230, ../sass/style.scss */
+    /* line 244, ../sass/style.scss */
     .release-whos p .icons-who {
       background-position: -1277px 0px;
       width: 29px;
       height: 28px;
       margin-top: -20px;
       margin-right: 22px; }
-    /* line 231, ../sass/style.scss */
+    /* line 245, ../sass/style.scss */
     .release-whos p .icons-who.select {
       background-position: -1240px 0px; }
 
 /*******发布(自定义标签)********/
-/* line 236, ../sass/style.scss */
+/* line 250, ../sass/style.scss */
 .release-tag-box {
   padding: 14px;
   *zoom: 1; }
@@ -868,7 +991,7 @@ body {
     clear: both;
     overflow: hidden;
     visibility: hidden; }
-  /* line 237, ../sass/style.scss */
+  /* line 251, ../sass/style.scss */
   .release-tag-box .tag-des {
     float: left;
     display: inline;
@@ -876,53 +999,53 @@ body {
     height: 50px;
     margin-right: 10px;
     padding: 0 25px; }
-    /* line 238, ../sass/style.scss */
+    /* line 252, ../sass/style.scss */
     .release-tag-box .tag-des a {
       line-height: 50px; }
-  /* line 240, ../sass/style.scss */
+  /* line 254, ../sass/style.scss */
   .release-tag-box .tag-des-1 {
     background: #f75131; }
-  /* line 241, ../sass/style.scss */
+  /* line 255, ../sass/style.scss */
   .release-tag-box .tag-des-2 {
     background: #ee9f98; }
-  /* line 242, ../sass/style.scss */
+  /* line 256, ../sass/style.scss */
   .release-tag-box .tag-des-3 {
     background: #02cdee; }
-  /* line 243, ../sass/style.scss */
+  /* line 257, ../sass/style.scss */
   .release-tag-box .tag-des-4 {
     background: #ff2986; }
-  /* line 244, ../sass/style.scss */
+  /* line 258, ../sass/style.scss */
   .release-tag-box a {
     font-size: 26px;
     color: #fff; }
 
-/* line 246, ../sass/style.scss */
+/* line 260, ../sass/style.scss */
 .tag-btn {
   width: 608px;
   height: 56px;
   border: solid 2px #ff752c;
   margin-top: 6px;
   margin-left: 14px; }
-  /* line 247, ../sass/style.scss */
+  /* line 261, ../sass/style.scss */
   .tag-btn a {
     color: #ff752c;
     line-height: 56px;
     font-size: 26px; }
 
 /*********************通知************************/
-/* line 253, ../sass/style.scss */
+/* line 267, ../sass/style.scss */
 .pub-notice {
   margin-top: 66px; }
 
 /*********消息通知**********/
-/* line 255, ../sass/style.scss */
+/* line 269, ../sass/style.scss */
 .notice-msg {
   display: block; }
-  /* line 257, ../sass/style.scss */
+  /* line 271, ../sass/style.scss */
   .notice-msg .notice-msg-nav li {
     height: 110px;
     border-bottom: solid 1px #dddddd; }
-    /* line 258, ../sass/style.scss */
+    /* line 272, ../sass/style.scss */
     .notice-msg .notice-msg-nav li a {
       line-height: 110px;
       *zoom: 1; }
@@ -934,19 +1057,19 @@ body {
         clear: both;
         overflow: hidden;
         visibility: hidden; }
-      /* line 259, ../sass/style.scss */
+      /* line 273, ../sass/style.scss */
       .notice-msg .notice-msg-nav li a i {
         width: 66px;
         height: 66px;
         margin-left: 23px; }
-      /* line 260, ../sass/style.scss */
+      /* line 274, ../sass/style.scss */
       .notice-msg .notice-msg-nav li a span {
         margin-left: 18px;
         font-size: 26px;
         line-height: 1.5;
         color: #282828;
         font-weight: normal; }
-      /* line 261, ../sass/style.scss */
+      /* line 275, ../sass/style.scss */
       .notice-msg .notice-msg-nav li a b {
         display: inline-block;
         *display: inline;
@@ -958,32 +1081,32 @@ body {
         display: inline;
         background: #ff6f54;
         margin-top: 50px; }
-  /* line 265, ../sass/style.scss */
+  /* line 279, ../sass/style.scss */
   .notice-msg .notice-msg-nav li:nth-child(1) i {
     background-position: -328px 0px; }
-  /* line 265, ../sass/style.scss */
+  /* line 279, ../sass/style.scss */
   .notice-msg .notice-msg-nav li:nth-child(2) i {
     background-position: -402px 0px; }
-  /* line 265, ../sass/style.scss */
+  /* line 279, ../sass/style.scss */
   .notice-msg .notice-msg-nav li:nth-child(3) i {
     background-position: -476px 0px; }
-  /* line 265, ../sass/style.scss */
+  /* line 279, ../sass/style.scss */
   .notice-msg .notice-msg-nav li:nth-child(4) i {
     background-position: -550px 0px; }
-  /* line 265, ../sass/style.scss */
+  /* line 279, ../sass/style.scss */
   .notice-msg .notice-msg-nav li:nth-child(5) i {
     background-position: -624px 0px; }
 
 /*********赞**********/
-/* line 272, ../sass/style.scss */
+/* line 286, ../sass/style.scss */
 .notice-praise {
   display: none; }
 
-/* line 275, ../sass/style.scss */
+/* line 289, ../sass/style.scss */
 .pub-call ul li {
   height: 126px;
   border-bottom: solid 1px #dddddd; }
-  /* line 276, ../sass/style.scss */
+  /* line 290, ../sass/style.scss */
   .pub-call ul li a {
     *zoom: 1;
     line-height: 126px; }
@@ -995,17 +1118,18 @@ body {
       clear: both;
       overflow: hidden;
       visibility: hidden; }
-    /* line 278, ../sass/style.scss */
+    /* line 292, ../sass/style.scss */
     .pub-call ul li a .praise-left {
       float: left;
       display: inline;
       margin-left: 20px;
-      height: 126px; }
-      /* line 279, ../sass/style.scss */
+      height: 126px;
+      position: relative; }
+      /* line 293, ../sass/style.scss */
       .pub-call ul li a .praise-left img {
         width: 88px;
         height: 88px; }
-      /* line 280, ../sass/style.scss */
+      /* line 294, ../sass/style.scss */
       .pub-call ul li a .praise-left strong {
         font-size: 26px;
         line-height: 1.5;
@@ -1013,14 +1137,14 @@ body {
         font-weight: normal;
         vertical-align: middle;
         margin-left: 10px; }
-      /* line 281, ../sass/style.scss */
+      /* line 295, ../sass/style.scss */
       .pub-call ul li a .praise-left b {
         width: 10px;
         height: 10px;
         background: #ff6f54;
         position: absolute;
         margin: -105px 0 0 85px; }
-      /* line 282, ../sass/style.scss */
+      /* line 296, ../sass/style.scss */
       .pub-call ul li a .praise-left small {
         font-size: 22px;
         line-height: 1.5;
@@ -1030,13 +1154,13 @@ body {
         width: 100%;
         position: absolute;
         margin: -60px 0 0 95px; }
-      /* line 283, ../sass/style.scss */
+      /* line 297, ../sass/style.scss */
       .pub-call ul li a .praise-left .comment-descet {
         position: absolute;
         margin: -95px 0 0 95px;
         max-width: 340px;
         width: 100%; }
-      /* line 284, ../sass/style.scss */
+      /* line 298, ../sass/style.scss */
       .pub-call ul li a .praise-left .icon-tages {
         width: 27px;
         height: 27px;
@@ -1049,12 +1173,12 @@ body {
         background-color: #ff6f54;
         font-weight: normal;
         line-height: 27px; }
-    /* line 286, ../sass/style.scss */
+    /* line 300, ../sass/style.scss */
     .pub-call ul li a .praise-right {
       float: right;
       display: inline;
       margin-right: 24px; }
-      /* line 287, ../sass/style.scss */
+      /* line 301, ../sass/style.scss */
       .pub-call ul li a .praise-right span {
         font-size: 22px;
         line-height: 1.5;
@@ -1062,7 +1186,7 @@ body {
         font-weight: normal;
         margin-right: 5px;
         vertical-align: middle; }
-      /* line 288, ../sass/style.scss */
+      /* line 302, ../sass/style.scss */
       .pub-call ul li a .praise-right img {
         width: 70px;
         height: 70px;
@@ -1070,61 +1194,62 @@ body {
         -moz-border-radius: 5px;
         -ms-border-radius: 5px;
         border-radius: 5px; }
-      /* line 289, ../sass/style.scss */
+      /* line 303, ../sass/style.scss */
       .pub-call ul li a .praise-right .icon-concern {
         width: 50px;
         height: 50px; }
-      /* line 290, ../sass/style.scss */
+      /* line 304, ../sass/style.scss */
       .pub-call ul li a .praise-right .icon-correct {
         width: 35px;
         height: 29px;
         background-position: -106px 0px; }
-      /* line 291, ../sass/style.scss */
+      /* line 305, ../sass/style.scss */
       .pub-call ul li a .praise-right .incon-fans-correct {
         visibility: hidden; }
-      /* line 292, ../sass/style.scss */
+      /* line 306, ../sass/style.scss */
       .pub-call ul li a .praise-right .icon-fans-concern {
         display: none; }
 
 /*********谁@了我**********/
-/* line 300, ../sass/style.scss */
+/* line 314, ../sass/style.scss */
 .notice-who {
   display: none; }
 
 /*********评论**********/
-/* line 303, ../sass/style.scss */
+/* line 317, ../sass/style.scss */
 .notice-comment {
   display: none; }
 
 /*********关注了你**********/
-/* line 306, ../sass/style.scss */
+/* line 320, ../sass/style.scss */
 .notice-attention {
   display: none; }
 
 /*********关注**********/
-/* line 309, ../sass/style.scss */
+/* line 323, ../sass/style.scss */
 .notice-focus {
   display: none; }
 
 /*********粉丝**********/
-/* line 312, ../sass/style.scss */
+/* line 326, ../sass/style.scss */
 .notice-fans {
   display: none; }
 
 /*********************个人************************/
-/* line 316, ../sass/style.scss */
+/* line 330, ../sass/style.scss */
 .indal-box {
   margin-top: 66px;
-  height: 489px; }
-  /* line 317, ../sass/style.scss */
+  height: 490px;
+  position: relative; }
+  /* line 331, ../sass/style.scss */
   .indal-box .indal-bg {
     top: 0;
     left: 0;
     position: absolute; }
-    /* line 318, ../sass/style.scss */
+    /* line 332, ../sass/style.scss */
     .indal-box .indal-bg img {
       display: block; }
-  /* line 320, ../sass/style.scss */
+  /* line 334, ../sass/style.scss */
   .indal-box .indal-top {
     padding-top: 46px;
     *zoom: 1;
@@ -1137,25 +1262,25 @@ body {
       clear: both;
       overflow: hidden;
       visibility: hidden; }
-    /* line 321, ../sass/style.scss */
+    /* line 335, ../sass/style.scss */
     .indal-box .indal-top .indal-fans {
       float: left;
       display: inline;
       margin-left: 80px;
       margin-top: 108px; }
-    /* line 322, ../sass/style.scss */
+    /* line 336, ../sass/style.scss */
     .indal-box .indal-top .indal-portrait {
       position: absolute;
       margin: 0px 0px 0px 240px; }
-      /* line 323, ../sass/style.scss */
+      /* line 337, ../sass/style.scss */
       .indal-box .indal-top .indal-portrait .portrait {
         border: 4px solid #fff; }
-        /* line 324, ../sass/style.scss */
+        /* line 338, ../sass/style.scss */
         .indal-box .indal-top .indal-portrait .portrait img {
           width: 154px;
           height: 154px;
           display: block; }
-      /* line 326, ../sass/style.scss */
+      /* line 340, ../sass/style.scss */
       .indal-box .indal-top .indal-portrait .icon-tagss {
         width: 40px;
         height: 40px;
@@ -1167,27 +1292,27 @@ body {
         color: #fff;
         background-color: #ff6f54;
         font-weight: normal; }
-    /* line 328, ../sass/style.scss */
+    /* line 342, ../sass/style.scss */
     .indal-box .indal-top .indal-attention {
       float: right;
       display: inline;
       margin-right: 100px;
       margin-top: 108px; }
-    /* line 329, ../sass/style.scss */
+    /* line 343, ../sass/style.scss */
     .indal-box .indal-top .pub-indal {
       display: block;
       color: #fff; }
-    /* line 331, ../sass/style.scss */
+    /* line 345, ../sass/style.scss */
     .indal-box .indal-top .number {
       font-size: 36px; }
-  /* line 333, ../sass/style.scss */
+  /* line 347, ../sass/style.scss */
   .indal-box .info-editor-top {
     padding-top: 95px; }
-  /* line 334, ../sass/style.scss */
+  /* line 348, ../sass/style.scss */
   .indal-box .indal-body {
     margin-top: 10px;
     position: relative; }
-    /* line 337, ../sass/style.scss */
+    /* line 351, ../sass/style.scss */
     .indal-box .indal-body .indal-info .indal-name span {
       font-size: 36px;
       line-height: 1.5;
@@ -1195,38 +1320,35 @@ body {
       font-weight: normal;
       margin-right: 10px;
       text-indent: 24px; }
-    /* line 338, ../sass/style.scss */
+    /* line 352, ../sass/style.scss */
     .indal-box .indal-body .indal-info .indal-name .indal-sex {
       width: 26px;
       height: 28px;
-      background-position: -2097px 0px;
-      display: inline-block;
-      *display: inline;
-      *zoom: 1; }
-    /* line 339, ../sass/style.scss */
+      background-position: -2097px 0px; }
+    /* line 353, ../sass/style.scss */
     .indal-box .indal-body .indal-info .indal-name .indal-sex.select {
       background-position: -2131px 0px; }
-    /* line 341, ../sass/style.scss */
+    /* line 355, ../sass/style.scss */
     .indal-box .indal-body .indal-info .indal-career {
       font-size: 20px;
       line-height: 1.5;
       color: #fff;
       font-weight: normal; }
-    /* line 343, ../sass/style.scss */
+    /* line 357, ../sass/style.scss */
     .indal-box .indal-body .signatures {
       margin: 25px 0px;
       font-size: 22px;
       line-height: 1.5;
       color: #fff;
       font-weight: normal; }
-  /* line 345, ../sass/style.scss */
+  /* line 359, ../sass/style.scss */
   .indal-box .info-editor-body {
     margin-top: 188px; }
-  /* line 346, ../sass/style.scss */
+  /* line 360, ../sass/style.scss */
   .indal-box .personal-btn {
     display: block;
     position: relative; }
-    /* line 347, ../sass/style.scss */
+    /* line 361, ../sass/style.scss */
     .indal-box .personal-btn a {
       width: 115px;
       height: 48px;
@@ -1236,16 +1358,16 @@ body {
       background-color: #ff6f54;
       font-weight: normal;
       line-height: 50px; }
-  /* line 349, ../sass/style.scss */
+  /* line 363, ../sass/style.scss */
   .indal-box .others-btn {
     display: none;
     position: relative; }
-    /* line 350, ../sass/style.scss */
+    /* line 364, ../sass/style.scss */
     .indal-box .others-btn a {
       width: 50px;
       height: 50px; }
 
-/* line 353, ../sass/style.scss */
+/* line 367, ../sass/style.scss */
 .indal-btn {
   height: 94px;
   width: 100%;
@@ -1259,41 +1381,41 @@ body {
     clear: both;
     overflow: hidden;
     visibility: hidden; }
-  /* line 354, ../sass/style.scss */
+  /* line 368, ../sass/style.scss */
   .indal-btn a {
     width: 55px;
     height: 53px;
     margin-left: 110px; }
-  /* line 355, ../sass/style.scss */
+  /* line 369, ../sass/style.scss */
   .indal-btn span {
     margin-left: 15px; }
-  /* line 356, ../sass/style.scss */
+  /* line 370, ../sass/style.scss */
   .indal-btn .personal-ford {
     width: 50%;
     float: left;
     display: inline; }
-    /* line 357, ../sass/style.scss */
+    /* line 371, ../sass/style.scss */
     .indal-btn .personal-ford a {
       background-position: -162px 0px; }
-    /* line 358, ../sass/style.scss */
+    /* line 372, ../sass/style.scss */
     .indal-btn .personal-ford span {
       color: #999999; }
-  /* line 360, ../sass/style.scss */
+  /* line 374, ../sass/style.scss */
   .indal-btn .personal-coll {
     width: 50%;
     float: right;
     display: inline; }
-    /* line 361, ../sass/style.scss */
+    /* line 375, ../sass/style.scss */
     .indal-btn .personal-coll a {
       background-position: -480px 0px; }
-    /* line 362, ../sass/style.scss */
+    /* line 376, ../sass/style.scss */
     .indal-btn .personal-coll span {
       color: #ff0a13; }
 
-/* line 365, ../sass/style.scss */
+/* line 379, ../sass/style.scss */
 .indal-con {
   padding: 10px 9px; }
-  /* line 366, ../sass/style.scss */
+  /* line 380, ../sass/style.scss */
   .indal-con .indal-nav {
     *zoom: 1; }
     /* line 22, C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -1304,25 +1426,25 @@ body {
       clear: both;
       overflow: hidden;
       visibility: hidden; }
-    /* line 367, ../sass/style.scss */
+    /* line 381, ../sass/style.scss */
     .indal-con .indal-nav li {
       float: left;
       display: inline;
       margin-right: 1px;
       margin-bottom: 1px; }
-      /* line 369, ../sass/style.scss */
+      /* line 383, ../sass/style.scss */
       .indal-con .indal-nav li a img {
         display: block;
         width: 206px; }
 
 /*******个人信息编辑*******/
-/* line 375, ../sass/style.scss */
+/* line 389, ../sass/style.scss */
 .info-editor-btn {
   margin-top: 45px;
   font-size: 0;
   position: relative; }
-  /* line 376, ../sass/style.scss */
-  .info-editor-btn a {
+  /* line 391, ../sass/style.scss */
+  .info-editor-btn div {
     width: 114px;
     height: 48px;
     font-size: 26px;
@@ -1331,21 +1453,21 @@ body {
     background-color: #ff6f54;
     font-weight: normal;
     line-height: 48px; }
-  /* line 377, ../sass/style.scss */
-  .info-editor-btn a:nth-child(1) {
+  /* line 392, ../sass/style.scss */
+  .info-editor-btn div:nth-child(1) {
     margin-right: 25px; }
-  /* line 378, ../sass/style.scss */
-  .info-editor-btn a:nth-child(2) {
+  /* line 393, ../sass/style.scss */
+  .info-editor-btn div:nth-child(2) {
     margin-left: 25px; }
 
-/* line 380, ../sass/style.scss */
+/* line 395, ../sass/style.scss */
 .editor-sidebar {
   width: 100%; }
-  /* line 382, ../sass/style.scss */
+  /* line 397, ../sass/style.scss */
   .editor-sidebar .editor-nav li {
     border-bottom: 1px solid #dedede;
     height: 74px; }
-    /* line 383, ../sass/style.scss */
+    /* line 398, ../sass/style.scss */
     .editor-sidebar .editor-nav li a {
       *zoom: 1;
       line-height: 74px; }
@@ -1357,14 +1479,14 @@ body {
         clear: both;
         overflow: hidden;
         visibility: hidden; }
-      /* line 384, ../sass/style.scss */
+      /* line 399, ../sass/style.scss */
       .editor-sidebar .editor-nav li a span {
         float: left;
         display: inline;
         margin-left: 45px;
         font-size: 26px;
         color: #9a9a9a; }
-      /* line 385, ../sass/style.scss */
+      /* line 400, ../sass/style.scss */
       .editor-sidebar .editor-nav li a em {
         float: right;
         display: inline;
@@ -1372,18 +1494,70 @@ body {
         font-size: 26px;
         color: #000;
         text-align: right; }
-        /* line 386, ../sass/style.scss */
+        /* line 401, ../sass/style.scss */
         .editor-sidebar .editor-nav li a em i {
           margin-left: 10px; }
 
+/* line 407, ../sass/style.scss */
+.update-load {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  margin-left: -92.5px;
+  width: 185px;
+  height: 156px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.9); }
+  /* line 408, ../sass/style.scss */
+  .update-load span {
+    font-size: 24px;
+    line-height: 1.5;
+    color: #fff;
+    font-weight: normal;
+    display: block;
+    margin-top: 10px; }
+  /* line 410, ../sass/style.scss */
+  .update-load .update-push {
+    display: none; }
+    /* line 411, ../sass/style.scss */
+    .update-load .update-push i {
+      width: 32px;
+      height: 32px;
+      background: url('../images/straining.gif?1432534226') no-repeat;
+      background-size: 32px 32px;
+      margin-top: 30px; }
+  /* line 413, ../sass/style.scss */
+  .update-load .update-success {
+    display: block; }
+    /* line 414, ../sass/style.scss */
+    .update-load .update-success i {
+      background-position: -106px 0px;
+      width: 35px;
+      height: 29px;
+      margin-top: 40px; }
+
 /*********************搜索************************/
-/* line 393, ../sass/style.scss */
+/* line 418, ../sass/style.scss */
+.search-pub {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: 830px;
+  -webkit-overflow-scrolling: touch;
+  -moz-overflow-scrolling: touch;
+  -ms-overflow-scrolling: touch;
+  overflow-scrolling: touch; }
+
+/* line 419, ../sass/style.scss */
 .search-nav {
   margin-top: 90px;
   width: 100%;
   height: 98px;
   font-size: 0; }
-  /* line 394, ../sass/style.scss */
+  /* line 420, ../sass/style.scss */
   .search-nav a {
     font-size: 36px;
     line-height: 1.5;
@@ -1391,53 +1565,73 @@ body {
     font-weight: normal;
     line-height: 98px;
     width: 50%; }
-  /* line 395, ../sass/style.scss */
+  /* line 421, ../sass/style.scss */
   .search-nav a.select {
     color: #ff6f54; }
 
 /*********推荐内容********/
-/* line 399, ../sass/style.scss */
+/* line 425, ../sass/style.scss */
 .search-recd-con {
   display: block;
   position: relative; }
-  /* line 400, ../sass/style.scss */
+  /* line 426, ../sass/style.scss */
+  .search-recd-con > div:first-child {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    height: 830px;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    -ms-overflow-scrolling: touch;
+    overflow-scrolling: touch; }
+  /* line 427, ../sass/style.scss */
+  .search-recd-con > div:first-child {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    height: 830px;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    -ms-overflow-scrolling: touch;
+    overflow-scrolling: touch; }
+  /* line 428, ../sass/style.scss */
   .search-recd-con .recd-con-1 {
     top: 0;
     left: 0;
     position: absolute; }
-  /* line 401, ../sass/style.scss */
+  /* line 429, ../sass/style.scss */
   .search-recd-con .recd-con-2 {
     top: 464px;
     left: 0;
     position: absolute; }
-  /* line 402, ../sass/style.scss */
+  /* line 430, ../sass/style.scss */
   .search-recd-con .recd-con-3 {
     top: 464px;
     left: 284px;
     position: absolute; }
-  /* line 403, ../sass/style.scss */
+  /* line 431, ../sass/style.scss */
   .search-recd-con .recd-con-4 {
     top: 695px;
     left: 284px;
     position: absolute; }
 
 /*********内容列表********/
-/* line 406, ../sass/style.scss */
+/* line 434, ../sass/style.scss */
 .search-con-list {
   display: none;
   margin-top: -66px; }
-  /* line 408, ../sass/style.scss */
+  /* line 436, ../sass/style.scss */
   .search-con-list .praise-left img {
     width: 88px;
     height: 88px;
     margin-left: 32px; }
-  /* line 409, ../sass/style.scss */
+  /* line 437, ../sass/style.scss */
   .search-con-list .praise-left em {
     margin-left: 90px !important; }
-  /* line 411, ../sass/style.scss */
+  /* line 439, ../sass/style.scss */
   .search-con-list .praise-right {
     text-align: right; }
-    /* line 412, ../sass/style.scss */
+    /* line 440, ../sass/style.scss */
     .search-con-list .praise-right img {
       width: 70px;
       -webkit-border-radius: 5px;
@@ -1445,15 +1639,15 @@ body {
       -ms-border-radius: 5px;
       border-radius: 5px;
       margin-left: 3px; }
-    /* line 413, ../sass/style.scss */
+    /* line 441, ../sass/style.scss */
     .search-con-list .praise-right img:last-child {
       margin-right: 22px; }
 
 /*********关键字列表********/
-/* line 417, ../sass/style.scss */
+/* line 445, ../sass/style.scss */
 .search-key-list {
   display: none; }
-  /* line 418, ../sass/style.scss */
+  /* line 446, ../sass/style.scss */
   .search-key-list ul {
     *zoom: 1;
     padding: 0 9px; }
@@ -1465,26 +1659,26 @@ body {
       clear: both;
       overflow: hidden;
       visibility: hidden; }
-    /* line 419, ../sass/style.scss */
+    /* line 447, ../sass/style.scss */
     .search-key-list ul li {
       float: left;
       display: inline;
       margin-bottom: 1px;
       margin-right: 1px; }
-      /* line 420, ../sass/style.scss */
+      /* line 448, ../sass/style.scss */
       .search-key-list ul li img {
         width: 206px;
         display: block; }
 
 /*********************联系我们************************/
-/* line 428, ../sass/style.scss */
+/* line 456, ../sass/style.scss */
 .contact {
   width: 100%;
   height: 500px;
   top: 66px;
   left: 0;
   position: absolute; }
-  /* line 429, ../sass/style.scss */
+  /* line 457, ../sass/style.scss */
   .contact textarea {
     width: 100%;
     padding-top: 20px;

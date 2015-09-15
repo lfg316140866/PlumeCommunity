@@ -12,19 +12,16 @@
 $browser-minimum-versions:("ie":"8");
 /*-------------------------------------css--------------------------------------------*/
 // intro-left-arrow
-@mixin animate-intro-left-arrow () {
-  @include keyframes(intro-left-arrow){
+@mixin animate-desc-round () {
+  @include keyframes(desc-round){
     0% {
-      opacity: 1;
-      left: 174px;
+      @include prefixer(transform, scale(1));
     }
     50% {
-      opacity: 0.5;
-      left: 164px;
+      @include prefixer(transform, scale(0.95));
     }
     100% {
-      opacity: 1;
-      left: 174px;
+      @include prefixer(transform, scale(1));
     }
   }
 }

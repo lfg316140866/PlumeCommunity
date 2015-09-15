@@ -51,9 +51,9 @@ body{width:640px;@extend %center-block;height:$Height;}
 .attention-box{@include horizontal-center(150px,435px);height:600px;
   .attention-bar{@include position();
       .attention-con{@include prefixer(box-shadow,-15px 80px 150px rgba(0,0,0,0.4));
-        img{width:435px;@include prefixer(border-radius,5px);}
+        img{width:435px;@include prefixer(border-radius,5px);height: 480px;display: block;}
       }
-      .attention-footer{@include position-box(null,0,0px,null);@include bg-image(436px,149px,'master-bg.png');
+      .attention-footer{@include position-box(null,0,-100px,null);@include bg-image(436px,149px,'master-bg.png');
          .attention-footer-user{@include vertically-center(10px,78px);display:table;
            .user-avatar{width:78px;height:78px;@extend %inline-block;
              img{width:78px;height:78px;@extend %round;}
@@ -72,7 +72,7 @@ body{width:640px;@extend %center-block;height:$Height;}
 .attention-desc{@include position(324px,5px);height:40px;font-size:0;max-width:320px;@include legacy-pie-clearfix;
   .choose-desc-box{@include float();@include prefixer(border-top-left-radius,8px);@include prefixer(border-bottom-left-radius,8px);background:rgba(0,0,0,0.8);
     .attention-arrow{@include triangle(right,20px,rgba(0,0,0,0.8));position:absolute;}
-    .attention-desc-text{height:40px;@extend %inline-block;@include font-style($Text-Font-Size,lighten($Color-Black,95.29412%),null);line-height:40px;padding:0px 21px;}
+    .attention-desc-text{height:40px;@extend %inline-block;@include font-style($Text-Font-Size,lighten($Color-Black,95.29412%),null);line-height:40px;padding:0px 20px;}
   }
    .choose-desc-round{@include float(right);margin-left:25px;margin-top:13px;
      .drop{@extend %inline-block;width:10px;height:10px;background-color:#ff7055;@extend %round;}
@@ -100,25 +100,25 @@ body{width:640px;@extend %center-block;height:$Height;}
 }
 
 .desc-box{margin-top:66px;
-  .tip-box{height: 86px;background-color:lighten($Color-Black,96.86275%);font-size:0;
-    .topics-btn{text-align:right;
+  .tip-box{height: 86px;background-color:lighten($Color-Black,96.86275%);@include legacy-pie-clearfix;
+    .topics-btn{text-align:right;@include  float();
       a{padding-right:50px;}
     }
-    .concern-btn{text-align:left;
+    .concern-btn{text-align:left;@include float(right);
       a{padding-left: 50px;}
     }
-    .tabs-btn{height:$Height;width:50%;@extend %inline-block;}
+    .tabs-btn{height:86px;width:50%;}
     .tabs-btn.select a{color:$Bg-Btn;}
     a{@include font-style($Main-Font-Size,$Color-Primary,null);display:inline;line-height: 86px;}
   }
   .con-box{
      .con-tip{height:110px;@include legacy-pie-clearfix;
-       .avatar-left{height:$Height;margin-top: 13px;@include float();width: 80%;
+       .avatar-left{height:$Height;margin-top: 13px;@include float();width: 80%;@include legacy-pie-clearfix;
          p{width: 85px;height: 85px;margin-left: 20px;@include float();
            img{width: 85px;@extend %round;height: 85px;}
          }
          .publisher{@include float();margin-left: 15px;margin-top:10px;}
-         .release-time{@include font-style($Text-Font-Size,$Color-Primary,null);@include float();margin-top:40px;margin-left:-106px;}
+         .release-time{@include font-style($Text-Font-Size,$Color-Primary,null);@include float();margin-top:40px;margin-left:-75px;}
        }
        .contract-right{@include float(right);margin-top: 35px;margin-right: 27px;
          .icons-attention{@extend %inline-block;width: 49px;height:49px;}
@@ -127,17 +127,17 @@ body{width:640px;@extend %center-block;height:$Height;}
          .icon-trash{display: none;font-size:40px;}
        }
      }
-    .con-des{position:relative;
+    .con-des{position:relative;@extend %center;
       .choose-desc{@extend .attention-desc;
-        .choose-desc-box.select~.choose-desc-round{margin-left:5px;}
-        .choose-desc-round{margin-top:5px;
+        .choose-desc-box.select~.choose-desc-round{margin-left:50px;}
+        .choose-desc-round{margin-top:5px;@include animation(desc-round 1000ms 800ms linear infinite both);@include animate-desc-round();
           .round{width:14px;height:14px;@extend %round;border:solid 8px lighten($Color-Black,58.43137%);@extend %vertically;}
         }
       }
     }
     .con-features{width: $Width;margin:30px 0px;
-      .con-nav{font-size: 0;
-        li{@extend %inline-block;width:25%;@extend %center;
+      .con-nav{@include legacy-pie-clearfix;
+        li{width:25%;@extend %center;@include float();
           a{width:63px;height:61px;@extend %inline-block;}
         }
         li:nth-child(1) a{background-position:-296px 0px;}
@@ -209,14 +209,28 @@ body{width:640px;@extend %center-block;height:$Height;}
 }
 .release-btn{margin-top:35px;width:365px;height:70px;@include font-style($Font-Size,$Color-White,null);@extend %center;background:$Bg-Btn;position:absolute;left:50%;margin-left:-183px;}
 
+/*******发布(选择)********/
+.choice-btn{margin-top: 65px;@include legacy-pie-clearfix;
+  a{width: 265px;height: 90px;background:$Bg-Btn;line-height:80px;@extend %center;
+    i{@extend %vertically;width: 45px;height: 45px;margin-right: 10px;}
+    i.icons-template{background-position:-2278px 0px;}
+    i.icons-sticker{background-position:-2225px 0px;}
+    span{@extend %vertically;@include font-style($Main-Font-Size,$Color-White,null);}
+  }
+  a:nth-child(1){@include float();margin-left: 40px;}
+  a:nth-child(2){@include float(right);margin-right: 40px;}
+}
+
 /*******发布(滤镜选择)********/
-.filter-des{margin-top:66px;}
-.filter-bar{margin-top:18px;width:$Width;overflow-x: auto;@extend %scrolling;
-  .filter-nav{@include legacy-pie-clearfix;width:20000px;
+.filter-des{margin-top:66px;
+   img{display:block;}
+}
+.filter-bar{margin-top:10px;width:$Width;height: 175px;
+  .filter-nav{@include legacy-pie-clearfix;width:20000px;overflow-x: auto;@extend %scrolling;margin-left:150px;position:absolute;max-width:490px;
     li{@include float();width: 130px;margin-left: 10px;
       a{@extend %inline-block;@extend %center;
         img{display:block;}
-        span{@include font-style($Text-Font-Size,$Color-Black,null);width: 130px;height: 43px;@extend %inline-block;line-height: 43px;}
+        span{@include font-style($Text-Font-Size,$Color-Black,null);width:130px;height:43px;@extend %inline-block;line-height:43px;}
       }
       a.select span{background: $Bg-Btn;color: $Color-White;}
     }
@@ -275,7 +289,7 @@ body{width:640px;@extend %center-block;height:$Height;}
      li{height: 126px;border-bottom:solid 1px lighten($Color-Black,86.66667%);
        a{@include legacy-pie-clearfix;line-height: 126px;
          img{@extend %vertically;}
-         .praise-left{@include float();margin-left: 20px;height: 126px;
+         .praise-left{@include float();margin-left: 20px;height: 126px;position: relative;
            img{width:88px;height:88px;@extend %round;}
            strong{@include font-style($Font-Size,lighten($Color-Black,15.68627%),null);vertical-align:middle;margin-left: 10px;}
            b{@extend %inline-block;width: 10px;height: 10px;@extend %round;background: $Bg-Btn;position: absolute;margin:-105px 0 0 85px;}
@@ -313,7 +327,7 @@ body{width:640px;@extend %center-block;height:$Height;}
 
 
 /*********************个人************************/
-.indal-box{margin-top:66px;@extend %center;height:489px;
+.indal-box{margin-top:66px;@extend %center;height:490px;position:relative;
   .indal-bg{@include position();
     img{display: block;}
   }
@@ -335,7 +349,7 @@ body{width:640px;@extend %center-block;height:$Height;}
     .indal-info{
       .indal-name{
         span{@include font-style($TextSize,$Color-White,null);margin-right: 10px;text-indent: 24px;@extend %inline-block;}
-        .indal-sex{width:26px;height:28px;background-position:-2097px 0px;@include inline-block();}
+        .indal-sex{width:26px;height:28px;background-position:-2097px 0px;@extend %inline-block;}
         .indal-sex.select{background-position:-2131px 0px;}
       }
       .indal-career{@include font-style(20px,$Color-White,null);}
@@ -373,9 +387,10 @@ body{width:640px;@extend %center-block;height:$Height;}
 }
 /*******个人信息编辑*******/
 .info-editor-btn{margin-top:45px;font-size:0;@extend %center;position: relative;
-    a{@extend %inline-block;width:114px;height: 48px;@include font-style($Font-Size,$Color-White,$Bg-Btn);line-height:48px;}
-    a:nth-child(1){margin-right:25px;}
-    a:nth-child(2){margin-left:25px;}
+    label{@extend %inline-block;}
+    div{@extend %inline-block;width:114px;height: 48px;@include font-style($Font-Size,$Color-White,$Bg-Btn);line-height:48px;}
+  div:nth-child(1){margin-right:25px;}
+  div:nth-child(2){margin-left:25px;}
 }
 .editor-sidebar{width: $Width;
   .editor-nav{
@@ -383,20 +398,33 @@ body{width:640px;@extend %center-block;height:$Height;}
       a{@include legacy-pie-clearfix;line-height: 74px;
         span{@include float();margin-left: 45px;font-size:$Font-Size;color:lighten($Color-Black,60.39216%);}
         em{@include float(right);margin-right: 20px;font-size:$Font-Size;color:$Color-Black;text-align: right;
-           i{margin-left: 10px;}
+           i{margin-left:10px;}
         }
       }
     }
   }
 }
+.update-load{@include horizontal-center(300px,185px);height:156px;@include prefixer(border-radius,20px);background:rgba(0,0,0,0.9);
+  span{@include font-style(24px,$Color-White,null);display:block;margin-top:10px;}
+  i{@extend %inline-block;}
+  .update-push{display:none;
+    i{@include bg-image(32px,32px,'straining.gif');margin-top:30px;}
+  }
+  .update-success{display:block;
+    i{background-position:-106px 0px;width:35px;height:29px;margin-top:40px;}
+  }
+}
 /*********************搜索************************/
-.search-nav{margin-top:90px;width: $Width;height: 98px;font-size: 0;
+.search-pub{@include rolling-container($Width,830px);}
+.search-nav{margin-top:90px;width:$Width;height:98px;font-size:0;
   a{@include font-style($TextSize,$Color-Primary,null);line-height:98px;width:50%;@extend %inline-block;@extend %center;}
   a.select{color:$Bg-Btn;}
 }
 
 /*********推荐内容********/
 .search-recd-con{display:block;position:relative;
+  >div:first-child{@include rolling-container($Width,830px);}
+  >div:first-child{@include rolling-container($Width,830px);}
     .recd-con-1{@include position();}
     .recd-con-2{@include position(464px);}
     .recd-con-3{@include position(464px,284px);}

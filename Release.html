@@ -46,11 +46,26 @@
                 </div>
             </div>
 
+            <!--发布(选择)-->
+            <div class="cmn-Scenes PublicScenes choice" id="choice">
+                <div class="Inner">
+                    <div class="filter-des"><img  src="images/filter-des-img.png" /></div>
+                    <div class="choice-btn">
+                        <a href="javascript:void(0)"><i class="icons-sprite icons-template"></i><span>模板</span></a>
+                        <a href="javascript:void(0)"><i class="icons-sprite icons-sticker"></i><span>贴纸</span></a>
+                    </div>
+                </div>
+            </div>
+
             <!--发布(滤镜选择)-->
             <div class="cmn-Scenes PublicScenes release-filter" id="release-filter">
                 <div class="Inner">
                     <div class="filter-des"><img  src="images/filter-des-img.png" /></div>
                     <div class="filter-bar">
+                        <button class="icons-returns">
+                            <em><i class="icons-sprite"></i></em>
+                            <span>返回</span>
+                        </button>
                         <ul class="filter-nav">
                             <!--选中滤镜添加a标签select-->
                             <li><a href="javascript:void(0)" class="select"><img  src="images/filter-color.png" /><span>原图</span></a></li>
@@ -156,104 +171,6 @@
             <div class="success-tip"><img  src="images/load.png" lazypath="images/success-tip.png" /></div>
             <div class="success-text"><img  src="images/load.png" lazypath="images/success-text.png" /></div>
         </div>
-        <!-------修改个人信息浮层-------->
-        <div class="info-float">
-            <!-----------性别-------------->
-            <div class="gender-box">
-                <div class="gender-man">
-                    <a  href="javascript:void(0)">
-                        <i class="set-man icons-sprite"></i>
-                        <span>男</span>
-                    </a>
-                </div>
-                <div class="gender-wonmen">
-                    <a  href="javascript:void(0)">
-                        <i class="set-wonmen icons-sprite"></i>
-                        <span>女</span>
-                    </a>
-                </div>
-            </div>
-            <!-----------个性签名-------------->
-            <div class="signature-box">
-                <div class="signature-con">
-                    <textarea>输入你的个人简介</textarea>
-                </div>
-                <div class="float-close-btn"><a  href="javascript:void(0)"><i class="icon-remove"></i></a></div>
-            </div>
-            <!-----------填写姓名-------------->
-            <div class="fill-name-box">
-                <div class="fill-name-con">
-                    <input type="text" name="请输入姓名" placeholder="请输入姓名"/>
-                </div>
-                <p class="">听说酷炫的名字与你更配哟!</p>
-            </div>
-            <div class="float-submit-btn"><a  href="javascript:void(0)">确定</a></div>
-            <div class="float-close-btn"><a  href="javascript:void(0)" class="btn-sprite"></a></div>
-        </div>
-        <!-------登陆-------->
-        <div class="land-float">
-            <h1 class="tip-box">与中国美的不期而遇</h1>
-            <div class="land-box info-box">
-                <input type="text" name="" placeholder="请输入您的手机号" class="land-phone pub-input"/>
-                <input type="password" name="" placeholder="请输入您的密码" class="land-password pub-input"/>
-                <button class="">登录</button>
-                <a href="javascript:void(0)" class="forget-password">忘记密码？</a>
-            </div>
-        </div>
-        <!-------注册-------->
-        <div class="register-float">
-            <h1 class="tip-box">注册账号</h1>
-            <div class="register-box info-box">
-                <input type="text" name="" placeholder="手机号 / 只适用中国大陆手机号" class="register-phone pub-input"/>
-                <input type="password" name="" placeholder="6-14位密码、建议数字、字母、符号" class="register-password pub-input"/>
-                <input type="text" name="" placeholder="输入验证码" class="register-code pub-input code-box"/><span class="code-time code-box">60s</span>
-                <a href="javascript:void(0)" class="pub-input get-code">获取验证码</a>
-                <button class="">注&nbsp;&nbsp;&nbsp;&nbsp;册</button>
-            </div>
-        </div>
-        <!-------注册完成-------->
-        <div class="register-finish-float">
-            <h1 class="tip-box">注册完成</h1>
-            <small>请完善你的个人基本信息</small>
-            <div class="register-finish-box info-box">
-                <input type="text" name="" placeholder="李小冉" class="register-phone pub-input"/>
-                <!-------验证用户名是否被用-------->
-                <em class="verify-name">
-                    <i class="icon-ok correct validation"></i>
-                    <i class="icon-remove validation error"></i>
-                </em>
-                <p class="sex-select">
-                    <!-------选中男女span标签添加select-------->
-                    <span class="select"><i>男</i><a href="javascript:void(0)" class="sex-man"></a></span>
-                    <span><i>女</i><a href="javascript:void(0)" class="sex-wonmen"></a></span>
-                </p>
-                <button class="">完&nbsp;&nbsp;&nbsp;&nbsp;成</button>
-            </div>
-        </div>
-        <!-------重置密码-------->
-        <div class="reset-password-float">
-            <h1 class="tip-box">重设密码</h1>
-            <div class="reset-password-box info-box">
-                <input type="text" name="" placeholder="请输入您的新密码" class="reset-password pub-input"/>
-                <input type="password" name="" placeholder="请确认您的新密码" class="reset-password pub-input"/>
-                <button class="">完&nbsp;&nbsp;&nbsp;&nbsp;成</button>
-            </div>
-        </div>
-        <!-------验证身份-------->
-        <div class="verify-identity-float">
-            <h1 class="tip-box">验证身份</h1>
-            <div class="verify-identity-box info-box">
-                <input type="text" name="" placeholder="手机号 / 只适用中国大陆手机号" class="register-phone pub-input"/>
-                <input type="text" name="" placeholder="输入验证码" class="register-code pub-input code-box code-identity"/><span class="code-time code-box">60s</span>
-                <a href="javascript:void(0)" class="pub-input get-code id-code">获取验证码</a>
-                <button class="">下一步</button>
-            </div>
-        </div>
-        <!-------问答提交-------->
-        <div class="answers-float">
-            <p class="general-font">感谢您的宝贵意见</p>
-            <div class="float-submit-btn"><a  href="javascript:void(0)">确定</a></div>
-        </div>
     </div>
 
 
@@ -263,6 +180,10 @@
 
        </div>
        <div class="papercut-bar">
+           <button class="icons-returns">
+               <em><i class="icons-sprite"></i></em>
+               <span>返回</span>
+           </button>
            <ul class="papercut-nav">
                <li><a href="javascript:void(0)" class="select"><img  src="images/filter-color.png" /><span>的萨达粉丝</span></a></li>
                <li><a href="javascript:void(0)"><img  src="images/filter-color.png" /><span>的萨达粉丝</span></a></li>

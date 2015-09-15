@@ -5,7 +5,7 @@ Error: File to import not found or unreadable: user/custom.
         on line 18 of tobe/_base.scss
         from line 2 of public.scss
 
-13: .header-box{position:fixed;top:0;left:0;z-index:100;height:66px;background-color:$Color-Black;@include legacy-pie-clearfix();width:$Width;
+13: .header-box{position:fixed;top:0;left:0;z-index:10000000;height:66px;background-color:$Color-Black;@include legacy-pie-clearfix();width:$Width;
 14:   .return-btn{@include float();margin-left:18px;width:65px;height:65px;
 15:     .icons-return{width: 19px;height:32px;background-position:-211px 0px;}
 16:   }
@@ -13,9 +13,9 @@ Error: File to import not found or unreadable: user/custom.
 18:   .search-btn{@include float(right);width:105px;height:65px;margin-right:15px;text-align:right;
 19:     i.icons-seach{width:37px;height:36px;background-position:-238px 0px;}
 20:     i.icons-correct{width:35px;height:29px;background-position:-106px 0px;}
-21:   }
-22:   a{@include font-style($Font-Size,$Color-White,null);line-height:66px;}
-23:   i{@extend %vertically;}
+21:     .confirm{display:none;}
+22:     .contact-us{display:block;}
+23:   }
 
 Backtrace:
 tobe/_base.scss:18
@@ -75,4 +75,4 @@ C:/Ruby/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: user/custom.\A        Load paths:\A          \A         on line 18 of tobe/_base.scss\A         from line 2 of public.scss\A \A 13: .header-box{position:fixed;top:0;left:0;z-index:100;height:66px;background-color:$Color-Black;@include legacy-pie-clearfix();width:$Width;\A 14:   .return-btn{@include float();margin-left:18px;width:65px;height:65px;\A 15:     .icons-return{width: 19px;height:32px;background-position:-211px 0px;}\A 16:   }\A 17:    p{color:$Color-White;position:absolute;margin-left:250px;margin-top:15px;}\A 18:   .search-btn{@include float(right);width:105px;height:65px;margin-right:15px;text-align:right;\A 19:     i.icons-seach{width:37px;height:36px;background-position:-238px 0px;}\A 20:     i.icons-correct{width:35px;height:29px;background-position:-106px 0px;}\A 21:   }\A 22:   a{@include font-style($Font-Size,$Color-White,null);line-height:66px;}\A 23:   i{@extend %vertically;}"; }
+  content: "Error: File to import not found or unreadable: user/custom.\A        Load paths:\A          \A         on line 18 of tobe/_base.scss\A         from line 2 of public.scss\A \A 13: .header-box{position:fixed;top:0;left:0;z-index:10000000;height:66px;background-color:$Color-Black;@include legacy-pie-clearfix();width:$Width;\A 14:   .return-btn{@include float();margin-left:18px;width:65px;height:65px;\A 15:     .icons-return{width: 19px;height:32px;background-position:-211px 0px;}\A 16:   }\A 17:    p{color:$Color-White;position:absolute;margin-left:250px;margin-top:15px;}\A 18:   .search-btn{@include float(right);width:105px;height:65px;margin-right:15px;text-align:right;\A 19:     i.icons-seach{width:37px;height:36px;background-position:-238px 0px;}\A 20:     i.icons-correct{width:35px;height:29px;background-position:-106px 0px;}\A 21:     .confirm{display:none;}\A 22:     .contact-us{display:block;}\A 23:   }"; }

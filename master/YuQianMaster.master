@@ -20,11 +20,13 @@
     <script src="Js/CmnFuncExd.js"></script>
     <script src="Js/jquery.cycle.all.js"></script>
     <script src="Js/CmnTools/WechatShare.js"></script>
-    <script src="Js/SiteJs/Site.js"></script>
+    <script src="../Js/SiteJs/SiteFunc.js"></script>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+      <div style="display: none" id="NickName"><%=_NickName %></div>
+      <div style="display: none" id="HeadImgUrl"><%=_HeadImgUrl %></div>
      <div class="header-box">
         <div class="return-btn"><a href="javascript:void(0)"><i class="icon-chevron-left"></i></a></div>
         <div class="search-btn"><a href="javascript:void(0)"><i class="icon-search"></i></a></div>
