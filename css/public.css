@@ -4,16 +4,9 @@
   width: 100%;
   height: 100%; }
 
-/* line 4, ../sass/user/_custom.scss */
-.papercut-float .papercut-bar .papercut-nav {
-  -webkit-overflow-scrolling: touch;
-  -moz-overflow-scrolling: touch;
-  -o-overflow-scrolling: touch;
-  overflow-scrolling: touch; }
-
 /*-------------------------------------css--------------------------------------------*/
 /* line 22, ../sass/tobe/core/_mixin.scss */
-.header-box i, .header-search i, .header-search .search-submit a i, .footer-box .footer-nav li a i, .footer-bar .footer-item li a, .footer-box .footer-nav li a .bar-bg, .register-finish-float .sex-select span, .register-finish-float .sex-select span a, .register-finish-float .sex-select span i, .register-finish-float .verify-name, .gender-box > div, .gender-box i, .papercut-float .papercut-bar .papercut-nav li a, .papercut-float .papercut-bar .papercut-nav li a span, .icons-returns em, .icons-returns em i {
+.header-box i, .header-search i, .header-search .search-submit a i, .footer-box .footer-nav li a i, .footer-bar .footer-item li a, .footer-box .footer-nav li a .bar-bg, .register-finish-float .sex-select span, .register-finish-float .sex-select span a, .register-finish-float .sex-select span i, .register-finish-float .verify-name, .gender-box > div, .gender-box i, .icons-returns em, .icons-returns em i {
   display: inline-block;
   *display: inline;
   *zoom: 1; }
@@ -35,7 +28,7 @@
   border-radius: 50%; }
 
 /* line 9, ../sass/public.scss */
-.header-search .search-submit, .footer-box .footer-nav li, .footer-bar .footer-item li, .info-box, h1.tip-box, .register-finish-float small, .info-float .float-submit-btn, .answers-float .float-submit-btn, .gender-box > div, .fill-name-box .fill-name-con, .answers-float p, .papercut-float .papercut-bar .papercut-nav li a {
+.header-search .search-submit, .footer-box .footer-nav li, .footer-bar .footer-item li, .info-box, h1.tip-box, .register-finish-float small, .info-float .float-submit-btn, .answers-float .float-submit-btn, .gender-box > div, .fill-name-box .fill-name-con, .answers-float p {
   text-align: center; }
 
 /* line 10, ../sass/public.scss */
@@ -487,9 +480,11 @@ h1.tip-box {
   display: none; }
   /* line 156, ../sass/public.scss */
   .success-float .success-arrow {
-    top: 50px;
-    right: 65px;
-    position: absolute; }
+    position: absolute;
+    top: 520px;
+    left: 50%;
+    margin-left: -18.5px;
+    width: 37px; }
   /* line 157, ../sass/public.scss */
   .success-float .success-tip {
     position: absolute;
@@ -697,40 +692,5 @@ h1.tip-box {
     /* line 227, ../sass/public.scss */
     .papercut-float .papercut-bar .papercut-nav {
       padding: 20px;
-      *zoom: 1;
-      width: 20000px;
       margin: -20px 0 0 140px;
-      overflow-x: auto;
-      position: absolute;
       max-width: 460px; }
-      /* line 22, C:/Ruby/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
-      .papercut-float .papercut-bar .papercut-nav:after {
-        content: "\0020";
-        display: block;
-        height: 0;
-        clear: both;
-        overflow: hidden;
-        visibility: hidden; }
-      /* line 228, ../sass/public.scss */
-      .papercut-float .papercut-bar .papercut-nav li {
-        float: left;
-        display: inline;
-        width: 130px;
-        margin-right: 10px; }
-        /* line 230, ../sass/public.scss */
-        .papercut-float .papercut-bar .papercut-nav li a img {
-          display: block;
-          width: 130px; }
-        /* line 231, ../sass/public.scss */
-        .papercut-float .papercut-bar .papercut-nav li a span {
-          width: 130px;
-          height: 43px;
-          font-size: 22px;
-          line-height: 1.5;
-          color: #000;
-          font-weight: normal;
-          line-height: 43px; }
-        /* line 233, ../sass/public.scss */
-        .papercut-float .papercut-bar .papercut-nav li a.select span {
-          background: #ff6f54;
-          color: #fff; }

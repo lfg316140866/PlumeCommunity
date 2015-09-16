@@ -10,20 +10,20 @@
 
 //首页业务逻辑 此处名称可以和页面对应起来 也可以和场景ID对应
 $(document).ready(function () {
-    $(".concern-btn").bind("touchend", function () {
+    $(".concern-btn").bind("click", function () {
         var _top = $(".Inner").eq(0).scrollTop();
         //$(".Inner").eq(0).css("visibility", "hidden").next().css("visibility", "visible");
         $(".Inner").eq(0).hide().next().show();
         $(".Inner").eq(1).scrollTop(_top);
     });
-    $(".topics-btn").bind("touchend", function () {
+    $(".topics-btn").bind("click", function () {
         var _top = $(".Inner").eq(1).scrollTop();
         //$(".Inner").eq(0).css("visibility", "visible").next().css("visibility", "hidden");
         $(".Inner").eq(0).show().next().hide();
         $(".Inner").eq(0).scrollTop(_top);
     });
 
-    $(".DescMain .icon-trash").on("touchend", function () {
+    $(".DescMain .icon-trash").on("click", function () {
         var _self = $(this);
         var _workID = _self.attr("workid");
         _param = {
@@ -37,7 +37,7 @@ $(document).ready(function () {
             }
             if (data.IsSuccess == 1) {
                 $(".MainList .con-box[workid=" + _workID + "]").remove();
-                $(".return-btn").trigger("touchend");
+                $(".return-btn").trigger("click");
                 YQFunc.EventIdle = true;
             } else {
                 //登录判断
@@ -48,7 +48,7 @@ $(document).ready(function () {
         });
     });
 
-    $(".reviews-btn").on("touchend", function () {
+    $(".reviews-btn").on("click", function () {
         var _comment = $(".comment-input input").val();
         if (_comment.trim() == "") {
             Cmn.alert("评论不可为空");
@@ -75,7 +75,7 @@ $(document).ready(function () {
     });
 
     //举报按钮
-    $(".report").on("touchend", function () {
+    $(".report").on("click", function () {
         if (YQFunc.EventIdle) {
             YQFunc.EventIdle = false;
         } else {
@@ -99,11 +99,11 @@ $(document).ready(function () {
     });
 
     //标签点击事件绑定
-    $(".Inner1,Inner2").on("touchend", ".choose-desc-box", function () {
+    $(".Inner1,Inner2").on("click", ".choose-desc-box", function () {
         location.href = "Search.aspx?lid=" + $(this).attr("labelid");
     });
 
-    $(".DescMain").on("touchend", ".choose-desc-box", function () {
+    $(".DescMain").on("click", ".choose-desc-box", function () {
         SiteFunc.JumpPage("Search.aspx?lid=" + $(this).attr("labelid"), "Home.aspx?workid=" + $(this).parents(".con-box").attr("workid"));
     });
 
@@ -177,10 +177,10 @@ $(document).ready(function () {
 
     Cmn.Func.TouchSlide(".carousel-bar", 30, function (dir) {
         if (_IsCycleChange) { return false; }
-        if (dir == "left") {
+        if (dir === "left") {
             $(".carousel-nav").cycle("next");
         }
-        else if (dir = "right") {
+        else if (dir === "right") {
             $(".carousel-nav").cycle("prev");
         }
     });
@@ -263,14 +263,14 @@ $.prototype.SgShow = function () {
 var YQFunc = {
     EventIdle: true,
     PraiseBtnBind: function () {
-        $(".Inner").on("touchend", ".PraiseBtn", function () {
+        $(".Inner").on("click", ".PraiseBtn", function () {
 
             if (YQFunc.EventIdle) {
                 YQFunc.EventIdle = false;
             } else {
                 return;
             }
-            //$(".PraiseBtn").unbind("touchend").bind("touchend", function () {
+            //$(".PraiseBtn").unbind("click").bind("click", function () {
             var _self = $(this);
             var _praiseID = _self.attr("praiseid");
             var _workID = _self.attr("workid");
@@ -305,13 +305,13 @@ var YQFunc = {
         });
     },
     CollectBtnBind: function () {
-        $(".Inner").on("touchend", ".CollectBtn", function () {
+        $(".Inner").on("click", ".CollectBtn", function () {
             if (YQFunc.EventIdle) {
                 YQFunc.EventIdle = false;
             } else {
                 return;
             }
-            //$(".CollectBtn").unbind("touchend").bind("touchend", function () {
+            //$(".CollectBtn").unbind("click").bind("click", function () {
             var _self = $(this);
             var _collectID = _self.attr("collectid");
             var _workID = _self.attr("workid");
@@ -345,13 +345,13 @@ var YQFunc = {
         });
     },
     FollowBtnBind: function () {
-        $(".Inner1,.Inner3").on("touchend", ".icons-attention", function () {
+        $(".Inner1,.Inner3").on("click", ".icons-attention", function () {
             if (YQFunc.EventIdle) {
                 YQFunc.EventIdle = false;
             } else {
                 return;
             }
-            //$(".icons-attention").unbind("touchend").bind("touchend", function () {
+            //$(".icons-attention").unbind("click").bind("click", function () {
             var _self = $(this);
             //if ($(this).hasClass("select")) {
             //    Cmn.Ajax.PostData("/Itf/CSharp/CmnMisItf.aspx?method=GetSqlData&ItfName=DelFollowByID", { "FollowedUserID": _self.attr("userid") }, function (data) {
@@ -512,7 +512,7 @@ var YQFunc = {
         Container.find(".release-time").html(_sendTimetext);
     },
     CommentBtnBind: function () {
-        $(".Inner1,.Inner2").on("touchend", ".CommentBtn", function () {
+        $(".Inner1,.Inner2").on("click", ".CommentBtn", function () {
             _self = $(this);
             _workID = _self.parents(".con-box").attr("workid");
 
@@ -543,7 +543,7 @@ var YQFunc = {
         });
     },
     DescCommentBtnBind: function () {
-        $(".DescMain .CommentBtn").on("touchend", function () {
+        $(".DescMain .CommentBtn").on("click", function () {
             setTimeout(function () {
                 $(".comment-input input").focus().Select();
             }, 100);

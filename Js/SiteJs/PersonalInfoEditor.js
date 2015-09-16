@@ -82,6 +82,7 @@ $(function () {
     PersonalInformation();
  
     ///////////////////////图片切换///////////////////////////////
+
     //收藏作品
     $(".JscCollectBtn").on("touchend", function () {
         $(".Inner").hide();
@@ -96,8 +97,10 @@ $(function () {
     $(".JscEditInformationBtn").on("touchend", function () {
         SiteFunc.JumpPage("PersonalInfoEditor.aspx");
     })
-    
-    
+    //跳转留言
+    $(".JscHrefContact").on("touchend", function () {
+        SiteFunc.JumpPage("ContactUs.html");
+    })
     /////////////////////修改资料////////////////////////////
     //关闭浮层
     $(".JscCloseFloat").on("touchend", function () {

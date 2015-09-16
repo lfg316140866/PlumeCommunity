@@ -153,7 +153,7 @@ h1.tip-box{@include font-style(50px,$Color-White,null);margin-top:212px;@extend 
 
 /*************发布成功浮层**************/
 .success-float{display:none;
-  .success-arrow{@include position-right(50px,65px);}
+  .success-arrow{@include horizontal-center(520px,37px);}
   .success-tip{@include horizontal-center(205px,242px);}
   .success-text{@include horizontal-center(310px,454px)}
 }
@@ -218,20 +218,12 @@ h1.tip-box{@include font-style(50px,$Color-White,null);margin-top:212px;@extend 
 .papercut-float{@include pop(0.85,none,$Color-White);
    .papercut-box{width: $Width;height: 620px;}
    .papercut-bar{width:$Width;@include legacy-pie-clearfix;
-       @at-root .icons-returns{@include float();background: transparent;margin-left: 20px;
+       @at-root .icons-returns{@include float();background: transparent;margin-left:20px;
          em{padding: 40px;background-color:#d6d6d6;@extend %inline-block;
-           i{@extend %inline-block;background-position:-2167px 0px;width: 50px;height: 52px;}
+           i{@extend %inline-block;background-position:-2167px 0px;width:50px;height:52px;}
          }
          span{@include font-style($Font-Size,$Color-Black,null);display: block;}
        }
-      .papercut-nav{padding:20px;@include legacy-pie-clearfix;width:20000px;margin:-20px 0 0 140px;overflow-x:auto;@extend %scrolling;position:absolute;max-width:460px;
-        li{@include float();width:130px;margin-right:10px;
-          a{@extend %inline-block;@extend %center;
-            img{display:block;width:130px;}
-            span{width:130px;height:43px;@include font-style($Text-Font-Size,$Color-Black,null);@extend %inline-block;line-height:43px;}
-          }
-          a.select span{background:$Bg-Btn;color:$Color-White;}
-        }
-      }
+      .papercut-nav{padding:20px;margin:-20px 0 0 140px;max-width:460px; }
   }
 }

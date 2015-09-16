@@ -16,7 +16,7 @@
             <!--首页-->
             <div class="home" id="home">
                 <!--<div class="Bg"><img  src="images/load.png" lazypath="images/bg/home_bg.jpg" /></div>-->
-                <div class="Inner Inner1" style="height: 100%; overflow: scroll;">
+                <div class="Inner Inner1 home-inner">
                     <div class="carousel-box">
                         <div class="carousel-bar">
                             <ul class="carousel-nav">
@@ -94,7 +94,7 @@
                     </div>
 
                 </div>
-                <div class="Inner Inner2" style="display: none; height: 100%; overflow: scroll;">
+                <div class="Inner Inner2 home-inner" style="display:none;">
                     <div class="carousel-box">
                         <div class="carousel-bar">
                             <ul class="carousel-nav">
