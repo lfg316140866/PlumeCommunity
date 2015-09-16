@@ -210,8 +210,8 @@ h1.tip-box{@include font-style(50px,$Color-White,null);margin-top:212px;@extend 
 
 
 /*******更改封面浮层********/
-.change-cover-float{display: block;
-   .change-cover{@include position(260px);}
+.change-cover-float{display:block;
+  .change-cover{@include position(260px);background: rgba(0,0,0,0.8);width:$Width;height:490px;}
 }
 
 /*************剪纸选择浮层**************/
