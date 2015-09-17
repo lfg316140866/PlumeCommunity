@@ -219,11 +219,24 @@ h1.tip-box{@include font-style(50px,$Color-White,null);margin-top:212px;@extend 
    .papercut-box{width: $Width;height: 620px;}
    .papercut-bar{width:$Width;@include legacy-pie-clearfix;
        @at-root .icons-returns{@include float();background: transparent;margin-left:20px;
-         em{padding: 40px;background-color:#d6d6d6;@extend %inline-block;
+         em{padding: 40px;background-color:lighten($Color-Black,80%);@extend %inline-block;
            i{@extend %inline-block;background-position:-2167px 0px;width:50px;height:52px;}
          }
-         span{@include font-style($Font-Size,$Color-Black,null);display: block;}
+         span{@include font-style($Font-Size,$Color-Black,null);display:block;}
        }
       .papercut-nav{padding:20px;margin:-20px 0 0 140px;max-width:460px; }
+  }
+}
+
+/************表情符号浮层**************/
+.expression-float{bottom:75px;height: 240px;z-index:1000;@extend %footer-navbar;
+  .expression-box{@extend %wh100;position: relative;overflow: hidden;
+    .expression-bar{@include legacy-pie-clearfix;padding:20px;position: relative;overflow:hidden;height:200px;
+      li{@include float();@extend %wh100;font-size:0;@extend %center;
+        a{margin:10px;@extend %inline-block;width:31px;height:34px;
+          img{width:31px;display:block}
+        }
+      }
+    }
   }
 }
