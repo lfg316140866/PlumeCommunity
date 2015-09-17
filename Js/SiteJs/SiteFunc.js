@@ -7,6 +7,16 @@
 /// <reference path="SiteFunc.js" />
 /// <reference path="Recommend.js" />
 
+$.prototype.SgVisible = function () {
+    $(this).css("visibility", "visible");
+    return $(this);
+}
+
+$.prototype.Sghidden = function () {
+    $(this).css("visibility", "hidden");
+    return $(this);
+}
+
 //公共方法库
 (SiteFunc = new function () {
     this.Alert = function (message) {

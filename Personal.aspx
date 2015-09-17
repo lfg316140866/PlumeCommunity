@@ -117,7 +117,7 @@
     <div class="header-box">
         <div class="return-btn"><a href="javascript:void(0)"><i class="icons-return icons-sprite"></i></a></div>
         <div class="search-btn">
-            <a href="contactus.html" class="contact-us">联系我们</a>
+            <a href="javascript:void(0)" class="contact-us JscHrefContact">联系我们</a>
         </div>
     </div>
 

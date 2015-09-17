@@ -14,7 +14,9 @@ body{width:640px;@extend %center-block;height:$Height;}
 .Position{position:absolute;} 
 .PublicScenes{@include position();display:none;@extend %wh100;overflow:hidden;}
 /*各场景背景*/
-.Bg{@include position();@extend %wh100;}
+.Bg{@include position();@extend %wh100;
+   img{width:$Width;}
+}
 .PublicScenes .Bg img{position:relative;}
 .Inner{@extend %center-block;position:relative;height:$Height;width:640px;}
 
@@ -69,23 +71,30 @@ body{width:640px;@extend %center-block;height:$Height;}
   .attention-set{@include animation(attention-set 1000ms 800ms linear 1 both);@include animate-attention-set();}
 }
 .attention-btn{@include horizontal-center(790px,83px);width:83px;height:80px;}
-.attention-desc{@include position(324px,5px);height:40px;font-size:0;max-width:320px;@include legacy-pie-clearfix;
-  .choose-desc-box{@include float();@include prefixer(border-top-left-radius,8px);@include prefixer(border-bottom-left-radius,8px);background:rgba(0,0,0,0.8);
-    .attention-arrow{@include triangle(right,20px,rgba(0,0,0,0.8));position:absolute;}
-    .attention-desc-text{height:40px;@extend %inline-block;@include font-style($Text-Font-Size,lighten($Color-Black,95.29412%),null);line-height:40px;padding:0px 20px;}
+.set-label{@include position(324px,5px);@include legacy-pie-clearfix;
+  @at-root .choose-desc{height:40px;font-size:0;@include legacy-pie-clearfix;@include float();
+    .choose-desc-box{@include prefixer(border-top-left-radius,8px);@include prefixer(border-bottom-left-radius,8px);background:rgba(0,0,0,0.8);height: 40px;@include float(right);
+      .attention-arrow{@include triangle(right,20px,rgba(0,0,0,0.8));position:absolute;}
+      .attention-desc-text{height:40px;@extend %inline-block;@include font-style($Text-Font-Size,lighten($Color-Black,95.29412%),null);line-height:40px;padding:0px 20px;max-width:215px;@include ellipsis();width:auto;min-width:85px;}
+    }
+    .choose-desc-fr{@include prefixer(transform,rotateZ(180deg));margin-left:25px;
+      span{@include prefixer(transform,rotateZ(180deg));}
+    }
   }
-   .choose-desc-round{@include float(right);margin-left:25px;margin-top:13px;
-     .drop{@extend %inline-block;width:10px;height:10px;background-color:#ff7055;@extend %round;}
-   }
-  .choose-desc-box.select{@include prefixer(transform,translate(235px, 0px) rotateZ(180deg));
-    span{@include prefixer(transform,rotateZ(180deg));}
+  .choose-desc-round{@include float();margin-left:25px;margin-top:5px;
+    .drop{@extend %inline-block;width:10px;height:10px;background-color:#ff7055;@extend %round;}
+  }
+  .tags-set{visibility:hidden;
+    div{@include float();}
   }
 }
 
 
 
+
 /*********************首页************************/
 .home{height:$Height;}
+.home-inner{@include rolling-container($Width,$Height);}
 .con-home-box{padding-bottom:120px;}
 .carousel-box{width:$Width;height:357px;margin-top:65px;margin-bottom:-66px;
   .carousel-bar{position: relative;overflow:hidden;@extend %wh100;
@@ -93,8 +102,9 @@ body{width:640px;@extend %center-block;height:$Height;}
        li{@include float();@extend %wh100;}
      }
   }
- .carousel-click{@include horizontal-center(318px,120px);font-size:0;@extend %center;
+ .carousel-click{@include horizontal-center(318px,400px);font-size:0;@extend %center;
    a{@include hide-text();width:20px;height:20px;background-color:$Color-White;@extend %round;margin-right:20px;@extend %inline-block;}
+   a:first-child{margin-left:20px;}
    a.select{background-color:$Bg-Btn;}
  }
 }
@@ -117,8 +127,8 @@ body{width:640px;@extend %center-block;height:$Height;}
          p{width: 85px;height: 85px;margin-left: 20px;@include float();
            img{width: 85px;@extend %round;height: 85px;}
          }
-         .publisher{@include float();margin-left: 15px;margin-top:10px;}
-         .release-time{@include font-style($Text-Font-Size,$Color-Primary,null);@include float();margin-top:40px;margin-left:-75px;}
+         .publisher{@include float();margin-left: 15px;margin-top:10px;display:block;}
+         .release-time{@include font-style($Text-Font-Size,$Color-Primary,null);position:absolute;margin-top:40px;margin-left:120px;display:block;}
        }
        .contract-right{@include float(right);margin-top: 35px;margin-right: 27px;
          .icons-attention{@extend %inline-block;width: 49px;height:49px;}
@@ -128,12 +138,9 @@ body{width:640px;@extend %center-block;height:$Height;}
        }
      }
     .con-des{position:relative;@extend %center;
-      .choose-desc{@extend .attention-desc;
-        .choose-desc-box.select~.choose-desc-round{margin-left:50px;}
-        .choose-desc-round{margin-top:5px;@include animation(desc-round 1000ms 800ms linear infinite both);@include animate-desc-round();
+        .choose-desc-round{@include animation(desc-round 1000ms 800ms linear infinite both);@include animate-desc-round();
           .round{width:14px;height:14px;@extend %round;border:solid 8px lighten($Color-Black,58.43137%);@extend %vertically;}
         }
-      }
     }
     .con-features{width: $Width;margin:30px 0px;
       .con-nav{@include legacy-pie-clearfix;
@@ -154,7 +161,7 @@ body{width:640px;@extend %center-block;height:$Height;}
         .comment-name{}
         .comment-des{color:$Color-Primary;@include ellipsis();max-width:400px;width:auto;}
       }
-      .more-comment{padding-bottom: 25px;border-bottom: solid 4px lighten($Color-Black,89.80392%);padding-left: 28px;}
+      .more-comment{padding-bottom: 25px;border-bottom: solid 4px lighten($Color-Black,89.80392%);padding-left:28px;}
     }
   }
 }
@@ -207,9 +214,14 @@ body{width:640px;@extend %center-block;height:$Height;}
     li:nth-child(4) a{background-position:-1013px 0px;}
   }
 }
-.release-btn{margin-top:35px;width:365px;height:70px;@include font-style($Font-Size,$Color-White,null);@extend %center;background:$Bg-Btn;position:absolute;left:50%;margin-left:-183px;}
+.release-button{position:absolute;left:50%;margin-left:-183px;margin-top:35px;width:365px;height:70px;
+  label{@extend %wh100;@extend %inline-block;}
+  .release-btn{@include font-style($Font-Size,$Color-White,null);@extend %center;background:$Bg-Btn;@extend %wh100;line-height:70px;}
+}
+
 
 /*******发布(选择)********/
+.choice{display: block;}
 .choice-btn{margin-top: 65px;@include legacy-pie-clearfix;
   a{width: 265px;height: 90px;background:$Bg-Btn;line-height:80px;@extend %center;
     i{@extend %vertically;width: 45px;height: 45px;margin-right: 10px;}
@@ -222,18 +234,19 @@ body{width:640px;@extend %center-block;height:$Height;}
 }
 
 /*******发布(滤镜选择)********/
+.release-filter{display: none;}
 .filter-des{margin-top:66px;
    img{display:block;}
 }
 .filter-bar{margin-top:10px;width:$Width;height: 175px;
-  .filter-nav{@include legacy-pie-clearfix;width:20000px;overflow-x: auto;@extend %scrolling;margin-left:150px;position:absolute;max-width:490px;
-    li{@include float();width: 130px;margin-left: 10px;
-      a{@extend %inline-block;@extend %center;
-        img{display:block;}
-        span{@include font-style($Text-Font-Size,$Color-Black,null);width:130px;height:43px;@extend %inline-block;line-height:43px;}
+   @at-root.tags-box{@include legacy-pie-clearfix;overflow-x:auto;@extend %scrolling;margin-left:150px;position:absolute;max-width:490px;
+      li{@include float();width:130px;margin-left: 10px;
+        a{@extend %inline-block;@extend %center;
+          img{display:block;width:130px;height:130px;}
+          span{@include font-style($Text-Font-Size,$Color-Black,null);width:130px;height:43px;@extend %inline-block;line-height:43px;}
+        }
+        a.select span{background: $Bg-Btn;color: $Color-White;}
       }
-      a.select span{background: $Bg-Btn;color: $Color-White;}
-    }
   }
 }
 
@@ -247,6 +260,7 @@ body{width:640px;@extend %center-block;height:$Height;}
 }
 
 /*******发布(自定义标签)********/
+.release-tag{display: none;}
 .release-tag-box{padding: 14px;@include legacy-pie-clearfix;
   .tag-des{@extend %center;@include float();margin-bottom:6px;height: 50px;margin-right:10px;padding: 0 25px;
     a{line-height: 50px;}
@@ -416,8 +430,8 @@ body{width:640px;@extend %center-block;height:$Height;}
 }
 /*********************搜索************************/
 .search-pub{@include rolling-container($Width,830px);}
-.search-nav{margin-top:90px;width:$Width;height:98px;font-size:0;
-  a{@include font-style($TextSize,$Color-Primary,null);line-height:98px;width:50%;@extend %inline-block;@extend %center;}
+.search-nav{margin-top:90px;width:$Width;height:98px;@include legacy-pie-clearfix;
+  a{@include font-style($TextSize,$Color-Primary,null);line-height:98px;width:50%;@include float();@extend %center;}
   a.select{color:$Bg-Btn;}
 }
 

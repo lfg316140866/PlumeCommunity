@@ -8,6 +8,7 @@
         .DescMain { left: 640px;background-color: #fff;z-index: 25}
         .DescMain .list .list-box .comment-input {left: 640px}
         .DescMain .Inner {overflow: scroll}
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -16,16 +17,17 @@
             <!--首页-->
             <div class="home" id="home">
                 <!--<div class="Bg"><img  src="images/load.png" lazypath="images/bg/home_bg.jpg" /></div>-->
-                <div class="Inner Inner1" style="height: 100%; overflow: scroll;">
+                <div class="Inner Inner1 home-inner">
                     <div class="carousel-box">
                         <div class="carousel-bar">
                             <ul class="carousel-nav">
-                                <li><a href="javascript:void(0)">
+                                <%=_BannerList %>
+                                <%--<li><a href="javascript:void(0)">
                                     <img src="images/home-img.png" /></a></li>
                                 <li><a href="javascript:void(0)">
                                     <img src="images/home-img.png" /></a></li>
                                 <li><a href="javascript:void(0)">
-                                    <img src="images/home-img.png" /></a></li>
+                                    <img src="images/home-img.png" /></a></li>--%>
                             </ul>
                         </div>
                         <div class="carousel-click" style="z-index:20">
@@ -40,8 +42,8 @@
                         </div>
                         <div class="con-box con-home-box dat-UserID-userid dat-WorkID-workid">
                             <div class="con-tip">
-                                <div class="avatar-left">
-                                    <p>
+                                <div class="avatar-left dat-UserID-userid">
+                                    <p class="BtnToUser">
                                         <img class="dat-HeadImgUrl-src" src="images/master-img.png" />
                                     </p>
                                     <span class="publisher general-font dat-NickName"></span>
@@ -94,7 +96,7 @@
                     </div>
 
                 </div>
-                <div class="Inner Inner2" style="display: none; height: 100%; overflow: scroll;">
+                <div class="Inner Inner2 home-inner" style="display:none;">
                     <div class="carousel-box">
                         <div class="carousel-bar">
                             <ul class="carousel-nav">
@@ -118,8 +120,8 @@
                         </div>
                         <div class="con-box con-home-box dat-UserID-userid dat-WorkID-workid">
                             <div class="con-tip">
-                                <div class="avatar-left">
-                                    <p>
+                                <div class="avatar-left dat-UserID-userid">
+                                    <p class="BtnToUser">
                                         <img class="dat-HeadImgUrl-src" src="images/master-img.png" />
                                     </p>
                                     <span class="publisher general-font dat-NickName"></span>
@@ -185,8 +187,8 @@
                     <div class="desc-box list-box">
                         <div class="con-bar con-box">
                             <div class="con-tip">
-                                <div class="avatar-left">
-                                    <p><img  src="images/master-img.png" /></p>
+                                <div class="avatar-left dat-UserID-userid">
+                                    <p class="BtnToUser"><img  src="images/master-img.png" /></p>
                                     <span class="publisher general-font"></span>
                                     <em class="release-time"></em>
                                 </div>
@@ -230,7 +232,7 @@
                         <div class="report"><a href="javascript:void(0)" class="general-font">举报</a></div>
                         <div class="comment-input">
                             <span class="expression icons-sprite"></span>
-                            <input type="text" placeholder="" name=""/>
+                            <input type="text" placeholder="我也说一句" name=""/>
                             <button class="reviews-btn general-font">评论</button>
                         </div>
                     </div>
@@ -240,6 +242,13 @@
         </div><!--Main_end-->
     </div>
     <!--Wrap_end-->
-  
+   <!-----------标签符号---------->
+    <div class="expression-float" style="display:none">
+        <div class="expression-box">
+            <ul class="expression-bar">
+                <li><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a><a href="javascript:void(0)"><img src="images/expression.png"/></a></li>
+            </ul>
+        </div>
+    </div>
 </asp:Content>
 
