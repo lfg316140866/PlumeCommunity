@@ -82,6 +82,7 @@ $(function () {
     PersonalInformation();
  
     ///////////////////////图片切换///////////////////////////////
+
     //收藏作品
     $(".JscCollectBtn").on("touchend", function () {
         $(".Inner").hide();
@@ -96,8 +97,10 @@ $(function () {
     $(".JscEditInformationBtn").on("touchend", function () {
         SiteFunc.JumpPage("PersonalInfoEditor.aspx");
     })
-    
-    
+    //跳转留言
+    $(".JscHrefContact").on("touchend", function () {
+        SiteFunc.JumpPage("ContactUs.html");
+    })
     /////////////////////修改资料////////////////////////////
     //关闭浮层
     $(".JscCloseFloat").on("touchend", function () {
@@ -136,7 +139,7 @@ $(function () {
             }
             else if (dat.IsSuccess == 1) {
                 //修改成功
-                SiteFunc.FloatOperating(".JscContactBtn,.JscLayer,.JscUpdateLayer", ".JscFloatAll,.JscSubmitPicture,.JscUploadLayer");
+                SiteFunc.FloatOperating(".JscContactBtn,.JscLayer,.JscUpdateLayer,.JscHrefContact", ".JscFloatAll,.JscSubmitPicture,.JscUploadLayer");
                 setTimeout(function () { $(".JscLayer").hide(); }, 1500);
                 _IsUploadImgLK = false;
             }
@@ -161,7 +164,7 @@ $(function () {
         _Stage.BindSelectFileBtn(FileInput, 5);
         _Stage.OnSelectFile.Add(function (image) {
             //浮层显示出来
-            SiteFunc.FloatOperating(".JscFloatAll,.JscCoverCanvas,.JscCoverFloat,.JscSubmitPicture", ".JscContactBtn");
+            SiteFunc.FloatOperating(".JscFloatAll,.JscCoverCanvas,.JscCoverFloat,.JscSubmitPicture", ".JscContactBtn,.JscHrefContact");
         });
     }
     //背景图片修改

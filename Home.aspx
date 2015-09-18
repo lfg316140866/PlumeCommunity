@@ -4,10 +4,32 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="Js/SiteJs/Home.js"></script>
     <style>
-        .Wrap{overflow: hidden}
-        .DescMain { left: 640px;background-color: #fff;z-index: 25}
-        .DescMain .list .list-box .comment-input {left: 640px}
-        .DescMain .Inner {overflow: scroll}
+        .Wrap {
+            overflow: hidden;
+        }
+
+        .DescMain {
+            left: 640px;
+            background-color: #fff;
+            z-index: 25;
+        }
+
+            .DescMain .list .list-box .comment-input {
+                left: 640px;
+            }
+
+            .DescMain .Inner {
+                overflow: scroll;
+            }
+
+        #Comment_Input {
+            width: 400px;
+            height: 50px;
+            border: solid 1px #b4b4b4;
+            margin-right: 10px;
+            font-size: 26px;
+            padding-left: 20px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -16,20 +38,20 @@
             <!--首页-->
             <div class="home" id="home">
                 <!--<div class="Bg"><img  src="images/load.png" lazypath="images/bg/home_bg.jpg" /></div>-->
-                <div class="Inner Inner1" style="height: 100%; overflow: scroll;">
+                <div class="Inner Inner1 home-inner">
                     <div class="carousel-box">
                         <div class="carousel-bar">
                             <ul class="carousel-nav">
-                                <li><a href="javascript:void(0)">
+                                <%=_BannerList %>
+                                <%--<li><a href="javascript:void(0)">
                                     <img src="images/home-img.png" /></a></li>
                                 <li><a href="javascript:void(0)">
                                     <img src="images/home-img.png" /></a></li>
                                 <li><a href="javascript:void(0)">
-                                    <img src="images/home-img.png" /></a></li>
+                                    <img src="images/home-img.png" /></a></li>--%>
                             </ul>
                         </div>
-                        <div class="carousel-click" style="z-index:20">
-                           
+                        <div class="carousel-click" style="z-index: 20">
                         </div>
                     </div>
                     <div class="desc-box hot_box">
@@ -40,8 +62,8 @@
                         </div>
                         <div class="con-box con-home-box dat-UserID-userid dat-WorkID-workid">
                             <div class="con-tip">
-                                <div class="avatar-left">
-                                    <p>
+                                <div class="avatar-left dat-UserID-userid">
+                                    <p class="BtnToUser">
                                         <img class="dat-HeadImgUrl-src" src="images/master-img.png" />
                                     </p>
                                     <span class="publisher general-font dat-NickName"></span>
@@ -52,7 +74,7 @@
                                     <i class="icons-attention icons-sprite dat-UserID-userid"></i>
                                     <!--关注好友后下面icon显示-->
                                     <i class="icons-ok icons-sprite dat-UserID-userid"></i>
-                                     <!--我发布下面icon显示-->
+                                    <!--我发布下面icon显示-->
                                     <i class="icon-trash"></i>
                                 </div>
                             </div>
@@ -94,7 +116,7 @@
                     </div>
 
                 </div>
-                <div class="Inner Inner2" style="display: none; height: 100%; overflow: scroll;">
+                <div class="Inner Inner2 home-inner" style="display: none;">
                     <div class="carousel-box">
                         <div class="carousel-bar">
                             <ul class="carousel-nav">
@@ -106,8 +128,7 @@
                                     <img src="images/home-img.png" /></a></li>
                             </ul>
                         </div>
-                        <div class="carousel-click" style="z-index:20">
-                           
+                        <div class="carousel-click" style="z-index: 20">
                         </div>
                     </div>
                     <div class="desc-box follow_box">
@@ -118,19 +139,19 @@
                         </div>
                         <div class="con-box con-home-box dat-UserID-userid dat-WorkID-workid">
                             <div class="con-tip">
-                                <div class="avatar-left">
-                                    <p>
+                                <div class="avatar-left dat-UserID-userid">
+                                    <p class="BtnToUser">
                                         <img class="dat-HeadImgUrl-src" src="images/master-img.png" />
                                     </p>
                                     <span class="publisher general-font dat-NickName"></span>
                                     <em class="release-time"></em>
                                 </div>
-                               <div class="contract-right" style="display: none">
+                                <div class="contract-right" style="display: none">
                                     <!--点击查看详情添加select(没关注好友)-->
                                     <i class="icons-attention icons-sprite dat-UserID-userid"></i>
                                     <!--关注好友后下面icon显示-->
                                     <i class="icons-ok icons-sprite dat-UserID-userid"></i>
-                                     <!--我发布下面icon显示-->
+                                    <!--我发布下面icon显示-->
                                     <i class="icon-trash"></i>
                                 </div>
                             </div>
@@ -176,8 +197,8 @@
 
         </div>
         <!--Main_end-->
-        
-        <div class="Main DescMain" style="display:none">
+
+        <div class="Main DescMain" style="display: none">
             <!--首页-->
             <div class="list" id="list">
                 <!--<div class="Bg"><img  src="images/load.png" lazypath="images/bg/home_bg.jpg" /></div>-->
@@ -185,8 +206,9 @@
                     <div class="desc-box list-box">
                         <div class="con-bar con-box">
                             <div class="con-tip">
-                                <div class="avatar-left">
-                                    <p><img  src="images/master-img.png" /></p>
+                                <div class="avatar-left dat-UserID-userid">
+                                    <p class="BtnToUser">
+                                        <img src="images/master-img.png" /></p>
                                     <span class="publisher general-font"></span>
                                     <em class="release-time"></em>
                                 </div>
@@ -200,7 +222,7 @@
                                 </div>
                             </div>
                             <div class="con-item">
-                               <%-- <div class="con-des">
+                                <%-- <div class="con-des">
                                     <img  src="images/master-img-1.png" />
                                     <div class="choose-desc">
                                         <span class="attention-desc-text">辛MM的中国范</span>
@@ -223,23 +245,41 @@
                                         <em class="comment-name general-font center-vertical">章三道:</em>
                                         <strong class="comment-des general-font center-vertical">过法国风格放大</strong>
                                     </div>--%>
-                                   
                                 </div>
                             </div>
                         </div>
                         <div class="report"><a href="javascript:void(0)" class="general-font">举报</a></div>
                         <div class="comment-input">
-                            <span class="expression icons-sprite"></span>
-                            <input type="text" placeholder="" name=""/>
-                            <button class="reviews-btn general-font">评论</button>
+                            <%--  <span class="expression icons-sprite"></span>
+                           <input id="Comment_Input" type="text" placeholder="我也说一句" name=""/>
+                            <div id="Comment_Input"  placeholder="我也说一句"></div>
+                            <button class="reviews-btn general-font">评论</button>--%>
+                            <div class="comment-input" style="left: 0px;">
+                                <span class="expression icons-sprite" style="position: absolute; bottom: 18px;"></span>
+
+                                <div id="Comment_Input" placeholder="我也说一句" contenteditable="true" style="display: inline-block; position: absolute; left: 73px;line-height:49px">
+                                </div>
+                                <button class="reviews-btn general-font" style="position: absolute; left: 518px; bottom: 13px;">
+                                    评论
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div><!--Main_end-->
+        </div>
+        <!--Main_end-->
     </div>
     <!--Wrap_end-->
-  
+    <!-----------标签符号---------->
+    <div class="expression-float" style="display: none">
+        <div class="expression-box">
+            <ul class="expression-bar">
+                <li><a href="javascript:void(0)">
+                    <img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a><a href="javascript:void(0)"><img src="images/expression.png" /></a></li>
+            </ul>
+        </div>
+    </div>
 </asp:Content>
 
