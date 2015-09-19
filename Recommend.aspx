@@ -1,47 +1,67 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width,user-scalable=no;" />
-    <link href="css/load.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/reset.css" rel="stylesheet" />
-    <link href="css/public.css" rel="stylesheet" />
-    <link href="css/font-awesome.css" rel="stylesheet" />
-    <script src="Js/ThirdLib/jquery.js"></script>
-    <script src="Js/jquery.easing.min.js"></script>
-    <script src="Js/Cmn.js"></script>
-    <script src="Js/CmnAjax.js"></script>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/YuQianMaster.master" AutoEventWireup="true" CodeFile="Recommend.aspx.cs" Inherits="Recommend" %>
+<%@ MasterType VirtualPath="~/master/YuQianMaster.master" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <script src="Js/animate/AnimateMan.js"></script>
     <script src="Js/animate/ScenesSwitch.js"></script>
     <script src="Js/animate/Scenes.js"></script>
     <script src="Js/animate/AnimateFrame.js"></script>
     <script src="Js/animate/BasAnimate.js"></script>
-    <script src="Js/jquery.mCustomScrollbar.js"></script>
-    <script src="Js/CmnFuncExd.js"></script>
-    <script src="Js/jquery.cycle.all.js"></script>
-    <script src="Js/CmnTools/WechatShare.js"></script>
     <script src="Js/Public.js"></script>
     <script src="Js/SiteJs/SiteFunc.js"></script>
-    <script src="Js/SiteJs/Index.js"></script>
+    <script src="Js/SiteJs/Recommendindex.js"></script>
     <script src="Js/SiteJs/Recommend.js"></script>
-    <title>羽茜社区</title>
-</head>
-<body>
-    <!--LoadingWrap-->
-    <div class="wrapper">
-        <div class="wrapperInner">
-            <div class="load-bar">
-                <div class="loadinner"><span id="counter">0%</span> </div>
-            </div>
-            <h1>Loading</h1>
-        </div>
-    </div>
+</asp:Content>
 
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="Wrap cmn-AnimteFrameContainer">
         <div class="Main cmn-ScenesContainer">
-            <!--登陆-->
-            <div class="cmn-Scenes PublicScenes land" id="land">
+            <!--推荐-->
+            <div class="cmn-Scenes PublicScenes recommend" id="recommend" style="display:block">
+                <!--<div class="Bg"><img  src="images/load.png" lazypath="images/bg/recommend_bg.jpg" /></div>-->
+                <div class="Inner">
+                    <div class="recommend-tip"><h3>你可能感兴趣的人</h3></div>
+                    <div class="attention-box JscRecommendBox">
+                        <!--attention-bar为一条达人信息-->
+                        <div wid="" class="attention-bar JscRecommendOne dat-WorkID-wid">
+                            <div class="attention-con">
+                                <img class="JscUserUploadImg dat-PicPath-src" src="images/load.png" lazypath="images/master-img.png" />
+                            </div>
+                            btn-sprite <div class="set-label JscLableChange">
+                                        <div class="choose-desc">
+                                            <div class="choose-desc-box">
+                                                <span class="attention-desc-text JscLableTest">辛MM的中国范</span>
+                                                <b class="attention-arrow"></b>
+                                            </div>
+                                        </div>
+                                        <div class="choose-desc-round">
+                                            <i class="drop"></i>
+                                        </div>
+
+                                        <div class="choose-desc tags-set">
+                                            <div class="choose-desc-box choose-desc-fr">
+                                                <span class="attention-desc-text JscLableTest">辛MM的中国范</span>
+                                                <b class="attention-arrow"></b>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <div class="attention-footer">
+                                <div class="attention-footer-user">
+                                    <span usid="" class="user-avatar JscUidJump dat-UserID-usid"><img class="JscUserHeadImg dat-HeadImgUrl-src" src="images/load.png" lazypath="images/master-img.png" /></span>
+                                    <strong class="master-name general-font center-vertical JscUserNameTest dat-NickName">Jennyioers</strong>
+                                </div>
+                                <div class="attention-footer-number">
+                                    <i class="icons-edits icons-sprite"></i>
+                                    <em class="edit-number general-font center-vertical JscUserWorkCount dat-WorkCount">35</em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skip-btn"><a class="general-font" href="Home.aspx">跳过</a></div>
+                    <div class="attention-btn JscAttentionBtn"><a class="btn-sprite" href="javascript:void(0)"></a></div>
+                </div>
+            </div>
+             <!--登陆-->
+            <div class="cmn-Scenes PublicScenes land" id="land" style="display:none">
                 <div class="Bg"><img  src="images/load.png" lazypath="images/bg/land_bg.jpg" /></div>
                 <div class="Inner JscHideMenu">
                     <div class="logo"><img  src="images/load.png" lazypath="images/logo.png" /></div>
@@ -57,48 +77,10 @@
                     </div>
                 </div>
             </div>
-
-            <!--推荐-->
-            <div class="cmn-Scenes PublicScenes recommend" id="recommend">
-                <!--<div class="Bg"><img  src="images/load.png" lazypath="images/bg/recommend_bg.jpg" /></div>-->
-                <div class="Inner">
-                    <div class="recommend-tip"><h3>你可能感兴趣的人</h3></div>
-                    <div class="attention-box JscRecommendBox">
-                        <!--attention-bar为一条达人信息-->
-                        <div wid="" class="attention-bar JscRecommendOne dat-WorkID-wid">
-                            <div class="attention-con">
-                                <img class="JscUserUploadImg dat-PicPath-src" src="images/load.png" lazypath="images/master-img.png" />
-                            </div>
-                            <div class="attention-desc">
-                                <!--添加select变换箭头角度-->
-                                <div class="choose-desc-box JscLableChange">
-                                    <span class="attention-desc-text JscLableTest">辛MM的中国范</span>
-                                    <b class="attention-arrow"></b>
-                                </div>
-                                <div class="choose-desc-round">
-                                    <i class="drop"></i>
-                                </div>
-                            </div>
-                            <div class="attention-footer">
-                                <div class="attention-footer-user">
-                                    <span class="user-avatar"><img class="JscUserHeadImg dat-HeadImgUrl-src" src="images/load.png" lazypath="images/master-img.png" /></span>
-                                    <strong class="master-name general-font center-vertical JscUserNameTest dat-NickName">Jennyioers</strong>
-                                </div>
-                                <div class="attention-footer-number">
-                                    <i class="icons-edits icons-sprite"></i>
-                                    <em class="edit-number general-font center-vertical JscUserWorkCount dat-WorkCount">35</em>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skip-btn"><a class="general-font" href="Home.aspx">跳过</a></div>
-                    <div class="attention-btn btn-sprite"><a href="javascript:void(0)"></a></div>
-                </div>
-            </div>
         </div><!--Main_end-->
     </div><!--Wrap_end-->
     <!---------------顶部菜单-------------------->
-    <div class="header-box JscHideAllHeader" style="display:none">
+    <div class="header-box">
         <div class="return-btn"><a href="javascript:void(0)"><i class="icons-return icons-sprite"></i></a></div>
     </div>
 
@@ -211,20 +193,5 @@
     </div>
 
 
-
-<!--    
-    <div class="footer-box">
-        <ul class="footer-nav">
-            <li><a href="javascript:void(0)" class="select"><i class="icons-home icons-sprite"></i><span>首页</span></a></li>
-            <li><a href="javascript:void(0)"><i class="icons-heart icons-sprite"></i><span>热门</span></a></li>
-            <li><a href="javascript:void(0)" class="update"><em class="bar-bg"><i class="icon-circle-blank"></i></em></a></li>
-            <li><a href="javascript:void(0)"><i class="icons-volume-down icons-sprite"></i><span>通知</span></a></li>
-            <li><a href="javascript:void(0)"><i class="icons-user icons-sprite"></i><span>我的</span></a></li>
-        </ul>
-    </div>-->
-    <script>
-        Cmn.Func.MobileAdaptive(640,1008, "images/AdviseVertical.png", Cmn.Func.MobileAdaptiveMode.WidthHeight);
-    </script>
-</body>
-</html>
+</asp:Content>
 

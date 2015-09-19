@@ -22,11 +22,11 @@
 //-sprite-selectors: false;    // 默认为true
 // $logo-sprite-dimensions:true;
 //$synthesis-dimensions: true;
-$synthesis-spacing: 8px;
-$synthesis-width: 108px;
-$synthesis-layout: 'horizontal';
-@import "synthesis/*.png";
-@include all-synthesis-sprites;
+// $synthesis-spacing: 8px;
+// $synthesis-width: 108px;
+// $synthesis-layout: 'horizontal';
+// @import "synthesis/*.png";
+// @include all-synthesis-sprites;
 // .menu01 {
 // @include Color-sprite(menu01);
 // width: 110px;height: 27px;

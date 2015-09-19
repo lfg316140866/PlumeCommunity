@@ -7,6 +7,16 @@
 /// <reference path="SiteFunc.js" />
 /// <reference path="Recommend.js" />
 
+$.prototype.SgVisible = function () {
+    $(this).css("visibility", "visible");
+    return $(this);
+}
+
+$.prototype.Sghidden = function () {
+    $(this).css("visibility", "hidden");
+    return $(this);
+}
+
 //公共方法库
 (SiteFunc = new function () {
     this.Alert = function (message) {
@@ -68,11 +78,11 @@
         var _url;
         if (location.href.indexOf("?") > 0) {
             _url = (location.href).substring(0, location.href.indexOf("?"));
-            _url = "/Personal.html?uid=" + uid + "&returnurl=" + _url + ""
+            _url = "/Personal.aspx?uid=" + uid + "&returnurl=" + _url + ""
             location.href = ((_url).replace(/\?/g, "&")).replace('&', '?');
         }
         else {
-            _url = "/Personal.html?uid=" + uid + "&returnurl=" + location.href + "";
+            _url = "/Personal.aspx?uid=" + uid + "&returnurl=" + location.href + "";
             location.href = ((_url).replace(/\?/g, "&")).replace('&', '?');
         }
     }
@@ -102,7 +112,7 @@
         } else {
             _returnBtn.show();
         }
-        _returnBtn.off().on("touchend", function () {
+        _returnBtn.off().on("click", function () {
             func && func();
         });
     }

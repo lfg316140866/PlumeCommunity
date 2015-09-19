@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" %>
+
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -28,15 +30,6 @@
     <title>羽茜社区</title>
 </head>
 <body>
-    <!--LoadingWrap-->
-    <div class="wrapper">
-        <div class="wrapperInner">
-            <div class="load-bar">
-                <div class="loadinner"><span id="counter">0%</span> </div>
-            </div>
-            <h1>Loading</h1>
-        </div>
-    </div>
 
     <div class="Wrap cmn-AnimteFrameContainer">
         <div class="Main cmn-ScenesContainer">
@@ -223,8 +216,7 @@
         </ul>
     </div>-->
     <script>
-        Cmn.Func.MobileAdaptive(640,1008, "images/AdviseVertical.png", Cmn.Func.MobileAdaptiveMode.WidthHeight);
+        Cmn.Func.MobileAdaptive(640, 1008, "images/AdviseVertical.png", Cmn.Func.MobileAdaptiveMode.WidthHeight);
     </script>
 </body>
 </html>
-

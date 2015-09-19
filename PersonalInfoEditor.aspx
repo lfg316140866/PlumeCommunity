@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/YuQianMaster.master" AutoEventWireup="true" CodeFile="PersonalInfoEditor.aspx.cs" Inherits="PersonalInfoEditor" %>
-
+<%@ MasterType VirtualPath="~/master/YuQianMaster.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
      <script src="Js/animate/AnimateMan.js"></script>
     <script src="Js/animate/ScenesSwitch.js"></script>
@@ -26,7 +26,7 @@
                         <div class="indal-top info-editor-top">
                             <div class="indal-portrait">
                                 <p class="portrait JscUserImg"><img src="images/personal-img.png" alt=""/></p>
-                                <i class="icon-tagss JscTalentLable">C</i>
+                                <i class="icons-tages JscTalentLable">C</i>
                             </div>
                         </div>
                         <div class="indal-body info-editor-body">
@@ -66,7 +66,7 @@
     <div class="header-box">
         <div class="return-btn"><a href="javascript:void(0)"><i class="icons-return icons-sprite"></i></a></div>
         <div class="search-btn">
-            <a href="contactus.html" class="contact-us JscContactBtn">联系我们</a>
+            <a href="javascript:void(0)" class="contact-us JscHrefContact">联系我们</a>
             <a href="javascript:void(0)" class="confirm JscSubmitPicture">确定</a>
         </div>
     </div>

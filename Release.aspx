@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Release.aspx.cs" Inherits="Release" %>
+
+<!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -56,27 +59,28 @@
 
             <!--发布-->
             <div class="cmn-Scenes PublicScenes choice" id="choice">
-                <div class="Inner">
-                    <div class="filter-des JscPhotoCanvas">
-                        <!--<div class="set-label">
-                                        <div class="choose-desc">
-                                            <div class="choose-desc-box">
-                                                <span class="attention-desc-text">辛MM的中国范</span>
-                                                <b class="attention-arrow"></b>
-                                            </div>
-                                        </div>
-                                        <div class="choose-desc-round">
-                                            <i class="round"></i>
-                                        </div>
+                <div class="filter-des JscPhotoCanvas">
+                                    <!--<div class="set-label">
+                                                    <div class="choose-desc">
+                                                        <div class="choose-desc-box">
+                                                            <span class="attention-desc-text">辛MM的中国范</span>
+                                                            <b class="attention-arrow"></b>
+                                                        </div>
+                                                    </div>
+                                                    <div class="choose-desc-round">
+                                                        <i class="round"></i>
+                                                    </div>
 
-                                        <div class="choose-desc tags-set">
-                                            <div class="choose-desc-box choose-desc-fr">
-                                                <span class="attention-desc-text">辛MM的中国范</span>
-                                                <b class="attention-arrow"></b>
-                                            </div>
-                                        </div>
-                                    </div>-->
-                    </div>
+                                                    <div class="choose-desc tags-set">
+                                                        <div class="choose-desc-box choose-desc-fr">
+                                                            <span class="attention-desc-text">辛MM的中国范</span>
+                                                            <b class="attention-arrow"></b>
+                                                        </div>
+                                                    </div>
+                                                </div>-->
+                                </div>
+                <div class="Inner">
+
                     <!--发布(选择)-->
                     <div class="choice JscOperatingPiece" style="display:none">
                         <div class="choice-btn ">
@@ -229,8 +233,7 @@
         </ul>
     </div>
     <script>
-        Cmn.Func.MobileAdaptive(640,1008, "images/AdviseVertical.png", Cmn.Func.MobileAdaptiveMode.WidthHeight);
+        Cmn.Func.MobileAdaptive(640, 1008, "images/AdviseVertical.png", Cmn.Func.MobileAdaptiveMode.WidthHeight);
     </script>
 </body>
 </html>
-

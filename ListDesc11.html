@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,user-scalable=no;" />
     <link href="css/load.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
@@ -18,6 +18,16 @@
     <script src="Js/CmnTools/WechatShare.js"></script>
     <script src="Js/SiteJs/Site.js"></script>
     <title>羽茜社区</title>
+    <style>
+        #Comment_Input {
+            width: 400px;
+            min-height: 50px;
+            border: solid 1px #b4b4b4;
+            margin-right: 10px;
+            font-size: 26px;
+            padding-left: 20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -31,7 +41,7 @@
                         <div class="con-bar con-box">
                             <div class="con-tip">
                                 <div class="avatar-left">
-                                    <p><img  src="images/master-img.png" /></p>
+                                    <p><img src="images/master-img.png" /></p>
                                     <span class="publisher general-font">Alex Tan</span>
                                     <em class="release-time">1小时前</em>
                                 </div>
@@ -46,7 +56,7 @@
                             </div>
                             <div class="con-item">
                                 <div class="con-des">
-                                    <img  src="images/master-img-1.png" />
+                                    <img src="images/master-img-1.png" />
                                     <div class="choose-desc">
                                         <span class="attention-desc-text">辛MM的中国范</span>
                                         <b class="attention-arrow"></b>
@@ -64,37 +74,37 @@
                                 <div class="comment-list">
                                     <!--list-desc为一条评论信息-->
                                     <div class="list-desc">
-                                        <span class="comment-face"><img  src="images/master-img-1.png" /></span>
+                                        <span class="comment-face"><img src="images/master-img-1.png" /></span>
+                                        <em class="comment-name general-font center-vertical">章三道:</em>
+                                        <strong class="comment-des general-font center-vertical" contenteditable="true">过法国风格放大</strong>
+                                    </div>
+                                    <!--list-desc为一条评论信息-->
+                                    <div class="list-desc">
+                                        <span class="comment-face"><img src="images/master-img-1.png" /></span>
                                         <em class="comment-name general-font center-vertical">章三道:</em>
                                         <strong class="comment-des general-font center-vertical">过法国风格放大</strong>
                                     </div>
                                     <!--list-desc为一条评论信息-->
                                     <div class="list-desc">
-                                        <span class="comment-face"><img  src="images/master-img-1.png" /></span>
+                                        <span class="comment-face"><img src="images/master-img-1.png" /></span>
                                         <em class="comment-name general-font center-vertical">章三道:</em>
                                         <strong class="comment-des general-font center-vertical">过法国风格放大</strong>
                                     </div>
                                     <!--list-desc为一条评论信息-->
                                     <div class="list-desc">
-                                        <span class="comment-face"><img  src="images/master-img-1.png" /></span>
+                                        <span class="comment-face"><img src="images/master-img-1.png" /></span>
                                         <em class="comment-name general-font center-vertical">章三道:</em>
                                         <strong class="comment-des general-font center-vertical">过法国风格放大</strong>
                                     </div>
                                     <!--list-desc为一条评论信息-->
                                     <div class="list-desc">
-                                        <span class="comment-face"><img  src="images/master-img-1.png" /></span>
+                                        <span class="comment-face"><img src="images/master-img-1.png" /></span>
                                         <em class="comment-name general-font center-vertical">章三道:</em>
                                         <strong class="comment-des general-font center-vertical">过法国风格放大</strong>
                                     </div>
                                     <!--list-desc为一条评论信息-->
                                     <div class="list-desc">
-                                        <span class="comment-face"><img  src="images/master-img-1.png" /></span>
-                                        <em class="comment-name general-font center-vertical">章三道:</em>
-                                        <strong class="comment-des general-font center-vertical">过法国风格放大</strong>
-                                    </div>
-                                    <!--list-desc为一条评论信息-->
-                                    <div class="list-desc">
-                                        <span class="comment-face"><img  src="images/master-img-1.png" /></span>
+                                        <span class="comment-face"><img src="images/master-img-1.png" /></span>
                                         <em class="comment-name general-font center-vertical">章三道:</em>
                                         <strong class="comment-des general-font center-vertical">过法国风格放大</strong>
                                     </div>
@@ -103,11 +113,13 @@
                         </div>
                         <div class="report"><a href="javascript:void(0)" class="general-font">举报</a></div>
                         <div class="comment-input">
-                            <span class="expression icons-sprite"></span>
-                            <div class="comment-bar">
-                                <div class="comment-con" placeholder="我也说一句" contenteditable="true"></div>
+                            <span class="expression icons-sprite" style="position: absolute; bottom: 18px;"></span>
+
+                            <div id="Comment_Input" placeholder="我也说一句" contenteditable="true" style="display: inline-block; position: absolute; left: 73px; line-height: 49px">
                             </div>
-                            <button class="reviews-btn general-font">评论</button>
+                            <button class="reviews-btn general-font" style="position: absolute; left: 518px; bottom: 13px;">
+                                评论
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -122,7 +134,7 @@
     </div>
 
     <script>
-        Cmn.Func.MobileAdaptive(640,1008, "images/AdviseVertical.png", Cmn.Func.MobileAdaptiveMode.WidthHeight);
+        Cmn.Func.MobileAdaptive(640, 1008, "images/AdviseVertical.png", Cmn.Func.MobileAdaptiveMode.WidthHeight);
     </script>
 </body>
 </html>

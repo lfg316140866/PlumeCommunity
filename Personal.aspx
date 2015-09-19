@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/YuQianMaster.master" AutoEventWireup="true" CodeFile="Personal.aspx.cs" Inherits="Personal" %>
-
+<%@ MasterType VirtualPath="~/master/YuQianMaster.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="Js/SiteJs/SiteFunc.js"></script>
     <script src="Js/SiteJs/InformationThrows.js"></script>
@@ -23,7 +23,7 @@
                             <div class="indal-portrait ">
                                 <p class="portrait JscUserImg">
                                     <img src="images/personal-img.png" alt="" /></p>
-                                <i class="icon-tagss JscTalentLable">C</i>
+                                <i class="icons-tages JscTalentLable">C</i>
                             </div>
                             <div class="indal-attention">
                                 <em class="fans-attion general-font pub-indal">关注</em>
@@ -71,7 +71,7 @@
                             <div class="indal-portrait ">
                                 <p class="portrait JscUserImg">
                                     <img src="images/personal-img.png" alt="" /></p>
-                                <i class="icon-tagss JscTalentLable">C</i>
+                                <i class="icons-tages JscTalentLable">C</i>
                             </div>
                             <div class="indal-attention">
                                 <em class="fans-attion general-font pub-indal">关注</em>
@@ -117,7 +117,7 @@
     <div class="header-box">
         <div class="return-btn"><a href="javascript:void(0)"><i class="icons-return icons-sprite"></i></a></div>
         <div class="search-btn">
-            <a href="contactus.html" class="contact-us">联系我们</a>
+            <a href="javascript:void(0)" class="contact-us JscHrefContact">联系我们</a>
         </div>
     </div>
 

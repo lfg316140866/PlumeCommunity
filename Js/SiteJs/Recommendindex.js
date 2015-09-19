@@ -59,6 +59,10 @@ $(function () {
 
     PhotoshowUserCollect();
 
-    ////////////////////点击头像跳转///////////////////
+    ////////////////////关注///////////////////
+    $(".JscAttentionBtn").on("click", function () {
+
+    })
+
 })
 

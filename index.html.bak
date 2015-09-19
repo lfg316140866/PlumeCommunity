@@ -65,6 +65,26 @@
                     <div class="recommend-tip"><h3>你可能感兴趣的人</h3></div>
                     <div class="attention-box JscRecommendBox">
                         <!--attention-bar为一条达人信息-->
+                        <div class="attention-bar ">
+                            <div class="attention-con">
+                                <img  src="images/load.png" lazypath="images/master-img.png" />
+                            </div>
+                            <div class="attention-desc">
+                                <span class="attention-desc-text ">辛MM的中国范</span>
+                                <b class="attention-arrow"></b>
+                                <i class="drop"></i>
+                            </div>
+                            <div class="attention-footer">
+                                <div class="attention-footer-user">
+                                    <span class="user-avatar"><img  src="images/load.png" lazypath="images/master-img.png" /></span>
+                                    <strong class="master-name general-font center-vertical ">Jennyioers</strong>
+                                </div>
+                                <div class="attention-footer-number">
+                                    <i class="icon-edits icons-sprite"></i>
+                                    <em class="edit-number general-font center-vertical ">35</em>
+                                </div>
+                            </div>
+                        </div>
                         <div wid="" class="attention-bar JscRecommendOne dat-WorkID-wid">
                             <div class="attention-con">
                                 <img class="JscUserUploadImg dat-PicPath-src" src="images/load.png" lazypath="images/master-img.png" />
@@ -98,7 +118,7 @@
         </div><!--Main_end-->
     </div><!--Wrap_end-->
     <!---------------顶部菜单-------------------->
-    <div class="header-box JscHideAllHeader" style="display:none">
+    <div class="header-box">
         <div class="return-btn"><a href="javascript:void(0)"><i class="icons-return icons-sprite"></i></a></div>
     </div>
 
@@ -212,7 +232,7 @@
 
 
 
-<!--    
+    <!---------------底部导航-------------------->
     <div class="footer-box">
         <ul class="footer-nav">
             <li><a href="javascript:void(0)" class="select"><i class="icons-home icons-sprite"></i><span>首页</span></a></li>
@@ -221,7 +241,7 @@
             <li><a href="javascript:void(0)"><i class="icons-volume-down icons-sprite"></i><span>通知</span></a></li>
             <li><a href="javascript:void(0)"><i class="icons-user icons-sprite"></i><span>我的</span></a></li>
         </ul>
-    </div>-->
+    </div>
     <script>
         Cmn.Func.MobileAdaptive(640,1008, "images/AdviseVertical.png", Cmn.Func.MobileAdaptiveMode.WidthHeight);
     </script>

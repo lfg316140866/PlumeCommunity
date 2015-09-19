@@ -10,7 +10,7 @@ output_style = :nested
 javascripts_dir = "javascripts"
 http_path = "/"
 images_dir = "images"
-line_comments = true
+line_comments = false
 relative_assets = true
 
 # You can select your preferred output style here (can be overridden via the command line):

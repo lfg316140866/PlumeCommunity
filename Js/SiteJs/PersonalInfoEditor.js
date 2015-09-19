@@ -23,14 +23,17 @@ $(function () {
     var _IsUploadImgLK = false;
     var _Switching = false;//切换
     //////////////////////页面加载调用方法///////////////////////////
-    if (_UserID != "") {
-        $(".JscEditInformationBtn").hide();
-    }
+    //if (_UserID != "") {
+    //    $(".JscEditInformationBtn").hide();
+    //}
 
     ///页面数据填充
     function PersonalInformation() {
         CmnAjax.PostData("/Itf/CSharp/ItfOther.aspx?method=PersonalDetails", {"UserID":_UserID}, function (dat) {
-            if (dat.IsSuccess == 1) {
+            if (dat.IsSuccess == 1||dat.IsSuccess==3) {
+                if (dat.IsSuccess == 1) {
+                    $(".JscEditInformationBtn").hide();
+                }
                 _HeadImgUrl = dat.HeadImgUrl;
                 _NickName = dat.NickName;
                 _Identitys = dat.Identitys;
@@ -75,50 +78,53 @@ $(function () {
                 }
             }
             else {
-                SiteFunc.JumpPage("index.html");
+                SiteFunc.JumpPage("index.aspx");
             }
         })
     }
     PersonalInformation();
  
     ///////////////////////图片切换///////////////////////////////
+
     //收藏作品
-    $(".JscCollectBtn").on("touchend", function () {
+    $(".JscCollectBtn").on("click", function () {
         $(".Inner").hide();
         $(".JscInnerOne").show();
     })
     //发布作品
-    $(".JscReleaseBtn").on("touchend", function () {
+    $(".JscReleaseBtn").on("click", function () {
         $(".Inner").hide();
         $(".JscInnerTwo").show();
     })
     //跳转修改
-    $(".JscEditInformationBtn").on("touchend", function () {
+    $(".JscEditInformationBtn").on("click", function () {
         SiteFunc.JumpPage("PersonalInfoEditor.aspx");
     })
-    
-    
+    //跳转留言
+    $(".JscHrefContact").on("click", function () {
+        SiteFunc.JumpPage("ContactUs.html");
+    })
     /////////////////////修改资料////////////////////////////
     //关闭浮层
-    $(".JscCloseFloat").on("touchend", function () {
+    $(".JscCloseFloat").on("click", function () {
         SiteFunc.FloatOperating("", ".JscFloatAll,.JscInformationChangesFloat,.JscInformationHide", true);
         PersonalInformation();
     })
     //姓名修改
-    $(".JscChangeDataName").on("touchend", function () {
+    $(".JscChangeDataName").on("click", function () {
         SiteFunc.FloatOperating(".JscFloatAll,.JscInformationChangesFloat,.JscNameFloat", "", false);
     })
     
     //性别修改
-    $(".JscChangeDataSex").on("touchend", function () {
+    $(".JscChangeDataSex").on("click", function () {
         SiteFunc.FloatOperating(".JscFloatAll,.JscInformationChangesFloat,.JscSexAllFloat", "", false);
     })
     //签名修改
-    $(".JscChangeDataSigna").on("touchend", function () {
+    $(".JscChangeDataSigna").on("click", function () {
         SiteFunc.FloatOperating(".JscFloatAll,.JscInformationChangesFloat,.JscSignatureFloat ", "", false);
     })
     //性别切换
-    $(".JscSexChange").on("touchend", function () {
+    $(".JscSexChange").on("click", function () {
         $(".JscSexChange a").removeClass("select");
         $(".JscSexChange a").eq($(this).index()).addClass("select");
     })
@@ -132,11 +138,11 @@ $(function () {
     function UserUploadImg(_param){
         CmnAjax.PostData("/Itf/CSharp/ItfOther.aspx?method=SubmitPictureItf", _param, function (dat) {
             if (dat.IsSuccess == 0) {
-                SiteFunc.JumpPage("index.html");
+                SiteFunc.JumpPage("index.aspx");
             }
             else if (dat.IsSuccess == 1) {
                 //修改成功
-                SiteFunc.FloatOperating(".JscContactBtn,.JscLayer,.JscUpdateLayer", ".JscFloatAll,.JscSubmitPicture,.JscUploadLayer");
+                SiteFunc.FloatOperating(".JscContactBtn,.JscLayer,.JscUpdateLayer,.JscHrefContact", ".JscFloatAll,.JscSubmitPicture,.JscUploadLayer");
                 setTimeout(function () { $(".JscLayer").hide(); }, 1500);
                 _IsUploadImgLK = false;
             }
@@ -147,11 +153,11 @@ $(function () {
     }
     //点击
     //修改背景
-    $(".JscFrontCoverHerf").on("touchend", function () {
+    $(".JscFrontCoverHerf").on("click", function () {
         _Switching = false;
     })
     //修改头像
-    $(".JscHeadPortraitHerf").on("touchend", function () {
+    $(".JscHeadPortraitHerf").on("click", function () {
         _Switching = true;
     })
     //选取图片
@@ -161,11 +167,11 @@ $(function () {
         _Stage.BindSelectFileBtn(FileInput, 5);
         _Stage.OnSelectFile.Add(function (image) {
             //浮层显示出来
-            SiteFunc.FloatOperating(".JscFloatAll,.JscCoverCanvas,.JscCoverFloat,.JscSubmitPicture", ".JscContactBtn");
+            SiteFunc.FloatOperating(".JscFloatAll,.JscCoverCanvas,.JscCoverFloat,.JscSubmitPicture", ".JscContactBtn,.JscHrefContact");
         });
     }
     //背景图片修改
-    $(".JscSubmitPicture").on("touchend", function () {
+    $(".JscSubmitPicture").on("click", function () {
         SiteFunc.FloatOperating(".JscLayer,.JscUploadLayer", ".JscCoverCanvas,.JscCoverFloat,.JscUpdateLayer");
         if (_IsUploadImgLK) { return; }
         _IsUploadImgLK = true;
@@ -195,7 +201,7 @@ $(function () {
 
 
     //提交资料
-    $(".JscSubmitInformation").on("touchend", function () {
+    $(".JscSubmitInformation").on("click", function () {
         //修改昵称
         _NickName = $(".JscNameText").val();
         //修改个性签名
