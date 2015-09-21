@@ -27,6 +27,12 @@
                             <img src="images/recd-con-3.png" /></div>
                         <div class="recd-con-4">
                             <img src="images/recd-con-4.png" /></div>
+                        
+                        
+                        
+                    <div class="recd-con-5"><img  src="images/hit-img-5.png" /></div>
+                    <div class="recd-con-6"><img  src="images/hit-img-6.png" /></div>
+                    <div class="recd-con-7"><img  src="images/hit-img-7.png" /></div>
                     </div>
                     <!---------内容列表---------->
                     <div class="search-con-list list">
@@ -68,7 +74,7 @@
     <!---------------顶部搜索-------------------->
     <div class="header-search">
         <div class="search-input">
-            <input type="text" value="中国美女" placeholder="中国美女" /></div>
+            <input type="text" placeholder="中国美女" /></div>
         <div class="search-submit"><a href="javascript:void(0)"><i class="icons-seach icons-sprite" id="SeachBtn"></i></a></div>
     </div>
 </asp:Content>
