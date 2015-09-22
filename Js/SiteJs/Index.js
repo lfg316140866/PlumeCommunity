@@ -10,9 +10,9 @@
 $(function () {
     var _IndexPhoto;//照片下标
     var _WorkID;//作品ID
-
+    AnimateFrame.IsLockScenes = true;
     //////////////////////////返回/////////////////////////////////
-    $(".JscHideAllHeader").on("touchend", function () {
+    $(".JscHideAllHeader").on("click", function () {
         SiteFunc.FloatOperating(".JscHideMenu", ".JscFloatAll,.JscFloatAllHide,.JscHideAllHeader");
         $(".JscLogonPhoneText").val("");
         $(".JscLogonPassWordText").val("");
@@ -20,11 +20,11 @@ $(function () {
     })
     ///////////////////////////跳转模块///////////////////////////////////////
     //登录
-    $(".JscHomeLogonBtn").on("touchend", function () {
+    $(".JscHomeLogonBtn").on("click", function () {
         SiteFunc.FloatOperating(".JscHideAllHeader,.JscFloatAll,.JscLogonFloat", ".JscHideMenu");
     })
     //登录忘记密码
-    $(".JscForgetHref").on("touchend", function () {
+    $(".JscForgetHref").on("click", function () {
         SiteFunc.FloatOperating(".JscForgotPasswordFloat",".JscLogonFloat ");
     })
     
@@ -33,7 +33,7 @@ $(function () {
 
     /////////////////////////////登录模块////////////////////////////////////////
     //登录
-    $(".JscLogonBtn").on("touchend", function () {
+    $(".JscLogonBtn").on("click", function () {
         var _phone = $(".JscLogonPhoneText").val();
         var _passWord = $(".JscLogonPassWordText").val();
         var _checkPhone = /^0?1[3|4|5|8][0-9]\d{8}$/;
@@ -63,7 +63,7 @@ $(function () {
         })
     })
     //找回获取验证码
-    $(".JscGetVerification").on("touchend", function () {
+    $(".JscGetVerification").on("click", function () {
         var _phone = $(".JscForgotPasswordText").val();
         $(".JscVerificationText").val("");
         var _checkPhone = /^0?1[3|4|5|8][0-9]\d{8}$/;
@@ -100,7 +100,7 @@ $(function () {
     })
 
     //找回密码下一步
-    $(".JscNextBtn").on("touchend", function () {
+    $(".JscNextBtn").on("click", function () {
         var _phone = $(".JscForgotPasswordText").val();
         var _code = $(".JscVerificationText").val();
         var _checkPhone = /^0?1[3|4|5|8][0-9]\d{8}$/;
@@ -136,7 +136,7 @@ $(function () {
     })
 
     //完成修改密码
-    $(".JscResetPasswordBtn").on("touchend", function () {
+    $(".JscResetPasswordBtn").on("click", function () {
         var _passWord = $(".JscPasswordText").val();
         var _passWord2 = $(".JscConfirmText").val();
         if (_passWord == "" || _passWord == "请输入您的新密码") {
@@ -173,11 +173,11 @@ $(function () {
     })
     /////////////////////////////////注册模块//////////////////////////////////////
     //注册
-    $(".JscHomeRegisterBtn").on("touchend", function () {
+    $(".JscHomeRegisterBtn").on("click", function () {
         SiteFunc.FloatOperating(".JscHideAllHeader,.JscFloatAll,.JscRegisterFloat", ".JscHideMenu");
     })
     //注册短信验证
-    $(".JscRegisterGetVerificationeHref").on("touchend", function () {
+    $(".JscRegisterGetVerificationeHref").on("click", function () {
         var _phone = $(".JscRegisterPhoneText").val();
         var _passWord = $(".JscRegisterPassWordText").val();
         var _checkPhone = /^0?1[3|4|5|8][0-9]\d{8}$/;
@@ -197,6 +197,7 @@ $(function () {
             Cmn.alert("密码长度不够！");
             return;
         }
+
         var _param = {
             "Phone": _phone,
             "Num": ""
@@ -221,7 +222,7 @@ $(function () {
         })
     })
     //注册短信验证
-    $(".JscRegisterBtn").on("touchend", function () {
+    $(".JscRegisterBtn").on("click", function () {
         var _phone = $(".JscRegisterPhoneText").val();
         var _passWord = $(".JscRegisterPassWordText").val();
         var _code = $(".JscRegisterVerificationText").val();
@@ -264,13 +265,13 @@ $(function () {
         })
     })
     //性别选择
-    $(".JscSexSelect").on("touchend", function () {
+    $(".JscSexSelect").on("click", function () {
         $(".JscSexSelect").removeClass("select");
         $(this).eq($(this).index(this)).addClass("select");
     })
  
     //完成注册
-    $(".JscInformationBtn").on("touchend", function () {
+    $(".JscInformationBtn").on("click", function () {
         var _phone = $(".JscRegisterPhoneText").val();
         var _name = $(".JscInformationNameText").val();
         var _passWord = $(".JscRegisterPassWordText").val();
@@ -304,7 +305,7 @@ $(function () {
                 $(".JscFloatAllHide").hide();
                 $(".JscFloatAll").hide();
                 //推荐页面显示
-                SiteFunc.JumpPage("Recommend.html");
+                SiteFunc.JumpPage("Recommend.aspx");
             }
             else if (dat.IsSuccess == 0) {
                 Cmn.alert("注册手机号不一致！");
