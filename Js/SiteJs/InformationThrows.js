@@ -12,7 +12,7 @@ $(function () {
             "UserID": userid,
             "SetTable": setTable
         }
-        _Y = new CmnAjax.DataStepLoad([".JscPhotoOne"], "/Itf/CSharp/ItfOther.aspx?method=WorkeShowcase", _param, [".JscPhotoBoxOne"], 4, 6, function (dat) {
+        _Y = new CmnAjax.DataStepLoad([".JscPhotoOne"], "/Itf/CSharp/ItfOther.aspx?method=WorkeShowcase", _param, [".JscPhotoBoxOne"], 4, 9, function (dat) {
             _Y.BindScrollLoadData(".JscPhotoBoxOne");
             //点击跳转详情页面
             $(".JscPhotoOne").on("click", function () {
@@ -28,7 +28,7 @@ $(function () {
             "UserID": userid,
             "SetTable": setTable
         }
-        _X = new CmnAjax.DataStepLoad([".JscPhotoTwo"], "/Itf/CSharp/ItfOther.aspx?method=WorkeShowcase", _param, [".JscPhotoBoxTwo"], 4, 6, function (dat) {
+        _X = new CmnAjax.DataStepLoad([".JscPhotoTwo"], "/Itf/CSharp/ItfOther.aspx?method=WorkeShowcase", _param, [".JscPhotoBoxTwo"], 4, 9, function (dat) {
             _X.BindScrollLoadData(".JscPhotoBoxTwo");
             //点击跳转详情页面
             $(".JscPhotoTwo").on("click", function () {
