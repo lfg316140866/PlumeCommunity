@@ -6,6 +6,21 @@
 /// <reference path="Private.js" />
 /// <reference path="SiteFunc.js" />
 /// <reference path="Recommend.js" />
+CallJsApiWXConfigItf("JsApiWXConfig.aspx");
+
+$(function() {
+    SiteFunc.SetBottomNav();
+});
+
+$.prototype.SgVisible = function () {
+    $(this).css("visibility", "visible");
+    return $(this);
+}
+
+$.prototype.Sghidden = function () {
+    $(this).css("visibility", "hidden");
+    return $(this);
+}
 
 //公共方法库
 (SiteFunc = new function () {
@@ -51,7 +66,7 @@
     this.JumpPage = function (url, returnUrl) {
         if (returnUrl == "" || returnUrl==undefined) {
             if (location.href.indexOf("returnurl") > 0) {
-                returnUrl = (location.href).substring(0, (location.href).indexOf("returnurl"));
+                returnUrl = (location.href).substring(0, (location.href).indexOf("returnurl")-1);
             }
             else {
                 returnUrl = location.href;
@@ -68,29 +83,47 @@
         var _url;
         if (location.href.indexOf("?") > 0) {
             _url = (location.href).substring(0, location.href.indexOf("?"));
-            _url = "/Personal.html?uid=" + uid + "&returnurl=" + _url + ""
+            _url = "/Personal.aspx?uid=" + uid + "&returnurl=" + _url + "";
             location.href = ((_url).replace(/\?/g, "&")).replace('&', '?');
         }
         else {
-            _url = "/Personal.html?uid=" + uid + "&returnurl=" + location.href + "";
+            _url = "/Personal.aspx?uid=" + uid + "&returnurl=" + location.href + "";
             location.href = ((_url).replace(/\?/g, "&")).replace('&', '?');
         }
     }
     //分享
-    this.Share = function () {
-        var _title = "C4L";
-        var _sharePic = "http://" + Cmn.Func.GetMainDomain(location.href) + "/images/ShareImg.jpg";
-        var _shareOnlyUrl = "http://" + Cmn.Func.GetMainDomain(location.href) + "/";
-        var _SinaShare = 'http://service.weibo.com/share/share.php?title=' + encodeURIComponent(_title) + '&url=' + _shareOnlyUrl + '&source=&appkey=&pic=' + _sharePic;
-        $("#sinaShare").attr("href", _SinaShare);
-        var _renrenShare = 'http://s.jiathis.com/?webid=renren&title=&summary=' + encodeURIComponent(_title) + '&url=' + _shareOnlyUrl + '&pic=' + _sharePic;
-        $("#renrenShare").attr("href", _renrenShare);
-        var _tenxunShare = "http://share.v.t.qq.com/index.php?c=share&a=index&title=" + encodeURIComponent(_title) + "&url=" + _shareOnlyUrl + "&site=&pic=" + _sharePic;
-        $("#tenxunShare").attr("href", _tenxunShare);
-        var _kaixinShare = 'http://www.kaixin001.com/rest/records.php?webid=kaixin&title=&content=' + encodeURIComponent(_title) + '&pic=' + _sharePic + '&starid=&aid=&style=11&t=10&url=' + _shareOnlyUrl;
-        $("#kaixinShare").attr("href", _kaixinShare);
-        var _souhuShare = 'http://t.sohu.com/third/post.jsp?title=' + encodeURIComponent(_title) + '&pic=' + _sharePic + '&url=' + _shareOnlyUrl;
-        $("#souhuShare").attr("href", _souhuShare);
+    this.Share = function (url) {
+        var _url = url;
+        if (_url == "" || _url == undefined) {
+            if (location.href.indexOf("returnurl") > 0) {
+                _url = (location.href).substring(0, (location.href).indexOf("returnurl")-1);
+            } else {
+                _url = location.href;
+            }
+        }
+        if (Cmn.Func.IsWeiXin()) {
+            console.log("WXShare");
+            $(".success-float .success-arrow2").show();
+            $(".success-float .success-arrow").hide();
+            SetWechatShare("羽西", "羽西", _url, "images/bg/land_bg.jpg", function () {
+                $(".success-float,.pop-float").hide();
+                console.log("WXShareSuccess");
+            });
+        } else {
+            $(".success-float .success-arrow").show();
+            $(".success-float .success-arrow2").hide();
+            console.log("heheShare");
+        }
+        if (window.location.href.split("?")[0].indexOf("Release") >= 0) {
+            $(".success-float .success-tip").show();
+        } else {
+            $(".success-float .success-tip").hide();
+        }
+        $(".success-float .success-text").show();
+        $(".success-float,.pop-float").show();
+        $(".success-float").off().on("click", function() {
+            $(".success-float,.pop-float").hide();
+        });
     }
 
     this.BackBtnBind= function (func) {
@@ -102,9 +135,25 @@
         } else {
             _returnBtn.show();
         }
-        _returnBtn.off().on("touchend", function () {
+        _returnBtn.off().on("click", function () {
             func && func();
         });
     }
+
+    this.SetBottomNav=function (ReturnUrl) {
+        var _returnUrl = ReturnUrl || location.href.indexOf("returnurl") >= 0 ? location.href.substring(0, location.href.indexOf("returnurl") - 1) : location.href;
+        $(".footer-nav a").each(function() {
+            var _href = $(this).attr("href").toString().split("?")[0];
+            if (location.host+"/"+_href != _returnUrl.split("?")[0]) {
+                _href += "?returnurl=" + encodeURIComponent(_returnUrl);
+            } else {
+                _href = _returnUrl;
+            }
+            $(this).attr("href", _href);
+        });
+
+    }
 });
+
+
 

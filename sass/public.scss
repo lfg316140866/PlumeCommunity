@@ -5,16 +5,16 @@
 @import "compass/layout";
 @import "compass/support";
 %vertically{@extend %inline-block;vertical-align:middle;}
-%round{@include prefixer(border-radius,50%);}
+%round{@include prefixer(border-radius,$Width/2);}
 %center{text-align:center;}
 .icons-sprite{background: inline_image('icon/synthesis-sf63c082d5a.png') no-repeat;}
-%footer-navbar{position:fixed;left:0;bottom:0;width:$Width;background:rgba(0,0,0,0.85);height:115px;}
+%footer-navbar{position:fixed;left:0;bottom:0;width:$Width;background:$Shadow-Color;height:115px;}
 /*********************顶部菜单************************/
 .header-box{position:fixed;top:0;left:0;z-index:10000000;height:66px;background-color:$Color-Black;@include legacy-pie-clearfix();width:$Width;
   .return-btn{@include float();margin-left:18px;width:65px;height:65px;
     .icons-return{width: 19px;height:32px;background-position:-211px 0px;}
   }
-   p{color:$Color-White;position:absolute;margin-left:250px;margin-top:15px;}
+  p{color:$Color-White;position:absolute;margin-left:250px;margin-top:15px;}
   .search-btn{@include float(right);width:105px;height:65px;margin-right:15px;text-align:right;
     i.icons-seach{width:37px;height:36px;background-position:-238px 0px;}
     i.icons-correct{width:35px;height:29px;background-position:-106px 0px;}
@@ -29,7 +29,7 @@
 /*********************顶部搜索************************/
 .header-search{@extend .header-box; display:block;height:90px;
   .search-input{@include float();width:502px;height:66px;margin-left:12px;margin-top:12px;
-     input{@include form-box(30px,66px,36px,$Color-Black);width:466px;}
+    input{@include form-box(30px,66px,36px,$Color-Black);width:466px;}
   }
   .search-submit{@include float(right);width:125px;height:90px;@extend %center;
     a{@include font-style($Text-Font-Size,$Color-White,null);line-height:90px;
@@ -45,13 +45,15 @@
   .footer-nav{@extend %wh100;@include legacy-pie-clearfix();
     li{@include float();width:20%;height:$Height;@extend %center;
       a{color:$Color-White;
+        .more-msg{@include inline-block();width:10px;height:10px;@extend %round;background:$Bg-Btn;margin-top:35px;position:absolute;margin-left: 60px;}
         i{width:55px;height:55px;@extend %vertically;margin-top:15px;}
         span{@include font-style(20px,null,null);display:block;margin-top:10px;letter-spacing:2px;}
         .bar-bg{background-color:lighten($Color-Black,51.37255%);width:110px;height:70px;@include prefixer(border-radius,10px);@extend %inline-block;line-height:70px;
-           i{margin-top:-15px;}
+          i{margin-top:-15px;}
         }
       }
       a.update{padding-top:15px;font-size:55px;color:$Bg-Btn;}
+      a.select .more-msg{background-color:$Color-White;}
     }
     @for $i from 1 through 5{
       @if $i ==3 {
@@ -102,9 +104,9 @@
 /*********************浮层************************/
 .pop-float{@include pop(0.7);}
 .info-box{width:476px;@extend %center;@extend %center-block;
-   .pub-input{@include form-box(30px,76px,20px,$Color-Primary);width:456px;margin-bottom:25px;}
-   button{background-color:$Bg-Btn;@include form-box($TextSize,100px,null,$Color-White);width:476px;}
-   .forget-password{@include font-style($Main-Font-Size,lighten($Color-Black,81.17647%),null);margin-top:65px;text-align:right;}
+  .pub-input{@include form-box(30px,76px,20px,$Color-Primary);width:456px;margin-bottom:25px;}
+  button{background-color:$Bg-Btn;@include form-box($TextSize,100px,null,$Color-White);width:476px;}
+  .forget-password{@include font-style($Main-Font-Size,lighten($Color-Black,81.17647%),null);margin-top:65px;text-align:right;}
 }
 h1.tip-box{@include font-style(50px,$Color-White,null);margin-top:212px;@extend %center;margin-bottom:88px;}
 
@@ -113,22 +115,22 @@ h1.tip-box{@include font-style(50px,$Color-White,null);margin-top:212px;@extend 
 
 /*************注册**************/
 .register-float{display:none;
-    input{font-size:$Font-Size!important;}
-    .get-code{background-color:$Btn-Color;color:$Color-White!important;text-indent:-20px;margin-bottom:50px!important;display:block;}
-    .code-time{@include font-style($TextSize,lighten($Color-Black,35.88235%),null);position: absolute;margin: 10px 0px 0px -70px;}
-    .code-box{display: none;}
+  input{font-size:$Font-Size!important;}
+  .get-code{background-color:$Btn-Color;color:$Color-White!important;text-indent:-20px;margin-bottom:50px!important;display:block;}
+  .code-time{@include font-style($TextSize,lighten($Color-Black,35.88235%),null);position:absolute;margin:10px 0px 0px -70px;}
+  .code-box{display:none;}
 }
 
 /*************注册完成**************/
 .register-finish-float{display:none;
   h1{margin-bottom:0;}
   small{@include font-style($Font-Size,$Color-White,null);@extend %center;display:block;margin-bottom: 60px;}
-  .sex-select{margin: 30px 0px 55px 0px;
+  .sex-select{margin:30px 0px 55px 0px;
     span{@include font-style($Main-Font-Size,$Color-White,null);@extend %inline-block;
-      a{@extend %inline-block;vertical-align: -6px;}
-      a.sex-man{width:44px;height:44px;background-position: -1870px 0px;}
-      a.sex-wonmen{width:33px;height:45px;background-position: -2015px 0px;}
-      i{@extend %inline-block;font-style:normal;margin-right: 10px;}
+      a{@extend %inline-block;vertical-align:-6px;}
+      a.sex-man{width:44px;height:44px;background-position:-1870px 0px;}
+      a.sex-wonmen{width:33px;height:45px;background-position:-2015px 0px;}
+      i{@extend %inline-block;font-style:normal;margin-right:10px;}
     }
     span.select a.sex-man{background-position:-1922px 0px;}
     span.select a.sex-wonmen{background-position:-2056px 0px;}
@@ -136,8 +138,8 @@ h1.tip-box{@include font-style(50px,$Color-White,null);margin-top:212px;@extend 
     span:nth-last-child(2){margin-right:20px;}
   }
   .verify-name{@extend %inline-block;position:absolute;width:31px;height:31px;@extend %round;margin:-80px 0px 0px 190px;@include font-style($Text-Font-Size,$Color-White,$Bg-Btn);
-     .correct{}
-     .error{display:none;}
+    .correct{}
+    .error{display:none;}
   }
 }
 
@@ -146,30 +148,31 @@ h1.tip-box{@include font-style(50px,$Color-White,null);margin-top:212px;@extend 
 
 /*************验证身份**************/
 .verify-identity-float{@extend .register-float;display:none;
-     .code-identity{display:none;}
-     .id-code{display: block;}
+  .code-identity{display:none;}
+  .id-code{display: block;}
 }
 
 
 /*************发布成功浮层**************/
 .success-float{display:none;
-  .success-arrow{@include horizontal-center(520px,37px);}
+  .success-arrow{@include horizontal-center(520px,37px);display:none;}
+  .success-arrow2{@include position(40px,490px);display:none;}
   .success-tip{@include horizontal-center(205px,242px);}
   .success-text{@include horizontal-center(310px,454px)}
 }
 
 /*************修改个人信息浮层**************/
-.info-float{display:none;@include horizontal-center(360px,490px);background-color: $Color-White;@include prefixer(border-radius,10px);
+.info-float{display:none;@include horizontal-center(360px,490px);background-color:$Color-White;@include prefixer(border-radius,10px);
   .float-submit-btn{@extend %center;width:114px;height:48px;@extend %center-block;margin-bottom:40px;
     a{@include font-style($Text-Font-Size,$Color-White,$Bg-Btn);line-height:48px;}
   }
   .float-close-btn{@include position-right(-15px,-15px);
-    a{width: 34px;height: 34px;background-position:-367px 0px;}
+    a{width: 34px;height: 34px;background-position:-1002px 0px;}
   }
 }
 
 /*******性别********/
-.gender-box{display:none;margin-top:75px;font-size: 0;margin-bottom: 60px;
+.gender-box{display:none;margin-top:75px;font-size:0;margin-bottom:60px;
   >div{@extend %inline-block;@extend %center;}
   .gender-man{margin-left: 156px;}
   .gender-wonmen{margin-left: 104px;}
@@ -178,14 +181,14 @@ h1.tip-box{@include font-style(50px,$Color-White,null);margin-top:212px;@extend 
   i.set-wonmen{width: 33px;height: 45px;background-position:-2015px 0px;}
   a.select i.set-man{background-position:-1922px 0px;}
   a.select i.set-wonmen{background-position:-2056px 0px;}
-  span{@include font-style($Font-Size,lighten($Color-Black,17.2549%),null);display: block;}
+  span{@include font-style($Font-Size,lighten($Color-Black,17.2549%),null);display:block;}
 }
 
 
 /*******个性签名********/
 .signature-box{display:none;margin-top:22px;height:175px;margin-bottom:27px;
   .signature-con{@extend %wh100;
-    textarea{@include font-style($Text-Font-Size,$Color-Primary,null);padding: 15px;width: 460px;height: 145px;background-color:lighten($Color-Black,96.86275%);}
+    textarea{@include font-style($Text-Font-Size,$Color-Primary,null);padding:15px;width:460px;height:145px;background-color:lighten($Color-Black,96.86275%);}
   }
 }
 
@@ -211,19 +214,46 @@ h1.tip-box{@include font-style(50px,$Color-White,null);margin-top:212px;@extend 
 
 /*******更改封面浮层********/
 .change-cover-float{display:block;
-   .change-cover{@include position(260px);background: rgba(0,0,0,0.8);width:$Width;height:490px;}
+  .change-cover{@include position(260px);background:$Shadow-Color;width:$Width;height:490px;}
 }
 
 /*************剪纸选择浮层**************/
 .papercut-float{@include pop(0.85,none,$Color-White);
-   .papercut-box{width: $Width;height: 620px;}
-   .papercut-bar{width:$Width;@include legacy-pie-clearfix;
-       @at-root .icons-returns{@include float();background: transparent;margin-left:20px;
-         em{padding: 40px;background-color:#d6d6d6;@extend %inline-block;
-           i{@extend %inline-block;background-position:-2167px 0px;width:50px;height:52px;}
-         }
-         span{@include font-style($Font-Size,$Color-Black,null);display: block;}
-       }
-      .papercut-nav{padding:20px;margin:-20px 0 0 140px;max-width:460px; }
+  .papercut-box{width:$Width;height:620px;margin-top:66px;overflow:hidden;
+    .sticker-box{display:none;overflow-y:auto;height:$Height;
+      ul{@include legacy-pie-clearfix;
+        li{@include float();width:$Width/2;
+          img{display:block;width:$Width;}
+        }
+      }
+    }
+  }
+  .papercut-bar{@include legacy-pie-clearfix;overflow-x:auto;@extend %scrolling;
+    @at-root .icons-returns{@include float();background:transparent;margin-left:20px;
+      em{padding: 40px;background-color:lighten($Color-Black,80%);@extend %inline-block;
+        i{@extend %inline-block;background-position:-2167px 0px;width:50px;height:52px;}
+      }
+      span{@include font-style($Font-Size,$Color-Black,null);display:block;}
+    }
+    .papercut-nav{padding:20px;margin:-20px 0 0 130px;}
+  }
+}
+
+/************表情符号浮层**************/
+.expression-float{display:none;bottom:75px;height:270px;z-index:1000;@extend %footer-navbar;
+  .expression-box{@extend %wh100;position:relative;overflow:hidden;
+    ul{@include legacy-pie-clearfix;
+      li{@include float();
+        img{width:30px;display:block}
+      }
+    }
+    .expression-nav{padding-left:30px;margin-top:20px;
+      li{margin-right:20px;}
+    }
+    .expression-bar{padding:20px;position:relative;overflow:hidden;height:200px;padding-top:10px;
+      li{@extend %wh100;@extend %center;@include legacy-pie-clearfix;
+        a{margin:10px;@include float();width:31px;height:34px;font-size:$Font-Size;}
+      }
+    }
   }
 }

@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no;" />
+    <link href="css/load.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/public.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <script src="Js/ThirdLib/jquery.js"></script>
+    <script src="Js/jquery.easing.min.js"></script>
+    <script src="Js/Cmn.js"></script>
+    <script src="Js/CmnAjax.js"></script>
+    <script src="Js/jquery.mCustomScrollbar.js"></script>
+    <script src="Js/CmnFuncExd.js"></script>
+    <script src="Js/jquery.cycle.all.js"></script>
+    <script src="Js/CmnTools/WechatShare.js"></script>
+    <script src="Js/SiteJs/Site.js"></script>
+    <title>羽茜社区</title>
+    <style>
+        #Comment_Input {
+            width: 400px;
+            min-height: 50px;
+            border: solid 1px #b4b4b4;
+            margin-right: 10px;
+            font-size: 26px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="Wrap">
+        <div class="Main">
+            <!--首页-->
+            <div class="list" id="list">
+                <!--<div class="Bg"><img  src="images/load.png" lazypath="images/bg/home_bg.jpg" /></div>-->
+                <div class="Inner">
+                    <div class="desc-box list-box">
+                        <div class="con-bar con-box">
+                            <div class="con-tip">
+                                <div class="avatar-left">
+                                    <p><img src="images/master-img.png" /></p>
+                                    <span class="publisher general-font">Alex Tan</span>
+                                    <em class="release-time">1小时前</em>
+                                </div>
+                                <div class="contract-right">
+                                    <!--点击查看详情添加select(没关注好友)-->
+                                    <i class="icons-attention icons-sprite"></i>
+                                    <!--关注好友后下面icon显示-->
+                                    <i class="icons-ok icons-sprite"></i>
+                                    <!--我发布下面icon显示-->
+                                    <i class="icon-trash"></i>
+                                </div>
+                            </div>
+                            <div class="con-item">
+                                <div class="con-des">
+                                    <img src="images/master-img-1.png" />
+                                    <div class="choose-desc">
+                                        <span class="attention-desc-text">辛MM的中国范</span>
+                                        <b class="attention-arrow"></b>
+                                        <i class="round"></i>
+                                    </div>
+                                </div>
+                                <div class="con-features">
+                                    <ul class="con-nav">
+                                        <li><a href="javascript:void(0)" class="btn-sprite"></a></li>
+                                        <li><a href="javascript:void(0)" class="btn-sprite"></a></li>
+                                        <li><a href="javascript:void(0)" class="btn-sprite"></a></li>
+                                        <li><a href="javascript:void(0)" class="btn-sprite"></a></li>
+                                    </ul>
+                                </div>
+                                <div class="comment-list">
+                                    <!--list-desc为一条评论信息-->
+                                    <div class="list-desc">
+                                        <span class="comment-face"><img src="images/master-img-1.png" /></span>
+                                        <em class="comment-name general-font center-vertical">章三道:</em>
+                                        <strong class="comment-des general-font center-vertical" contenteditable="true">过法国风格放大</strong>
+                                    </div>
+                                    <!--list-desc为一条评论信息-->
+                                    <div class="list-desc">
+                                        <span class="comment-face"><img src="images/master-img-1.png" /></span>
+                                        <em class="comment-name general-font center-vertical">章三道:</em>
+                                        <strong class="comment-des general-font center-vertical">过法国风格放大</strong>
+                                    </div>
+                                    <!--list-desc为一条评论信息-->
+                                    <div class="list-desc">
+                                        <span class="comment-face"><img src="images/master-img-1.png" /></span>
+                                        <em class="comment-name general-font center-vertical">章三道:</em>
+                                        <strong class="comment-des general-font center-vertical">过法国风格放大</strong>
+                                    </div>
+                                    <!--list-desc为一条评论信息-->
+                                    <div class="list-desc">
+                                        <span class="comment-face"><img src="images/master-img-1.png" /></span>
+                                        <em class="comment-name general-font center-vertical">章三道:</em>
+                                        <strong class="comment-des general-font center-vertical">过法国风格放大</strong>
+                                    </div>
+                                    <!--list-desc为一条评论信息-->
+                                    <div class="list-desc">
+                                        <span class="comment-face"><img src="images/master-img-1.png" /></span>
+                                        <em class="comment-name general-font center-vertical">章三道:</em>
+                                        <strong class="comment-des general-font center-vertical">过法国风格放大</strong>
+                                    </div>
+                                    <!--list-desc为一条评论信息-->
+                                    <div class="list-desc">
+                                        <span class="comment-face"><img src="images/master-img-1.png" /></span>
+                                        <em class="comment-name general-font center-vertical">章三道:</em>
+                                        <strong class="comment-des general-font center-vertical">过法国风格放大</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="report"><a href="javascript:void(0)" class="general-font">举报</a></div>
+                        <div class="comment-input">
+                            <span class="expression icons-sprite" style="position: absolute; bottom: 18px;"></span>
+
+                            <div id="Comment_Input" placeholder="我也说一句" contenteditable="true" style="display: inline-block; position: absolute; left: 73px; line-height: 49px">
+                            </div>
+                            <button class="reviews-btn general-font" style="position: absolute; left: 518px; bottom: 13px;">
+                                评论
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!--Main_end-->
+    </div><!--Wrap_end-->
+    <div class="expression-float" style="display: block">
+        <div class="expression-box">
+            <ul class="expression-bar">
+                <li>
+                    undefined<a href="javascript:void(0)">&#x0031;&#x20E3;</a><a href="javascript:void(0)">&#x0032;&#x20E3;</a><a href="javascript:void(0)">&#x0033;&#x20E3;</a><a href="javascript:void(0)">&#x0034;&#x20E3;</a><a href="javascript:void(0)">&#x0035;&#x20E3;</a><a href="javascript:void(0)">&#x0036;&#x20E3;</a><a href="javascript:void(0)">&#x0037;&#x20E3;</a><a href="javascript:void(0)">&#x0038;&#x20E3;</a><a href="javascript:void(0)">&#x0039;&#x20E3;</a><a href="javascript:void(0)">&#x0030;&#x20E3;</a><a href="javascript:void(0)">&#x0023;&#x20E3;</a><a href="javascript:void(0)">&#x2B06;</a><a href="javascript:void(0)">&#x2B07;</a><a href="javascript:void(0)">&#x2B05;</a><a href="javascript:void(0)">&#x27A1;</a><a href="javascript:void(0)">&#x2197;</a><a href="javascript:void(0)">&#x2196;</a><a href="javascript:void(0)">&#x2198;</a><a href="javascript:void(0)">&#x2199;</a><a href="javascript:void(0)">&#x25C0;</a><a href="javascript:void(0)">&#x25B6;</a><a href="javascript:void(0)">&#x23EA;</a><a href="javascript:void(0)">&#x23E9;;</a><a href="javascript:void(0)">&#x1F197;</a><a href="javascript:void(0)">&#x1F195;</a><a href="javascript:void(0)">&#x1F51D;</a><a href="javascript:void(0)">&#x1F199;</a><a href="javascript:void(0)">&#x1F192;</a><a href="javascript:void(0)">&#x1F3A6;</a><a href="javascript:void(0)">&#x1F201;</a><a href="javascript:void(0)">&#x1F4F6;</a><a href="javascript:void(0)">&#x1F235;</a><a href="javascript:void(0)">&#x1F233;</a><a href="javascript:void(0)">&#x1F250;</a><a href="javascript:void(0)">&#x1F239;</a><a href="javascript:void(0)">&#x1F22F;</a><a href="javascript:void(0)">&#x1F23A;</a><a href="javascript:void(0)">&#x1F236;</a><a href="javascript:void(0)">&#x1F21A;</a><a href="javascript:void(0)">&#x1F237;</a><a href="javascript:void(0)">&#x1F238;</a><a href="javascript:void(0)">&#x1F202;</a><a href="javascript:void(0)">&#x1F6BB;</a><a href="javascript:void(0)">&#x1F6B9;</a><a href="javascript:void(0)">&#x1f6ba;</a><a href="javascript:void(0)">&#x1f6bc;</a><a href="javascript:void(0)">&#x1f6ad;</a><a href="javascript:void(0)">&#x1f17f;</a><a href="javascript:void(0)">&#x267F;;</a><a href="javascript:void(0)">&#x1f687;</a><a href="javascript:void(0)">&#x1f6be;</a><a href="javascript:void(0)">&#x3299;;</a><a href="javascript:void(0)">&#x3297;;</a><a href="javascript:void(0)">&#x1f51e;</a><a href="javascript:void(0)">&#x1f194;</a><a href="javascript:void(0)">&#x2733;;</a><a href="javascript:void(0)">&#x2734;;</a><a href="javascript:void(0)">&#x1F49F;</a><a href="javascript:void(0)">&#x1F19A;</a><a href="javascript:void(0)">&#x1F4F3;</a><a href="javascript:void(0)">&#x1F4F4;</a><a href="javascript:void(0)">&#x1F4B9;</a><a href="javascript:void(0)">&#x1F4B1;</a><a href="javascript:void(0)">&#x2648;;</a><a href="javascript:void(0)">&#x2649;;</a><a href="javascript:void(0)">&#x264A;;</a><a href="javascript:void(0)">&#x264B;;</a><a href="javascript:void(0)">&#x264C;;</a><a href="javascript:void(0)">&#x264D;;</a><a href="javascript:void(0)">&#x264E;;</a><a href="javascript:void(0)">&#x264F;;</a><a href="javascript:void(0)">&#x2650;;</a><a href="javascript:void(0)">&#x2651;;</a><a href="javascript:void(0)">&#x2652;;</a><a href="javascript:void(0)">&#x2653;;</a><a href="javascript:void(0)">&#x26CE;;</a><a href="javascript:void(0)">&#x1F52F;</a><a href="javascript:void(0)">&#x1F170;</a><a href="javascript:void(0)">&#x1F171;</a><a href="javascript:void(0)">&#x1F18E;</a><a href="javascript:void(0)">&#x1F17E;</a><a href="javascript:void(0)">&#x1F532;</a><a href="javascript:void(0)">&#x1F534;</a><a href="javascript:void(0)">&#x1F533;</a><a href="javascript:void(0)">&#x1F55B;</a><a href="javascript:void(0)">&#x1F550;</a><a href="javascript:void(0)">&#x1F551;</a><a href="javascript:void(0)">&#x1F552;</a><a href="javascript:void(0)">&#x1F553;</a><a href="javascript:void(0)">&#x1F554;</a><a href="javascript:void(0)">&#x1F555;</a><a href="javascript:void(0)">&#x1F556;</a><a href="javascript:void(0)">&#x1F557;</a><a href="javascript:void(0)">&#x1F558;</a><a href="javascript:void(0)">&#x1F559;</a><a href="javascript:void(0)">&#x1F55A;</a><a href="javascript:void(0)">&#x2B55;;</a><a href="javascript:void(0)">&#x274C;;</a><a href="javascript:void(0)">&#x00A9;;</a><a href="javascript:void(0)">&#x00AE;</a><a href="javascript:void(0)">&#x2122;</a>        </li>
+            </ul>
+        </div>
+    </div>
+
+    <!---------------顶部菜单-------------------->
+    <div class="header-box">
+        <div class="return-btn"><a href="javascript:void(0)"><i class="icons-return icons-sprite"></i></a></div>
+        <div class="search-btn"><a href="javascript:void(0)"><i class="icons-seach icons-sprite"></i></a></div>
+    </div>
+
+    <script>
+        Cmn.Func.MobileAdaptive(640, 1008, "images/AdviseVertical.png", Cmn.Func.MobileAdaptiveMode.WidthHeight);
+    </script>
+</body>
+</html>
+

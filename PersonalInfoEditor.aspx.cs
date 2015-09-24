@@ -9,6 +9,7 @@ public partial class PersonalInfoEditor : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Master.SetTitle("羽茜社区");
+        Master.SetColor("Personal");
     }
 }
