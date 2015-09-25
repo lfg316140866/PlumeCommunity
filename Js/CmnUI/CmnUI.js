@@ -1,1 +1,1698 @@
-﻿Cmn_UI_Version = "2.0", function (a, b) { var c = a.Cmn, d = a.CmnAjax; c || alert("为引用Cmn"), c.UI || (c.UI = {}), c.UI.BasPlugin = function (a) { this.Resources = a || [], this.RootPath = c.Func.GetJsPath("Cmn.js"), this.Load() }, c.UI.BasPlugin.prototype.Load = function () { var a, b; if (!(this.Resources.length < 1)) for (d || c.alert("CmnAjax.js 未引用！"), a = 0; a < this.Resources.length; a++) b = this.RootPath + this.Resources[a], d.GetFile && d.GetFile(b, function () { }, !1) }, $.extend(c.UI, { CanTouch: c.Func.IsMobile(), CanHtml5: "undefined" != typeof Worker, KeyCode: { BACKSPACE: 8, COMMA: 188, DELETE: 46, DOWN: 40, END: 35, ENTER: 13, ESCAPE: 27, HOME: 36, LEFT: 37, NUMPAD_ADD: 107, NUMPAD_DECIMAL: 110, NUMPAD_DIVIDE: 111, NUMPAD_ENTER: 108, NUMPAD_MULTIPLY: 106, NUMPAD_SUBTRACT: 109, PAGE_DOWN: 34, PAGE_UP: 33, PERIOD: 190, RIGHT: 39, SPACE: 32, TAB: 9, UP: 38 }, EventType: { Mousedown: c.Func.IsMobile() ? "touchstart" : "mousedown", Mousemove: c.Func.IsMobile() ? "touchmove" : "mousemove", Mouseup: c.Func.IsMobile() ? "touchend" : "mouseup" }, StopBubble: function (b) { b && b.stopPropagation ? b.stopPropagation() : a.event.cancelBubble = !0 }, StopDefault: function (b) { return b && b.preventDefault ? b.preventDefault() : a.event.returnValue = !1, !1 }, GetSelectorName: function (a) { return a.replace(/[\s\S]*([\.]|[\#])/g, "") }, FrameAnimation: function (b, c) { return new function () { var e, f, g, d = this; d.frames = $(b), d.index = 0, d.timer = 0, e = d.frames.length, f = c / e, g = "ASC", _isStop = !0, d.frames.length < 1 || (d.onStop = function () { }, d.Init = function () { a.clearInterval(d.timer), d.frames.eq(d.index).show().siblings().hide(), _isStop = !0 }, d.Play = function () { this.PlayToStop() }, d.Stop = function () { a.clearInterval(d.timer) }, d.PlayToStop = function (b, c) { var i, h = e; b && (h = b), i = h - d.index, i && (g = 0 > i ? "DESC" : "ASC", i = Math.abs(i), c && (f = c / i), a.clearInterval(d.timer), d.timer = a.setInterval(function () { if ("ASC" == g) { if (d.index++, d.index > h) return d.index = h, a.clearInterval(d.timer), void 0 } else if (d.index--, d.index < h) return d.index = h, a.clearInterval(d.timer), void 0; d.frames.eq(d.index).show().siblings().hide() }, f)) }, d.Init()) } }, Drag: function (b, d) { function n(b) { function d(a) { c.UI.StopBubble(a), c.UI.StopDefault(a), k = h.getMousePoint(a); var b = {}, d = !1; return i.left = l.left + k.x - m.x, i.top = l.top + k.y - m.y, i.right = _dragWidth + i.left, i.bottom = i.top + _dragHeight, "x" == f.axis ? b.left = i.left + "px" : "y" == f.axis ? b.top = i.top + "px" : (b.left = i.left + "px", b.top = i.top + "px"), f.containment ? (j.left <= i.left && j.right >= i.right || "y" == f.axis) && (j.top <= i.top && j.bottom >= i.bottom || "x" == f.axis) && (d = !0) : d = !0, d && f.onMove.call(f.drag.css(b), h.getMousePoint(a)), !1 } function n() { $(a).off(c.UI.EventType.Mouseup), $(f.dragParent).off(c.UI.EventType.Mousemove), l = { left: 0, top: 0 }, g = !1, f.onEnd.call(f.drag) } return c.UI.StopBubble(b), c.UI.StopDefault(b), g ? !1 : (g = !0, f.drag = $(this), j = { left: 0, right: $(f.containment).width(), top: 0, bottom: $(f.containment).height() }, i = { left: 0, right: 0, top: 0, bottom: 0 }, _dragWidth = f.drag.width(), _dragHeight = f.drag.height(), f.containment = $(f.containment), m = h.getMousePoint(b), l = f.drag.position(), f.onStart.call(f.drag, h.getMousePoint(b)), $(f.dragParent).off(e.EventType.Mousemove).on(e.EventType.Mousemove, d), $(a).off(e.EventType.Mouseup).on(e.EventType.Mouseup, n), void 0) } var e = this, f = $.extend({ dragParent: $("body"), containment: $("body"), drag: b, axis: "", onStart: function () { }, onMove: function () { }, onEnd: function () { } }, d), g = !1, h = { getMousePoint: function (a) { return a = event.touches ? event.touches[0] : a, { x: a.pageX, y: a.pageY } } }, i = null, j = null, k = { x: 0, y: 0 }, l = { x: 0, y: 0 }, m = { x: 0, y: 0 }; $(f.containment).find(f.drag).css("position", "absolute"), $(f.dragParent).undelegate(f.drag, e.EventType.Mousedown, n).delegate(f.drag, e.EventType.Mousedown, n) }, CustomScroll: function (b, d) { return new function () { var e = this, f = $(b), g = $("<div>").css({ height: "100%", width: "100%", overflow: "hidden", position: "relative" }).html(f.html()).addClass("cmn-scrollContent").appendTo(f.empty()), h = $.extend({ selector: { ScrollBar: ".cmn-ScrollBar", BarBtn: ".cmn-ScrollBarBtn" }, rollStyle: "", dragBarAutoSize: !1, orientation: -1, scrollWidth: g.prop("scrollWidth"), scrollHeight: g.prop("scrollHeight"), onScrollBarDown: function () { }, onScrollBarUp: function () { }, onStart: function () { }, onMove: function () { }, onEnd: function () { } }, d), i = f.find(h.selector.ScrollBar), j = f.find(h.selector.BarBtn), k = i.outerHeight(!0), m = (i.outerWidth(!0), j.outerHeight(!0)), o = (j.outerWidth(!0), f.innerHeight()), q = (f.innerWidth(), 10), r = 0, s = 0, t = 0; return f.length > 1 ? (alert("滚动条容器冲突！请检查！"), void 0) : h.scrollHeight - o <= 0 ? (i.hide(), void 0) : (i.show(), f.append(i), k = o - 2 * parseInt(i.css("top")), i.height(k), h.dragBarAutoSize && (m = k / h.scrollHeight * m, m = 30 > m ? 30 : m, j.height(m)), e.Scrollfn = { roll: function (a) { r = a || r, j.css("top", r), s = (h.scrollHeight - o) / (k - m) * r, Math.abs(t - s) > q / 2 ? g.stop(!0, !1).animate({ scrollTop: s }, 300, h.rollStyle, function () { t = g.scrollTop() }) : g.stop(!0, !1).scrollTop(s), t = s }, MouseDown: function (a) { r = a.y - m / 2, q > k - r - m ? r = k - m : 0 >= r - q && (r = 0), this.roll() } }, i.off(c.UI.EventType.Mousedown).on(c.UI.EventType.Mousedown, function (b) { if (3 != b.which) { b = b || a.event; var d = { y: b.offsetY || b.originalEvent.layerY, x: b.offsetX || b.originalEvent.layerX }; return e.Scrollfn.MouseDown(d), h.onScrollBarDown(b), c.UI.StopBubble(b) } }), i.off(c.UI.EventType.Mouseup).on(c.UI.EventType.Mouseup, function (a) { h.onScrollBarUp(a) }), c.UI.Drag(j, { containment: i, axis: "y", onStart: function () { h.onStart() }, onMove: function () { e.Scrollfn.roll(this.position().top), h.onMove() }, onEnd: function () { h.onEnd() } }), c.UI.CanTouch || (f.hover(function () { i.fadeIn(300) }, function () { i.fadeOut(300) }), f.on("mousewheel DOMMouseScroll", function (a) { var b = a.originalEvent.wheelDelta || -a.originalEvent.detail; return 0 > b ? k - m > r && (q > k - r - m ? r = k - m : r += q) : b > 0 && r > 0 && (0 >= r - q ? r = 0 : r -= q), e.Scrollfn.roll(), c.UI.StopDefault(a), !1 })), void 0) } }, CustomSelect: function (a, b, d) { return new function () { var e = this; e.opt = $.extend({ Selector: {}, OnChange: function () { } }, d), e.Selector = $.extend({ Selector: a, ViewValue: ".cmn-SelectValue", Icon: ".cmn-SelectIcon", IconState: ".cmn-SelectIconShow", OptionContent: ".cmn-SelectOptionContent", OptionList: ".cmn-SelectOptionList", OoptionItem: ".cmn-SelectOptionItem", ScrollBar: ".cmn-ScrollBar", BarBtn: ".cmn-ScrollBarBtn" }, e.opt.Selector), e.SelfDom = $(e.Selector.Selector), e.State = !1, e.HideInput = $("<input type=\"text\" class='cmn-SelectHideInput' />").css({ position: "absolute", top: "-100px", left: "0px" }), e.OptionContentOpen = function () { e.SelfDom.find(e.Selector.Icon).addClass(c.UI.GetSelectorName(e.Selector.IconState)), e.SelfDom.find(e.Selector.OptionContent).stop().show() }, e.OptionContentClose = function () { e.SelfDom.find(e.Selector.Icon).removeClass(c.UI.GetSelectorName(e.Selector.IconState)), e.SelfDom.find(e.Selector.OptionContent).slideUp(50) }, this.SetValueList = function (a) { var b = e.SelfDom.find(e.Selector.OptionList).find(e.Selector.OoptionItem).remove().eq(0), d = e.SelfDom.find(e.Selector.OptionList); $.each(a, function (a, e) { var f = b.clone(!0, !0), g = a, h = e, i = [], j = 0; c.Object.IsType(e, "object") && $.each(e, function (a, b) { 0 == j ? g = b : 1 == j ? h = b : i.push({ name: g, value: h }), j++ }), f.attr("value", g), f.html(h), f.data(i), d.append(f) }) }, this.Init = function (a) { var b, d, f, g; e.SelfDom.find(".cmn-SelectHideInput").size() < 1 && e.SelfDom.append($("<div>").css({ width: "1px", height: "1px", opacity: "0", cursor: "pointer", position: "absolute", top: "0px", left: "0px", overflow: "hidden" }).append(e.HideInput)), a && e.SetValueList(a), b = e.SelfDom.find(e.Selector.OptionContent).css({ opacity: "0", filter: "alpha(opacity=0)" }).show(), d = b.find(e.Selector.OoptionItem), f = d.eq(0).outerHeight(!0) * d.length, b.innerHeight() > f ? b.height(f) : 3 * b.innerHeight() < f, e.SelfDom.find(e.Selector.ScrollBar).length > 0 && c.UI.CustomScroll(b, { onScrollBarDown: function () { e.State = !0 }, onStart: function () { e.State = !0 }, onMove: function () { e.State = !0 }, onScrollBarUp: function () { e.HideInput.focus(), e.State = !1 }, onEnd: function () { e.HideInput.focus(), e.State = !1 } }), b.hide().css({ opacity: "1", filter: "alpha(opacity=100)" }), e.OptionContentClose(), e.SelfDom.off("click").on("click", function () { e.HideInput.focus() }), e.HideInput.off("blur").on("blur", function () { 0 == e.State && e.OptionContentClose() }), e.HideInput.off("focus").on("focus", function () { e.OptionContentOpen() }), e.SelfDom.find(e.Selector.OptionContent).off(c.UI.EventType.Mousedown).on(c.UI.EventType.Mousedown, e.Selector.OoptionItem, function () { e.State = !0 }), e.SelfDom.find(e.Selector.OptionContent).off("click").on("click", e.Selector.OoptionItem, function () { var b, d; c.UI.StopBubble(), b = $(this).text(), d = $(this).attr("value"), e.HideInput.val(d), $(e.Selector.ViewValue).html(b), e.opt.OnChange.call(this, { target: $(this), value: d, text: b }), e.State = !1, e.HideInput.blur() }), g = e.SelfDom.find(e.Selector.OoptionItem).eq(0), $(e.Selector.ViewValue).html(g.text()), e.HideInput.val(g.attr("value")) }, this.Init(c.Object.IsType(b, "array") ? b : {}), this.SetValue = function (a) { var b = e.SelfDom.find(e.Selector.OoptionItem + "[value=" + a + "]").eq(0); b.length > 0 && ($(e.Selector.ViewValue).html(b.text()), e.HideInput.val(a)) }, this.GetValue = function () { return e.HideInput.val() } } }, CustomRadioBox: function (a, b, d) { return new function () { var f, e = this; e.opt = $.extend({ Selector: {}, IsRequired: !0, InputName: "Cg_InputName-" + (new Date).getTime() + "-" + Math.floor(1e3 * Math.random()) }, d), e.Selector = $.extend({ Selector: a, Item: ".cg-Radio-Item", Selected: ".Select", ItemText: ".cg-Radio-ItemText" }, e.opt.Selector), e.SelfDom = $(e.Selector.Selector), f = function (a) { return c.Object.IsType(a, "string") && "true" == a.toLowerCase() ? 1 : c.Object.IsType(a, "string") && "false" == a.toLowerCase() ? 0 : a }, this.SetValueList = function (a) { var b = ""; e.SelfDom.find(e.Selector.Item).length ? (b = e.SelfDom.find(e.Selector.Item).remove().eq(0).removeClass(c.UI.GetSelectorName(e.Selector.Selected)), e.SelfDom.data("item", b)) : b = e.SelfDom.data("item"), b.find("input[type=radio]").length < 1 && b.append($('<input type="radio" name="' + e.opt.InputName + '" />').hide()), $.each(a, function (a, d) { var g = b.clone(!0, !0), h = f(a), i = d, j = [], k = 0; c.Object.IsType(d, "object") && $.each(d, function (a, b) { 0 == k ? h = f(b) : 1 == k ? i = b : j.push({ name: h, value: i }), k++ }), g.attr("value", h), g.find(e.Selector.ItemText).html(i), g.data(j), e.SelfDom.append(g) }) }, this.Init = function (a) { a && e.SetValueList(a), e.SelfDom.find(e.Selector.Item).off("click").on("click", function () { $(this).find("input")[0].checked ? e.opt.IsRequired || ($(this).find("input")[0].checked = !1) : $(this).find("input")[0].checked = !0, e.SelfDom.find("input").change() }), e.SelfDom.find("input").off("change").on("change", function () { $(this)[0].checked ? $(this).parents(e.Selector.Item).eq(0).addClass(c.UI.GetSelectorName(e.Selector.Selected)) : $(this).parents(e.Selector.Item).eq(0).removeClass(c.UI.GetSelectorName(e.Selector.Selected)) }) }, this.Init(c.Object.IsType(b, "array") ? b : {}), this.SetValue = function (a) { if (a) { var b = e.SelfDom.find(e.Selector.Item + "[value=" + f(a) + "]").find("input")[0]; b && (b.checked = !0) } else e.SelfDom.find(e.Selector.Item).find("input").attr("checked", !1); e.SelfDom.find("input").change() }, this.GetValue = function () { return e.SelfDom.find(e.Selector.Selected).attr("value") } } }, CustomAutoComplete: function (b, e, f) { return new function () { function j(a) { i.find(_self.Selector.Item).eq(a).addClass(c.UI.GetSelectorName(_self.Selector.ItemSelect)).siblings(_self.Selector.Item).removeClass(c.UI.GetSelectorName(_self.Selector.ItemSelect)), l(i.find(_self.Selector.ItemSelect).attr(_self.option.value), i.find(_self.Selector.ItemSelect).text()) } function k(a) { return i.empty().hide(), a ? (a.length && a.length > 0 && ($.each(a, function (a, b) { var d, e, f, g; a > _self.option.Limit || (d = i.data("itemTemp").clone(!0, !0), e = d.find(_self.Selector.Text).length > 0 ? d.find(_self.Selector.Text) : d, c.Object.IsType(b, "object") ? (f = 0, g = [], $.each(b, function (a, b) { if (0 == f) d.attr(_self.option.value, b); else if (1 == f) e.text(b); else { var c = {}; c[a] = b, g.push(c) } f++ }), d.data(g)) : (d.attr(_self.option.value, a), e.text(b)), i.append(d)) }), i.show()), void 0) : (i.find(_self.Selector.Item + "[" + _self.option.value + "=" + _self.AutoCompleteInput.attr(_self.option.value) + "]").addClass(c.UI.GetSelectorName(_self.Selector.ItemSelect)).siblings(_self.Selector.Item).removeClass(c.UI.GetSelectorName(_self.Selector.ItemSelect)), i.show(), !1) } function l(a, b) { a !== _self.AutoCompleteInput.attr(_self.option.value, a) && (_self.AutoCompleteInput.val(b).attr(_self.option.value, a), _self.option.Change({ val: a, text: b })) } function m() { i.hide() } function n(a) { switch (a.keyCode) { case c.UI.KeyCode.HOME: break; case c.UI.KeyCode.END: break; case c.UI.KeyCode.UP: c.UI.StopDefault(a); break; case c.UI.KeyCode.DOWN: c.UI.StopDefault(a); break; case c.UI.KeyCode.LEFT: break; case c.UI.KeyCode.RIGHT: break; case c.UI.KeyCode.ENTER: case c.UI.KeyCode.SPACE: break; case c.UI.KeyCode.BACKSPACE: break; case c.UI.KeyCode.ESCAPE: } } function o(a) { var b, d; switch (c.UI.StopBubble(a), c.UI.StopDefault(a), a.keyCode) { case c.UI.KeyCode.HOME: break; case c.UI.KeyCode.END: break; case c.UI.KeyCode.UP: b = i.find(_self.Selector.Item).index($(_self.Selector.ItemSelect)), j(0 >= b ? 0 : --b), c.UI.StopDefault(a); break; case c.UI.KeyCode.DOWN: b = i.find(_self.Selector.Item).index($(_self.Selector.ItemSelect)), d = i.find(_self.Selector.Item).length, 0 > b ? b = 0 : b >= d - 1 ? b = d - 1 : b++, j(b); break; case c.UI.KeyCode.LEFT: break; case c.UI.KeyCode.RIGHT: break; case c.UI.KeyCode.ENTER: _self.AutoCompleteInput.blur(); break; case c.UI.KeyCode.SPACE: p.call(this); break; case c.UI.KeyCode.BACKSPACE: $(this).val() ? p.call(this) : m(); break; case c.UI.KeyCode.ESCAPE: m(); break; default: p.call(this) } } function p() { var a = $(this).val(); /[\S]+/.test((c.Object.IsType(a, "string") ? a : "").trim()) && (_self.DataItf ? d.PostData(_self.DataItf, _self.SerializeParam(a), function (a) { a = _self.onFormatData(a), k(a) }) : k(_self.onFormatData({}))) } _self = this, _self.option = $.extend({ Selector: {}, value: "data-val", SerializeParam: function (a) { return { param: a } }, Limit: 30, FormatData: function (a) { return a && c.Object.IsType(a, "string") && (a = $.parseJSON(a)), a.data && (a = c.Object.IsType(a.data, "string") ? $.parseJSON(a.data) : a.data), a || [] }, Change: function () { }, Click: function () { } }, f), _self.Selector = $.extend({ Selector: b, InputSelector: ".Cg-AutoComplete-Input", OptionList: ".Cg-AutoComplete-OptionList", Item: ".Cg-AutoComplete-Item", Text: ".Cg-AutoComplete-Text", ItemSelect: ".Cg-AutoComplete-ItemHover" }, _self.option.Selector), _self.DataItf = e, _self.SerializeParam = _self.option.SerializeParam, _self.onFormatData = _self.option.FormatData, _self.onChange = _self.option.Change, _self.onClick = _self.option.Click; var g = $(_self.Selector.Selector), h = g.find(_self.Selector.Item).remove().clone(!0, !0).removeClass(c.UI.GetSelectorName(_self.Selector.ItemSelect)), i = g.find(_self.Selector.OptionList); i.data("itemTemp") || i.data("itemTemp", h), _self.AutoCompleteInput = g.find(_self.Selector.InputSelector).val(""), _self.AutoCompleteInput.off("keyup").on("keyup", o), _self.AutoCompleteInput.off("keydown").on("keydown", n), _self.AutoCompleteInput.off("blur").on("blur", function () { m() }), _self.AutoCompleteInput.off("focus").on("focus", function () { $(this).val() && (g.find(_self.Selector.Item).length > 0 ? i.show() : p.call(this)) }), i.undelegate(c.UI.EventType.Mousedown).delegate(_self.Selector.Item, c.UI.EventType.Mousedown, function () { 3 != event.which && (event = event || a.event, l($(this).attr(_self.option.value), $(this).text())) }) } } }), function () { var d = function (d) { function p(a) { var b = h(a), c = { x: b.x - k.x, y: b.y - k.y }; Cmn.Extend(o, c, { Action: "drag" }), (!!c.x || !!c.y) && e.DragEvent.Trigger([o]), (c.x > 10 || c.y > 10) && clearTimeout(n) } function q(b) { var f, g, i, l, m, p; clearTimeout(n), f = h(b), g = Math.abs(f.x - k.x), i = Math.abs(f.y - k.y), l = "", m = 20, p = 50, $(a).off(c.UI.EventType.Mouseup), $(d).off(c.UI.EventType.Mousemove), g > i && 3 * m > i ? (g > m && (l = f.x - k.x <= 0 ? "left" : "right"), "Y" == j && (l = "")) : i > g && 3 * m > g ? (i > m && (l = f.y - k.y <= 0 ? "up" : "down"), "X" == j && (l = "")) : l = "", "" == l ? p > g && p > i ? (o.Action = "tap", Cmn.Extend(o, {})) : o.Action = "" : Cmn.Extend(o, { Action: l }), "tap" == o.Action && e.TapEvent.Trigger([o]), !("" == o.Action || "tap" == o.Action || !e.SwipeEvent.Trigger([o])), (g || i) && (o.Action = "dragend", e.DragEndEvent.Trigger([o])) } var e, h, j, k, n, o; this.TapEvent = new Cmn.Event(d), this.SwipeEvent = new Cmn.Event(d), this.HoldEvent = new Cmn.Event(d), this.DragStartEvent = new Cmn.Event(d), this.DragEvent = new Cmn.Event(d), this.DragEndEvent = new Cmn.Event(d), this.Config = { HoldTime: 3e3 }, e = this, (new Date).getTime(), h = function (b) { return b = a.event && a.event.touches ? event.touches[0] : b, b = b || event.changedTouches[0], { x: b.pageX, y: b.pageY } }, j = b, k = {}, n = null, o = { Action: "", Selector: d.replace(/^\#|\./g, "") }, $("body").delegate(d, Cmn.UI.EventType.Mousedown, function (b) { c.UI.StopBubble(b), c.UI.StopDefault(b); var d = $(this); k = h(b), o.Action = "dragstart", clearTimeout(n), n = setTimeout(function () { o.Action = "hold", e.HoldEvent.Trigger([o]) }, e.Config.HoldTime), e.DragStartEvent.Trigger([o]) !== !1 && (d.off(Cmn.UI.EventType.Mousemove, p).on(Cmn.UI.EventType.Mousemove, p), $(a).off(Cmn.UI.EventType.Mouseup, q).on(Cmn.UI.EventType.Mouseup, q)) }), this.Tap = function (a) { 0 == arguments.length ? this.TapEvent.Trigger() : Cmn.IsType(a, "function") ? this.TapEvent.Add(a, "cmn_touch_tap") : this.TapEvent.Remove("cmn_touch_tap") }, this.Swipe = function (a, b) { 0 == arguments.length ? this.TapEvent.Trigger() : 1 == arguments.length && Cmn.IsType(a, "function") ? (j = "", this.SwipeEvent.Add(a, "cmn_touch_swipe")) : Cmn.IsType(b, "function") ? (j = Cmn.Func.FirstUppercase(a), this.SwipeEvent.Add(b, "cmn_touch_swipe")) : this.SwipeEvent.Remove("cmn_touch_swipe") }, this.Hold = function (a) { 0 == arguments.length ? this.TapEvent.Trigger() : Cmn.IsType(a, "function") ? this.HoldEvent.Add(a, "cmn_touch_hold") : this.HoldEvent.Remove("cmn_touch_hold") }, this.Drag = function (a) { 0 == arguments.length ? this.TapEvent.Trigger() : Cmn.IsType(a, "function") ? this.DragEvent.Add(a, "cmn_touch_drag") : this.DragEvent.Remove("cmn_touch_drag") }, this.DragStart = function (a) { 0 == arguments.length ? this.TapEvent.Trigger() : Cmn.IsType(a, "function") ? this.DragStartEvent.Add(a, "cmn_touch_dragstart") : this.DragStartEvent.Remove("cmn_touch_dragstart") }, this.DragEnd = function (a) { 0 == arguments.length ? this.TapEvent.Trigger() : Cmn.IsType(a, "function") ? this.DragEndEvent.Add(a, "cmn_touch_dragend") : this.DragEndEvent.Remove("cmn_touch_dragend") } }, e = {}; Cmn.Extend(Cmn.UI, { Touch: function (a) { return $(a), a ? (e[a] || (e[a] = new d(a)), e[a]) : (Cmn.DebugLog("当前dom对象不存在！"), void 0) } }) }(), Cmn.Extend(Cmn.UI, { ImageCarouselModel: { ThreeDCard: "ThreeDCard" }, ImageCarousel: function (a, c) { var d = this; return new function () { var g, h, i, j, k, e = this, f = $(a); e.Option = Cmn.Extend({ Model: d.ImageCarouselModel.ThreeDCard, Auto: !1, Speed: 460, Item: ".cmn-ui-item", Width: 0, Height: 0, IndexItem: ".cmn-ui-index", Selected: ".Selected", DefaultIndex: 0 }, c), e.GetNextIndex = function (a) { return a = a == b ? i : a, a >= g.length - 1 ? 0 : a + 1 }, e.GetPrevIndex = function (a) { return a = a == b ? i : a, 0 >= a ? g.length - 1 : a - 1 }, g = $(a).find(e.Option.Item), h = !0, i = e.Option.DefaultIndex, j = e.GetNextIndex(), k = e.GetPrevIndex(), 0 == e.Option.Width && (e.Option.Width = f.width()), 0 == e.Option.Height && (e.Option.Height = f.height()), e.Option.Model == d.ImageCarouselModel.ThreeDCard && (TweenMax.set(f, { perspective: 900, transformStyle: "preserve-3d", perspectiveOrigin: "50% 50%", width: e.Option.Width, height: e.Option.Height }), TweenMax.set(g, { zIndex: 0, z: -1 * (e.Option.Width / 2), width: e.Option.Width, height: e.Option.Height }), TweenMax.set(g.eq(i), { zIndex: 3, z: "0px" }), TweenMax.set(g.eq(j), { zIndex: 2, x: e.Option.Width / 2 }), TweenMax.set(g.eq(k), { zIndex: 2, x: -1 * (e.Option.Width / 2) })), e.Next = function () { g.width() / 2; var b = function (a, c) { var d = { zIndex: 0, x: -1 * (e.Option.Width / 2), z: -1 * (e.Option.Width / 2), onComplete: function () { a == e.GetNextIndex(j) && (k = i, i = j, j = a, c && c()) } }; a == k ? (d.zIndex = 0, d.x = 0) : a == i ? (d.zIndex = 2, d.x = -1 * (e.Option.Width / 2), d.z = d.x) : a == j ? (d.zIndex = 3, d.x = 0, d.z = 0) : (d.zIndex = 2, d.x = e.Option.Width / 2), TweenMax.to(g.eq(a), e.Option.Speed / 1e3, d), a != e.GetNextIndex(j) && b(e.GetNextIndex(a), c) }; h && (h = !1, b(k, function () { h = !0 })) }, e.Prev = function () { var a = function (b, c) { var d = { zIndex: 0, x: 0, z: -1 * (e.Option.Width / 2), onComplete: function () { b == e.GetPrevIndex(k) && (j = i, i = k, k = b, c && c()) } }; b == k ? (d.zIndex = 3, d.x = 0, d.z = 0) : b == i ? (d.zIndex = 2, d.x = e.Option.Width / 2, d.z = -1 * d.x) : b == j ? (d.zIndex = 0, d.x = 0) : (d.zIndex = 2, d.x = -1 * (e.Option.Width / 2)), TweenMax.to(g.eq(b), e.Option.Speed / 1e3, d), b != e.GetPrevIndex(k) && a(e.GetPrevIndex(b), c) }; h && (h = !1, a(j, function () { h = !0 })) } } } }) }(window);
+﻿/// <reference path="../Cmn.js" />
+/// <reference path="../CmnAjax.js" />
+/// <reference path="../ThirdLib/TweenMax.min.js" />
+
+Cmn_UI_Version = "2.0";
+
+(function (window, undefined) {
+    var Cg = window.Cmn,
+        CgAjax = window.CmnAjax;
+
+    //健壮性检测
+    if (!Cg) { alert("为引用Cmn"); }
+    if (!Cg.UI) { Cg.UI = {}; }
+
+    //------------------------------插件基类
+    Cg.UI.BasPlugin = function (resources) {
+
+        //相对路径
+        this.Resources = resources || [];
+        //网站根目录
+        this.RootPath = Cg.Func.GetJsPath("Cmn.js");
+        //加载插件相关库
+        this.Load();
+
+    }
+
+    Cg.UI.BasPlugin.prototype.Load = function () {
+        /// <summary>load方法 </summary> 
+        if (this.Resources.length < 1) { return; } 
+        if (!CgAjax) { Cg.alert("CmnAjax.js 未引用！"); }
+
+        //遍历加载资源
+        for (var _i = 0; _i < this.Resources.length; _i++) {
+            var _path = this.RootPath + this.Resources[_i];
+
+            CgAjax.GetFile && CgAjax.GetFile(_path, function () { }, false);
+        }
+         
+    }
+
+    //------------------------------Cg.UI组件的扩展
+    //
+    $.extend(Cg.UI, {
+        CanTouch: Cg.Func.IsMobile(),           //是否支持touch
+        CanHtml5: typeof (Worker) !== "undefined",//是否支持html5
+        KeyCode: {                                //键盘对应的键值
+            BACKSPACE: 8,
+            COMMA: 188,
+            DELETE: 46,
+            DOWN: 40,
+            END: 35,
+            ENTER: 13,
+            ESCAPE: 27,
+            HOME: 36,
+            LEFT: 37,
+            NUMPAD_ADD: 107,
+            NUMPAD_DECIMAL: 110,
+            NUMPAD_DIVIDE: 111,
+            NUMPAD_ENTER: 108,
+            NUMPAD_MULTIPLY: 106,
+            NUMPAD_SUBTRACT: 109,
+            PAGE_DOWN: 34,
+            PAGE_UP: 33,
+            PERIOD: 190,
+            RIGHT: 39,
+            SPACE: 32,
+            TAB: 9,
+            UP: 38
+        },
+        EventType: {
+            Mousedown: Cg.Func.IsMobile() ? "touchstart" : "mousedown",
+            Mousemove: Cg.Func.IsMobile() ? "touchmove" : "mousemove",
+            Mouseup: Cg.Func.IsMobile() ? "touchend" : "mouseup"
+        },
+        StopBubble: function (e) {
+            //如果提供了事件对象，则这是一个非IE浏览器
+            //因此它支持W3C的stopPropagation()方法
+            if (e && e.stopPropagation) { e.stopPropagation(); }
+                //否则，我们需要使用IE的方式来取消事件冒泡
+            else { window.event.cancelBubble = true; }
+
+        },
+        //阻止浏览器的默认行为
+        StopDefault: function (e) {
+            //阻止默认浏览器动作(W3C)
+            if (e && e.preventDefault) { e.preventDefault(); }
+                //IE中阻止函数器默认动作的方式
+            else { window.event.returnValue = false; }
+            return false;
+        },
+        GetSelectorName: function (selector) {
+            /// <summary>获取选择器名称 去掉.#</summary>
+            /// <param name="selector" type="String">选择器</param>
+            return selector.replace(/[\s\S]*([\.]|[\#])/g, "");
+        },
+        //精灵帧动画
+        FrameAnimation: function (selector, speed) {
+            /// <summary>精灵帧动画</summary>
+            /// <param name="selector" type="String">帧的选择器</param>
+
+
+            return new function () {
+
+                var _self = this;
+                _self.frames = $(selector);                                 //帧集合
+                _self.index = 0;                                            //当前索引
+                _self.timer = 0;                                            //计时器
+
+                var _length = _self.frames.length,                          //帧总长度
+                    _speed = speed / _length,                               //速度
+                    _playSort = "ASC";                                      //播放顺序 默认正序
+                _isStop = true;                                         //是否停止
+
+                //没有帧的时候直接返回
+                if (_self.frames.length < 1) { return; }
+
+                _self.onStop = function () { };                             //停止的事件
+
+                _self.Init = function () {
+                    /// <summary>初始化</summary>
+                    window.clearInterval(_self.timer);
+                    _self.frames.eq(_self.index).show().siblings().hide();
+                    _isStop = true;
+                }
+
+
+                _self.Play = function () {
+                    /// <summary>播放</summary>
+                    this.PlayToStop();
+                }
+
+                _self.Stop = function () {
+                    /// <summary>停止</summary>
+                    window.clearInterval(_self.timer);
+                }
+
+                _self.PlayToStop = function (toIndex, speed) {
+                    /// <summary>播放到某一帧停止</summary>
+                    /// <param name="toIndex" type="String">目标帧</param>
+                    /// <param name="speed" type="int">速度</param>
+
+                    //目标帧数没传的话默认最后一帧
+                    var _toIndex = _length;
+                    if (!!toIndex) { _toIndex = toIndex; };
+                    //当前播放多少帧
+                    var _playFrameLen = _toIndex - _self.index;
+                    //为0 的话直接返回
+                    if (!_playFrameLen) { return; };
+
+                    //小于当前帧的时候就是倒序播放
+                    if (_playFrameLen < 0) { _playSort = "DESC"; }
+                    else { _playSort = "ASC"; }
+
+                    _playFrameLen = Math.abs(_playFrameLen);
+
+                    //速度
+                    if (!!speed) { _speed = (speed / _playFrameLen); }
+
+                    window.clearInterval(_self.timer);
+
+                    _self.timer = window.setInterval(function () {
+
+                        if (_playSort == "ASC") {
+                            _self.index++;
+                            if (_self.index > _toIndex) {
+                                _self.index = _toIndex;
+                                window.clearInterval(_self.timer);
+                                return;
+                            }
+                        }
+                        else {
+                            _self.index--;
+                            if (_self.index < _toIndex) {
+                                _self.index = _toIndex;
+                                window.clearInterval(_self.timer);
+                                return;
+                            }
+                        }
+
+                        _self.frames.eq(_self.index).show().siblings().hide();
+
+
+                    }, _speed);
+                }
+                _self.Init();
+            }
+        },
+        //拖动
+        Drag: function (selector, opt) {
+            /// <summary>拖动</summary>
+            /// <param name="selector" type="String">拖动对象选择器</param>
+            /// <param name="opt" type="Jjon">拖动配置</param>
+
+            var _self = this,
+                _opt = $.extend({
+                    dragParent: $("body"),                       //拖动元素的父亲
+                    containment: $("body"),                     //拖动对象的拖动区域对象
+                    drag: selector,                               //拖动元素本身
+                    axis: "",                                       //拖动方向 x y 空
+                    onStart: function () { },                       //开始拖动
+                    onMove: function () { },                        //拖动
+                    onEnd: function () { }                          //拖动结束
+                }, opt),
+            _isMoveDown = false,                              //是否点击
+            _dragFn = {                                       //拖动私有函数     
+                getMousePoint: function (ev) {
+                    ev = event.touches ? event.touches[0] : ev;
+                    return { 'x': ev.pageX, 'y': ev.pageY };
+                }
+            },
+            _dragRect = null,                                     //拖动对象的区域     
+            _astrict = null,                                      //限制的点       
+            _nowPoint = { x: 0, y: 0 },                          //当前的点
+            _initPoint = { x: 0, y: 0 },                         //初始的点
+            _startPoint = { x: 0, y: 0 };                        //开始的点
+
+            //$(_opt.containment).css("position", "relative");
+            $(_opt.containment).find(_opt.drag).css("position", "absolute");
+
+            $(_opt.dragParent).undelegate(_opt.drag, _self.EventType.Mousedown, _dragStartHandle)
+                .delegate(_opt.drag, _self.EventType.Mousedown, _dragStartHandle);
+
+            function _dragStartHandle(e) {
+                Cg.UI.StopBubble(e);
+                Cg.UI.StopDefault(e);
+
+                //如果在拖动状态就不允许点击
+                if (_isMoveDown) { return false; }
+                //点击
+
+                _isMoveDown = true;
+                //设置当前拖动对象
+                _opt.drag = $(this);
+                //设置限制的区域
+                _astrict = { left: 0, right: $(_opt.containment).width(), top: 0, bottom: $(_opt.containment).height() };
+                //设置拖动的区域初始位置
+                _dragRect = { left: 0, right: 0, top: 0, bottom: 0 };
+                //拖动物品的宽
+                _dragWidth = _opt.drag.width();
+                //拖动物品的高 
+                _dragHeight = _opt.drag.height();
+
+                _opt.containment = $(_opt.containment);
+                //起始点
+                _startPoint = _dragFn.getMousePoint(e);
+                //初始点
+                _initPoint = _opt.drag.position();
+                //开始拖动的事件
+                _opt.onStart.call(_opt.drag, _dragFn.getMousePoint(e));
+
+
+                $(_opt.dragParent).off(_self.EventType.Mousemove).on(_self.EventType.Mousemove, _dragMoveHandle);
+
+                function _dragMoveHandle (e) {
+                    Cg.UI.StopBubble(e);
+                    Cg.UI.StopDefault(e);//取消文档的默认行为[鼠标移动、触摸移动]
+                    _nowPoint = _dragFn.getMousePoint(e);
+
+                    var _moveCss = {},
+                        _isDrag = false;
+
+
+                    _dragRect.left = (_initPoint.left + _nowPoint.x - _startPoint.x);
+                    _dragRect.top = (_initPoint.top + _nowPoint.y - _startPoint.y);
+                    _dragRect.right = _dragWidth + _dragRect.left;
+                    _dragRect.bottom = _dragRect.top + _dragHeight;
+
+                    if (_opt.axis == "x") { _moveCss.left = _dragRect.left + "px"; }
+                    else if (_opt.axis == "y") { _moveCss.top = _dragRect.top + "px"; }
+                    else {
+                        _moveCss.left = _dragRect.left + "px";
+                        _moveCss.top = _dragRect.top + "px";
+                    }
+                    if (!!_opt.containment) {
+                        if (((_astrict.left <= _dragRect.left && _astrict.right >= _dragRect.right) || (_opt.axis == "y"))
+                            && ((_astrict.top <= _dragRect.top && _astrict.bottom >= _dragRect.bottom) || (_opt.axis == "x"))) {
+                            _isDrag = true;
+                        }
+                    }
+                    else { _isDrag = true; }
+                    if (_isDrag) { _opt.onMove.call(_opt.drag.css(_moveCss), _dragFn.getMousePoint(e)); }
+                    return false;
+                }
+
+
+                $(window).off(_self.EventType.Mouseup).on(_self.EventType.Mouseup, _dragEndHandle);
+
+                function _dragEndHandle(e) {
+                    $(window).off(Cg.UI.EventType.Mouseup);
+                    $(_opt.dragParent).off(Cg.UI.EventType.Mousemove);
+                    _initPoint = { left: 0, top: 0 };
+                    _isMoveDown = false;
+                    _opt.onEnd.call(_opt.drag);
+                }
+            }
+
+        },
+        //自定义滚动条
+        CustomScroll: function (selector, opt) {
+            /// <summary>自定义滚动条</summary>
+            /// <param name="selector" type="String">容器选择器</param>
+            /// <param name="opt" type="Json">插件配置</param>
+
+            return new function () {
+
+                var _self = this,
+                    //容器
+                    _container = $(selector),
+                    //容器里面的类容
+                    _content = $("<div>").css({ "height": "100%", "width": "100%", "overflow": "hidden", "position": "relative" })
+                                .html(_container.html()).addClass("cmn-scrollContent").appendTo(_container.empty()),
+                     //配置
+                    _opt = $.extend({
+                        selector: {   //选择器
+                            ScrollBar: ".cmn-ScrollBar",                          //滚动条选择器
+                            BarBtn: ".cmn-ScrollBarBtn"                           //滚动条按钮选择器
+                        },
+                        rollStyle: "",                                            //滚动的动画
+                        dragBarAutoSize: false,                                   //拖动手柄是否自动计算高度
+                        orientation: -1,                                          //滚动条方向 -1 竖 1 横 0 横竖都检测 
+                        scrollWidth: _content.prop("scrollWidth"),                //scroll的宽度
+                        scrollHeight: _content.prop("scrollHeight"),              //scroll的高度
+                        onScrollBarDown: function () { },                         //鼠标按下滚动条
+                        onScrollBarUp: function () { },                           //鼠标谈起滚动条
+                        onStart: function () { },                                 //开始拖动
+                        onMove: function () { },                                  //拖动
+                        onEnd: function () { }                                    //拖动结束
+                    }, opt),
+                    _scrollBar = _container.find(_opt.selector.ScrollBar),        //滚动条
+                    _scrollBarBtn = _container.find(_opt.selector.BarBtn),        //滚动条按钮
+                    _scrollBarHeight = _scrollBar.outerHeight(true),              //滚动条高度
+                    _scrollBarWidth = _scrollBar.outerWidth(true),                //滚动条宽度度
+                    _scrollBarBtnHeight = _scrollBarBtn.outerHeight(true),        //滚动条按钮高度
+                    _scrollBarBtnWidth = _scrollBarBtn.outerWidth(true),          //滚动条按钮宽度
+                    _displayHeight = _container.innerHeight(),                    //显示区域的高度
+                    _displayWidth = _container.innerWidth(),                      //显示区域的宽度
+                    _step = 10,                                                   //当前鼠标滚动的时候滚动条滚动的步长
+                    _curScrollBarBtnTop = 0,                                      //当前滚动条拖动按钮的高度
+                    _curScrollHeight = 0,                                         //当前滚动条高度
+                    _brforScrollHeight = 0;                                       //上一次滚动条的高度
+
+                if (_container.length > 1) { alert("滚动条容器冲突！请检查！"); return; }
+
+                //没有内容超出
+                if (_opt.scrollHeight - _displayHeight <= 0) {
+                    _scrollBar.hide();
+                    return;
+                }
+                else { _scrollBar.show(); }
+
+                //偷梁换柱 将原来的内容放到创建的容器里面去
+                _container.append(_scrollBar);
+
+                // 计算scrollbar 的高度
+                _scrollBarHeight = _displayHeight - parseInt(_scrollBar.css("top")) * 2;
+                _scrollBar.height(_scrollBarHeight);
+
+                if (_opt.dragBarAutoSize) {
+                    //计算滚动条按钮的高度
+                    _scrollBarBtnHeight = _scrollBarHeight / _opt.scrollHeight * _scrollBarBtnHeight;
+                    _scrollBarBtnHeight = _scrollBarBtnHeight < 30 ? 30 : _scrollBarBtnHeight;
+                    _scrollBarBtn.height(_scrollBarBtnHeight);
+                }
+
+                //滚动条的行为
+                _self.Scrollfn = {
+                    roll: function (curScrollBarBtnTop) {
+                        /// <summary>滚动滚动条</summary>
+                        /// <param name="curScrollBarBtnTop" type="int">当前拖动按钮的位置</param>
+
+                        _curScrollBarBtnTop = curScrollBarBtnTop || _curScrollBarBtnTop;
+                        _scrollBarBtn.css("top", _curScrollBarBtnTop);
+                        _curScrollHeight = (_opt.scrollHeight - _displayHeight) / (_scrollBarHeight - _scrollBarBtnHeight) * _curScrollBarBtnTop;
+
+                        //之前和之后滚动条的差异超过滚动条滚动的步长2倍的时候启用动画
+                        if (Math.abs(_brforScrollHeight - _curScrollHeight) > _step / 2) {
+                            _content.stop(true, false).animate({ scrollTop: _curScrollHeight }, 300, _opt.rollStyle, function () {
+                                _brforScrollHeight = _content.scrollTop();
+                            });
+                        }
+                        else {
+                            _content.stop(true, false).scrollTop(_curScrollHeight);
+                        }
+                        _brforScrollHeight = _curScrollHeight;
+                    },
+                    MouseDown: function (point) {
+                        /// <summary>点击滚动条</summary>
+                        /// <param name="point" type="JSON">点击的点</param>
+
+                        //当前拖动按钮默认的tuo为当前点击的y点 - 当前多动按钮的一半
+                        _curScrollBarBtnTop = point.y - _scrollBarBtnHeight / 2;
+
+                        if (_scrollBarHeight - _curScrollBarBtnTop - _scrollBarBtnHeight < _step) {
+                            _curScrollBarBtnTop = _scrollBarHeight - _scrollBarBtnHeight;
+                        }
+                        else if (_curScrollBarBtnTop - _step <= 0) { _curScrollBarBtnTop = 0; }
+
+                        this.roll();
+                    }
+                }
+
+
+                //----点击滚动条
+                _scrollBar.off(Cg.UI.EventType.Mousedown).on(Cg.UI.EventType.Mousedown, function (event) {
+
+                    if (event.which == 3) { return; }
+                    event = event || window.event;
+
+                    //点击的点
+                    var _point = {
+                        y: event.offsetY || event.originalEvent.layerY,
+                        x: event.offsetX || event.originalEvent.layerX
+                    }
+
+                    _self.Scrollfn.MouseDown(_point);
+
+                    _opt.onScrollBarDown(event);
+
+                    return Cg.UI.StopBubble(event);
+                });
+                _scrollBar.off(Cg.UI.EventType.Mouseup).on(Cg.UI.EventType.Mouseup, function (event) {
+                    _opt.onScrollBarUp(event);
+                });
+                //拖动
+
+                Cg.UI.Drag(_scrollBarBtn, {
+                    containment: _scrollBar, axis: "y",
+                    onStart: function () { _opt.onStart(); },
+                    onMove: function () {//拖动
+                        _self.Scrollfn.roll(this.position().top);
+                        _opt.onMove();
+                    },
+                    onEnd: function () { _opt.onEnd(); }
+
+                });
+
+                //鼠标滚轴
+                if (Cg.UI.CanTouch) {
+
+                }
+                else {
+                    //-------------------事件
+                    _container.hover(function () { _scrollBar.fadeIn(300); }, function () { _scrollBar.fadeOut(300); });
+
+                    _container.on('mousewheel DOMMouseScroll', function (event) {
+                        var _delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
+
+                        if (_delta < 0) {
+                            if (_curScrollBarBtnTop < _scrollBarHeight - _scrollBarBtnHeight) {
+
+                                if (_scrollBarHeight - _curScrollBarBtnTop - _scrollBarBtnHeight < _step) {
+                                    _curScrollBarBtnTop = _scrollBarHeight - _scrollBarBtnHeight;
+                                }
+                                else {
+                                    _curScrollBarBtnTop = _curScrollBarBtnTop + _step;
+                                }
+                            }
+                        } else if (_delta > 0) {
+                            if (_curScrollBarBtnTop > 0) {
+                                if (_curScrollBarBtnTop - _step <= 0) {
+                                    _curScrollBarBtnTop = 0;
+                                } else {
+                                    _curScrollBarBtnTop = _curScrollBarBtnTop - _step;
+                                }
+                            }
+                        }
+
+                        _self.Scrollfn.roll();
+                        Cg.UI.StopDefault(event);
+                        return false;
+                    });
+                }
+
+            }
+
+        },
+        //自定义下拉框
+        CustomSelect: function (selector, data, option) {
+            /// <summary>自定义下拉框</summary>
+            /// <param name="selector" type="String">自定义下拉框主容器</param>
+            /// <param name="data" type="JsonArray">option的项数据 json数组</param>
+            /// <param name="option" type="Json">下拉框配置</param>
+            /// <field name="opt" type="插件配置">控件配置</field>
+            /// <field name="HideInput" type="jQuery">隐藏的输入框 一般用于值传递以及焦点控制</field>
+
+            return new function () {
+                /// <summary>自定义下拉框</summary>
+                /// <field name="opt" type="插件配置">控件配置</field>
+                /// <field name="HideInput" type="jQuery">隐藏的输入框 一般用于值传递以及焦点控制</field>
+
+                var _self = this;
+                //配置信息
+                _self.opt = $.extend({
+                    Selector: {},
+                    OnChange:function(){}
+                }, option);
+
+                _self.Selector = $.extend({
+                    Selector: selector,
+                    ViewValue: ".cmn-SelectValue",                       //显示选择值的容器选择器                  
+                    Icon: ".cmn-SelectIcon",                             //显示icon选择
+                    IconState: ".cmn-SelectIconShow",                     //icon在下拉框展开之后的状态选择器
+                    OptionContent: ".cmn-SelectOptionContent",           //下拉框内容面板选择器
+                    OptionList: ".cmn-SelectOptionList",                 //下拉框项列表容器选择器
+                    OoptionItem: ".cmn-SelectOptionItem",                 //下拉框项选择器
+                    ScrollBar: ".cmn-ScrollBar",                        //滚动条选择器
+                    BarBtn: ".cmn-ScrollBarBtn"                         //滚动条按钮选择器
+                }, _self.opt.Selector);
+
+                _self.SelfDom = $(_self.Selector.Selector);             //插件对象本身
+
+                _self.State = false;                                    //当前控件的状态判断当前是否是失去焦点
+
+                //隐藏的输入框 一般用于值传递以及焦点控制
+                _self.HideInput = $("<input type=\"text\" class='cmn-SelectHideInput' />").css({ "position": "absolute", "top": "-100px", "left": "0px" });
+
+
+                //展开list面板
+                _self.OptionContentOpen = function () {
+                    _self.SelfDom.find(_self.Selector.Icon).addClass(Cg.UI.GetSelectorName(_self.Selector.IconState));
+                    _self.SelfDom.find(_self.Selector.OptionContent).stop().show();
+                }
+
+                //关闭list面板
+                _self.OptionContentClose = function () {
+                    _self.SelfDom.find(_self.Selector.Icon).removeClass(Cg.UI.GetSelectorName(_self.Selector.IconState));
+                    _self.SelfDom.find(_self.Selector.OptionContent).slideUp(50);
+                }
+
+                //填充项
+                this.SetValueList = function (arr) {
+                    var _itemDom = _self.SelfDom.find(_self.Selector.OptionList).find(_self.Selector.OoptionItem).remove().eq(0);
+                    var _itemList = _self.SelfDom.find(_self.Selector.OptionList);
+                    $.each(arr, function (index, item) {
+                        var _itemClone = _itemDom.clone(true, true),
+                            _key = index,//键值
+                            _val = item,//val
+                            _data = [],//sql里面多余的值
+                            _length = 0;//长度
+
+                        if (Cg.Object.IsType(item, "object")) {
+                            //遍历json里面的值
+                            $.each(item, function (key, val) {
+                                if (_length == 0) { _key = val; }               //拿到第一个给key
+                                else if (_length == 1) { _val = val; }          //拿到第二个给value
+                                else { _data.push({ "name": _key, "value": _val }); }// 保存多余的数据
+                                _length++;
+                            });
+                        }
+
+                        _itemClone.attr("value", _key);
+                        _itemClone.html(_val);
+                        _itemClone.data(_data);
+                        _itemList.append(_itemClone);
+                    });
+                }
+ 
+                //初始化
+                this.Init = function (listValue) {
+                    /// <summary>初始化插件</summary>
+                    /// <param name="listValue" type="ArrayJson">填充的数据</param>
+
+                    if (_self.SelfDom.find(".cmn-SelectHideInput").size() < 1) {
+                        _self.SelfDom.append($("<div>").css({
+                            "width": "1px", "height": "1px", "opacity": "0", "cursor": "pointer",
+                            "position": "absolute", "top": "0px", "left": "0px", "overflow": "hidden"
+                        }).append(_self.HideInput));
+                    }
+
+                    if (!!listValue) { _self.SetValueList(listValue); }
+
+
+                    var _optionContent = _self.SelfDom.find(_self.Selector.OptionContent).css({ "opacity": "0", "filter": "alpha(opacity=0)" }).show(),
+                        _option = _optionContent.find(_self.Selector.OoptionItem),
+                        _optionTotalHeight = _option.eq(0).outerHeight(true) * _option.length;
+
+                    if (_optionContent.innerHeight() > _optionTotalHeight) {
+                        _optionContent.height(_optionTotalHeight);
+                    }
+                    else if (_optionContent.innerHeight() * 3 < _optionTotalHeight) {
+
+                    }
+
+                    if (_self.SelfDom.find(_self.Selector.ScrollBar).length > 0) {
+                        //绑定滚动条
+                        Cg.UI.CustomScroll(_optionContent, {
+                            onScrollBarDown: function () { _self.State = true; },
+                            onStart: function () { _self.State = true; },
+                            onMove: function () { _self.State = true; },
+                            onScrollBarUp: function () {
+                                _self.HideInput.focus();
+                                _self.State = false;
+                            },
+                            onEnd: function () {
+                                _self.HideInput.focus();
+                                _self.State = false;
+                            }
+                        });
+                    }
+                   
+
+                    //初始化
+                    _optionContent.hide().css({ "opacity": "1", "filter": "alpha(opacity=100)" });
+                    _self.OptionContentClose();
+
+                    //点击下拉框
+                    _self.SelfDom.off("click").on("click", function () { _self.HideInput.focus(); });
+
+                    //焦点移除的时候关闭
+                    _self.HideInput.off("blur").on("blur", function () {
+                        if (_self.State == false) { _self.OptionContentClose(); }
+                    });
+
+                    //获得焦点的时候打开
+                    _self.HideInput.off("focus").on("focus", function () { _self.OptionContentOpen();});
+
+                    //选择某个项
+                    _self.SelfDom.find(_self.Selector.OptionContent).off(Cg.UI.EventType.Mousedown)
+                       .on(Cg.UI.EventType.Mousedown, _self.Selector.OoptionItem, function (e) {
+                           _self.State = true;
+                       });
+                    _self.SelfDom.find(_self.Selector.OptionContent).off("click")
+                        .on("click", _self.Selector.OoptionItem, function (e) {
+                            Cg.UI.StopBubble();
+                            var _text = $(this).text();
+                            var _val = $(this).attr("value");
+                            _self.HideInput.val(_val);
+                            $(_self.Selector.ViewValue).html(_text);
+
+                            _self.opt.OnChange.call(this, {
+                                target: $(this),
+                                value: _val,
+                                text: _text
+                            });
+
+                            _self.State = false;
+                            _self.HideInput.blur();
+                        });
+
+                    var _curItem = _self.SelfDom.find(_self.Selector.OoptionItem).eq(0);
+                    $(_self.Selector.ViewValue).html(_curItem.text());
+                    _self.HideInput.val(_curItem.attr("value"));
+                };
+
+                this.Init(Cg.Object.IsType(data, "array") ? data : {});
+
+
+                //设值
+                this.SetValue = function (val) {
+                    var _curItem = _self.SelfDom.find(_self.Selector.OoptionItem + "[value=" + val + "]").eq(0);
+                    
+                    if (_curItem.length > 0) {
+                        $(_self.Selector.ViewValue).html(_curItem.text());
+                        _self.HideInput.val(val);
+                    }
+                    
+                }
+
+                //获取值
+                this.GetValue = function () {
+                    return _self.HideInput.val();
+                }
+
+            }
+
+
+        },
+        //自定义单选按钮
+        CustomRadioBox: function (selector, data, option) {
+            /// <summary>自定义单选按钮</summary>
+            /// <param name="selector" type="String">自定义单选按钮主容器</param>
+            /// <param name="data" type="JsonArray">option的项数据 json数组</param>
+            /// <param name="option" type="Json">单选按钮配置</param>
+            /// <field name="opt" type="插件配置">控件配置</field>
+            /// <field name="HideInput" type="jQuery">隐藏的输入框 一般用于值传递以及焦点控制</field>
+
+
+            return new function () {
+                /// <summary>自定义下拉框</summary>
+                /// <field name="opt" type="插件配置">插件配置</field>
+
+                var _self = this;
+                //配置信息
+                _self.opt = $.extend({
+                    Selector: {},
+                    IsRequired:true,
+                    InputName: "Cg_InputName" + "-" + new Date().getTime() + "-" + Math.floor(Math.random() * 1000)
+                }, option);
+
+                _self.Selector = $.extend({
+                    Selector: selector,                                 
+                    Item: ".cg-Radio-Item",
+                    Selected: ".Select",
+                    ItemText: ".cg-Radio-ItemText"
+                }, _self.opt.Selector);
+
+                _self.SelfDom = $(_self.Selector.Selector);             //插件对象本身
+                 
+
+                var _FormatValue = function (val) {
+                    if (Cg.Object.IsType(val,"string") && val.toLowerCase() == "true") {
+                        return 1;
+                    }
+                    else if (Cg.Object.IsType(val, "string") && val.toLowerCase() == "false") {
+                        return 0;
+                    }
+                    
+                    return val;
+                }
+  
+                //填充项
+                this.SetValueList = function (arr) {
+                    var _itemDom = "";
+
+                    if (!_self.SelfDom.find(_self.Selector.Item).length) {
+                        _itemDom = _self.SelfDom.data("item");
+                    }
+                    else {
+                        _itemDom = _self.SelfDom.find(_self.Selector.Item).remove().eq(0).removeClass(Cg.UI.GetSelectorName(_self.Selector.Selected));
+                        _self.SelfDom.data("item", _itemDom);
+                    }
+                   
+
+                    if (_itemDom.find("input[type=radio]").length < 1) {
+                        _itemDom.append($('<input type="radio" name="' + _self.opt.InputName + '" />').hide());
+                    }
+                   
+                    $.each(arr, function (index, item) {
+                        var _itemClone = _itemDom.clone(true, true),
+                            _key = _FormatValue(index),//键值
+                            _val = item,//val
+                            _data = [],//sql里面多余的值
+                            _length = 0;//长度
+
+                        if (Cg.Object.IsType(item, "object")) {
+                            //遍历json里面的值
+                            $.each(item, function (key, val) {
+                                if (_length == 0) { _key = _FormatValue(val); }               //拿到第一个给key
+                                else if (_length == 1) { _val = val; }                         //拿到第二个给value
+                                else { _data.push({ "name": _key, "value": _val }); }          // 保存多余的数据
+                                _length++;
+                            });
+                        }
+
+                        _itemClone.attr("value", _key);
+                        _itemClone.find(_self.Selector.ItemText).html(_val);
+                        _itemClone.data(_data);
+                        _self.SelfDom.append(_itemClone);
+                    });
+                }
+                //初始化
+                this.Init = function (listValue) {
+                    /// <summary>初始化插件</summary>
+                    /// <param name="listValue" type="ArrayJson">填充的数据</param>
+                 
+                    if (!!listValue) { _self.SetValueList(listValue); }
+                    
+                    _self.SelfDom.find(_self.Selector.Item).off("click").on("click", function (e) {
+                        if ($(this).find("input")[0].checked) {
+                            if (!_self.opt.IsRequired) { $(this).find("input")[0].checked = false; }
+                            
+                        }
+                        else {
+                            $(this).find("input")[0].checked = true;
+                        }
+                        _self.SelfDom.find("input").change();
+                    });
+        
+                    _self.SelfDom.find("input").off("change").on("change", function () {
+                        if ($(this)[0].checked) {
+                            $(this).parents(_self.Selector.Item).eq(0).addClass(Cg.UI.GetSelectorName(_self.Selector.Selected));
+                        }
+                        else {
+                            $(this).parents(_self.Selector.Item).eq(0).removeClass(Cg.UI.GetSelectorName(_self.Selector.Selected));
+                        }
+                    });
+
+                };
+
+                this.Init(Cg.Object.IsType(data, "array") ? data : {});
+
+                //设值
+                this.SetValue = function (val) {
+                    if (!!val) {
+                        var _input = _self.SelfDom.find(_self.Selector.Item + "[value=" + _FormatValue(val) + "]").find("input")[0];
+                        if (!!_input) { _input.checked = true; }
+                    }
+                    else {
+                        _self.SelfDom.find(_self.Selector.Item).find("input").attr("checked",false);
+                    }
+                    _self.SelfDom.find("input").change();
+                }
+
+                //获取值
+                this.GetValue = function () {
+                    return _self.SelfDom.find(_self.Selector.Selected).attr("value");
+                }
+
+
+            }
+
+           
+
+        },
+        //自定义aotoComplete
+        CustomAutoComplete: function (selector, dataItf, option) {
+            /// <summary>自定义AutoComplete</summary>
+            /// <param name="selector" type="String">input选择器</param>
+            /// <param name="dataItf" type="JsonArray">数据接口地址</param>
+            /// <param name="option" type="Json">下拉框配置</param>
+
+            return new function () {
+                //指向当前对象
+                _self = this;
+                //插件配置
+                _self.option = $.extend({
+                    //选择器
+                    Selector: {},
+                    //隐藏的值属性名称
+                    value: "data-val",
+                    //序列化参数列表
+                    SerializeParam: function (val) {
+                        return { "param": val };
+                    },
+                    //检索的数据条数
+                    Limit: 30,
+                    //格式化显示的项
+                    FormatData: function (data) {
+                        if (!!data && Cg.Object.IsType(data, "string")) { data = $.parseJSON(data); }
+                        if (!!data.data) {
+                            if (Cg.Object.IsType(data.data, "string")) { data = $.parseJSON(data.data); }
+                            else { data = data.data; }
+                        }
+                        return data || [];
+                    },
+                    //选择改变的时候触发的事件
+                    Change: function () { },
+                    //单击事件
+                    Click: function () { }
+
+                }, option);
+                //选择器扩展
+                _self.Selector = $.extend({
+                    //autocomplete 容器选择器
+                    Selector: selector,
+                    //输入框选择器
+                    InputSelector: ".Cg-AutoComplete-Input",
+                    //显示的数据集合的容器选择器
+                    OptionList: ".Cg-AutoComplete-OptionList",
+                    //显示的项选择器
+                    Item: ".Cg-AutoComplete-Item",
+                    //显示的文本选择器
+                    Text: ".Cg-AutoComplete-Text",
+                    //选中项的选择器
+                    ItemSelect: ".Cg-AutoComplete-ItemHover"
+                }, _self.option.Selector);
+
+                //数据接口
+                _self.DataItf = dataItf;
+                //格式化参数
+                _self.SerializeParam = _self.option.SerializeParam;
+                //格式化显示的项
+                _self.onFormatData = _self.option.FormatData;
+                //选择改变的时候触发的事件
+                _self.onChange = _self.option.Change;
+                //点击选择的事件
+                _self.onClick = _self.option.Click;
+
+                //插件容器
+                var _Container = $(_self.Selector.Selector),
+                    //显示项模板
+                    _ItemTemp = _Container.find(_self.Selector.Item).remove().clone(true, true)
+                    .removeClass(Cg.UI.GetSelectorName(_self.Selector.ItemSelect)),
+                    //显示项容器
+                    _OptionList = _Container.find(_self.Selector.OptionList);
+
+                //数据模板是否存在于缓存 不存在则需要缓存
+                if (!_OptionList.data("itemTemp")) { _OptionList.data("itemTemp", _ItemTemp); }
+
+                //autoComplete输入框对象
+                _self.AutoCompleteInput = _Container.find(_self.Selector.InputSelector).val("");
+
+                //选择某个选项
+                function _SelectItem(index) {
+                    _OptionList.find(_self.Selector.Item).eq(index)
+                      .addClass(Cg.UI.GetSelectorName(_self.Selector.ItemSelect))
+                          .siblings(_self.Selector.Item)
+                        .removeClass(Cg.UI.GetSelectorName(_self.Selector.ItemSelect));
+
+                    _SetValue(_OptionList.find(_self.Selector.ItemSelect).attr(_self.option.value), _OptionList.find(_self.Selector.ItemSelect).text());
+                }
+
+                //显示数据列表
+                function _OpenItemPanel(data) {
+                    _OptionList.empty().hide();
+                    if (!data) {
+                        _OptionList.find(_self.Selector.Item + "[" + _self.option.value + "=" + _self.AutoCompleteInput.attr(_self.option.value) + "]")
+                        .addClass(Cg.UI.GetSelectorName(_self.Selector.ItemSelect))
+                            .siblings(_self.Selector.Item).removeClass(Cg.UI.GetSelectorName(_self.Selector.ItemSelect));
+                        _OptionList.show();
+                        return false;
+                    }
+                    else if (!!data.length && data.length > 0) {
+                        $.each(data, function (index, item) {
+                            if (index > _self.option.Limit) { return; }
+                            var _itemTempClone = _OptionList.data("itemTemp").clone(true, true);
+                            var _itemTxtDom = _itemTempClone.find(_self.Selector.Text).length > 0 ?
+                                _itemTempClone.find(_self.Selector.Text) : _itemTempClone;
+                            if (Cg.Object.IsType(item, "object")) {
+                                var _index = 0, _data = [];
+                                $.each(item, function (key, val) {
+                                    if (_index == 0) {
+                                        _itemTempClone.attr(_self.option.value, val);
+                                    }
+                                    else if (_index == 1) {
+                                        _itemTxtDom.text(val);
+                                    }
+                                    else {
+                                        var _keyToVal = {};
+                                        _keyToVal[key] = val;
+                                        _data.push(_keyToVal);
+                                    }
+                                    _index++;
+                                });
+                                _itemTempClone.data(_data);
+                            }
+                            else {
+                                _itemTempClone.attr(_self.option.value, index);
+                                _itemTxtDom.text(item);
+                            }
+
+                            _OptionList.append(_itemTempClone);
+                        });
+                        _OptionList.show();
+                    }
+
+
+                }
+
+                //设置值
+                function _SetValue(val, text) {
+                    /// <summary>设置值</summary>
+                    /// <param name="val" type="String">值</param>
+                    /// <param name="text" type="String">显示的文本</param>
+
+                    if (val !== _self.AutoCompleteInput.attr(_self.option.value, val)) {
+
+                        _self.AutoCompleteInput.val(text).attr(_self.option.value, val);
+                        _self.option.Change({ val: val, text: text });
+
+                    }
+                }
+
+                //隐藏数据列
+                function _CloseItemPanel() { _OptionList.hide(); }
+
+                //键盘按键事件句柄
+                function _KeyDown(event) {
+
+                    switch (event.keyCode) {
+                        case Cg.UI.KeyCode.HOME:
+                            break;
+                        case Cg.UI.KeyCode.END:
+                            break;
+                        case Cg.UI.KeyCode.UP:
+                            Cg.UI.StopDefault(event);
+                            break;
+                        case Cg.UI.KeyCode.DOWN:
+                            Cg.UI.StopDefault(event);
+                            break;
+                        case Cg.UI.KeyCode.LEFT:
+
+                            break;
+                        case Cg.UI.KeyCode.RIGHT:
+
+                            break;
+                        case Cg.UI.KeyCode.ENTER:
+                        case Cg.UI.KeyCode.SPACE:
+
+                            break;
+                        case Cg.UI.KeyCode.BACKSPACE:
+
+                            break;
+                        case Cg.UI.KeyCode.ESCAPE:
+
+                            break;
+                        default:
+
+                            break;
+                    }
+                }
+
+                //按键弹起的事件句柄
+                function _KeyUp(event) {
+                    Cg.UI.StopBubble(event);
+                    Cg.UI.StopDefault(event);
+                    switch (event.keyCode) {
+                        case Cg.UI.KeyCode.HOME:
+                            //  this._move("first", "first", event);
+                            break;
+                        case Cg.UI.KeyCode.END:
+                            // this._move("last", "last", event);
+                            break;
+                        case Cg.UI.KeyCode.UP:
+                            //获取当前选择项的位置
+                            var _index = _OptionList.find(_self.Selector.Item).index($(_self.Selector.ItemSelect));
+                            //某一行
+                            _SelectItem(_index <= 0 ? 0 : --_index);
+                            Cg.UI.StopDefault(event)
+                            break;
+                        case Cg.UI.KeyCode.DOWN:
+
+                            //获取当前选择项的位置
+                            var _index = _OptionList.find(_self.Selector.Item).index($(_self.Selector.ItemSelect)),
+                                _itemLen = _OptionList.find(_self.Selector.Item).length;
+
+                            //处理索引的边界问题
+                            if (_index < 0) { _index = 0; }
+                            else if (_index >= _itemLen - 1) { _index = _itemLen - 1; }
+                            else { _index++; }
+
+                            //某一行
+                            _SelectItem(_index);
+
+                            break;
+                        case Cg.UI.KeyCode.LEFT:
+
+                            break;
+                        case Cg.UI.KeyCode.RIGHT:
+
+                            break;
+                        case Cg.UI.KeyCode.ENTER:
+                            _self.AutoCompleteInput.blur();
+                            break;
+                        case Cg.UI.KeyCode.SPACE:
+                            _Search.call(this);
+                            break;
+                        case Cg.UI.KeyCode.BACKSPACE:
+
+                            //按下删除键的时候 看输入框是否有值 没有值的话直接关闭面板 有值的话继续查询
+                            if (!$(this).val()) { _CloseItemPanel(); }
+                            else { _Search.call(this); }
+
+                            break;
+                        case Cg.UI.KeyCode.ESCAPE:
+                            //按下ESC键取消搜索
+                            _CloseItemPanel();
+                            break;
+                        default:
+                            _Search.call(this);
+                            break;
+                    }
+                }
+
+                //搜索
+                function _Search() {
+                    /// <summary>搜索</summary>
+
+
+                    //当前输入框的内容
+                    var _val = $(this).val();//.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&");
+
+                    if (/[\S]+/.test((Cg.Object.IsType(_val, "string") ? _val : "").trim())) {
+                        if (!!_self.DataItf) {
+                            CgAjax.PostData(_self.DataItf, _self.SerializeParam(_val), function (data) {
+                                data = _self.onFormatData(data);
+                                _OpenItemPanel(data);
+                            });
+                        }
+                        else {
+                            _OpenItemPanel(_self.onFormatData({}));
+                        }
+
+                    }
+                };
+
+                //按键按下的时候触发
+                _self.AutoCompleteInput.off("keyup").on("keyup", _KeyUp);
+                //按键弹起的时候触发
+                _self.AutoCompleteInput.off("keydown").on("keydown", _KeyDown);
+                //失去焦点的时候触发
+                _self.AutoCompleteInput.off("blur").on("blur", function () { _CloseItemPanel(); });
+                //得到焦点的时候触发
+                _self.AutoCompleteInput.off("focus").on("focus", function () {
+                    if (!!$(this).val()) {
+                        if (_Container.find(_self.Selector.Item).length > 0) {
+                            _OptionList.show();
+                        }
+                        else { _Search.call(this); }
+                    }
+
+                });
+
+                _OptionList.undelegate(Cg.UI.EventType.Mousedown)
+                          .delegate(_self.Selector.Item, Cg.UI.EventType.Mousedown, function (e) {
+                              if (event.which == 3) { return; }
+                              event = event || window.event;
+
+                              _SetValue($(this).attr(_self.option.value), $(this).text());
+
+                          });
+
+            }
+        }
+
+    });
+
+
+    //=============================================================
+    //====== Touch 相关事件
+    (function () {
+        //Touch 相关事件
+        var _Touch = function (jo) {
+            /// <summary>触摸相关的事件</summary>
+            /// <param name="jo" type="String">jQuery对象</param>
+
+            //单击事件句柄
+            this.TapEvent = new Cmn.Event(jo);
+            //刷屏事件句柄
+            this.SwipeEvent = new Cmn.Event(jo);
+            //长按事件句柄
+            this.HoldEvent = new Cmn.Event(jo);
+            //开始拖动事件句柄
+            this.DragStartEvent = new Cmn.Event(jo);
+            //拖动事件句柄
+            this.DragEvent = new Cmn.Event(jo);
+            //拖动结束事件句柄
+            this.DragEndEvent = new Cmn.Event(jo);
+
+            this.Config = {
+                //长按时间  默认3秒
+                HoldTime:3000
+            };
+
+
+
+            var _Self = this,
+                //按下到按上的时间差 
+                _DownByUpTimeDiff = 0,
+                //按下的时间戳
+                _DownTime = new Date().getTime(),
+                //获取手指或者鼠标在屏幕的坐标
+                _GetMousePoint = function (ev) {
+                    ev = window.event && window.event.touches ? event.touches[0] : ev;
+                    ev = ev || event.changedTouches[0];
+                    return { 'x': ev.pageX, 'y': ev.pageY };
+                },
+                //拖动方向  (此为用户传参,内部实现用)
+                _DragDirection = undefined,
+                //滑动方向  （此为用户传参  内部实现用）
+                _SwipeDirection = undefined,
+                //起始点坐标
+                _StartPoint = {},
+                //长按事件的计时器
+                _HoldTimeOut = null,
+                //补救timeout   解决用户拖动到界外end事件不触发问题
+                _remedyTimmer = null,
+                //长按的事件触发器
+                _holdTimeout = null;
+
+
+            //回调函数   （单击  长按  拖动   滑动 共有的回调参数）
+            var _CallBack = {
+                //动作
+                Action: "",
+                //选择器
+                Selector: jo.replace(/^\#|\./g, "")
+            };
+
+            ////滑动特有的回调属性 （json）
+            //var _SwipeCallBack = {
+ 
+            //    },
+            //    //单击特有的回调属性 （json）
+            //    _TapCallBack = { 
+
+            //    },
+            //    //拖动特有的回调属性 （json）
+            //    _DragCallBack = {
+
+            //    };
+
+            //事件委托给body
+            $("body").delegate(jo, Cmn.UI.EventType.Mousedown, function  (e) {
+                Cg.UI.StopBubble(e);
+                Cg.UI.StopDefault(e);
+
+                    //设置事件触发的对象
+                var _curEventTarget = $(this); 
+
+                //获取起始点 (Cpm    2015 6.1改    因为考虑到外部用到起始点  局部变量删除) 
+                _StartPoint = _GetMousePoint(e);
+
+                //清除回调动作
+                _CallBack.Action = "dragstart";
+                //清除长按timeout
+                clearTimeout(_holdTimeout);
+
+                _holdTimeout = setTimeout(function () {
+                    //动作为长按   触发长按事件
+                    _CallBack.Action = "hold";
+                    _Self.HoldEvent.Trigger([_CallBack]);
+
+                }, _Self.Config.HoldTime); 
+
+                //如果触发事件  
+                if (_Self.DragStartEvent.Trigger([_CallBack]) === false) {
+                    return;
+                };   
+
+                //移动
+               _curEventTarget.off(Cmn.UI.EventType.Mousemove, _MoveHandle).on(Cmn.UI.EventType.Mousemove, _MoveHandle);
+               // //结束
+               //_curEventTarget.off(Cmn.UI.EventType.Mouseup, _EndHandle).on(Cmn.UI.EventType.Mouseup, _EndHandle);
+
+               $(window).off(Cmn.UI.EventType.Mouseup, _EndHandle).on(Cmn.UI.EventType.Mouseup, _EndHandle);
+
+               //event.preventDefault();
+            });
+
+
+
+            //鼠标或手指移动的事件句柄
+            function _MoveHandle(e) {  
+
+                //当前手指或鼠标移动的位置
+                var _nowMovePoint = _GetMousePoint(e),
+                    //当前手指或鼠标移动了多少距离
+                    _movePoint = {
+                        x: _nowMovePoint.x - _StartPoint.x,
+                        y: _nowMovePoint.y - _StartPoint.y
+                    };
+
+
+                //拖动回调
+                Cmn.Extend(_CallBack, _movePoint, { Action: "drag" });
+
+                (!!_movePoint.x || !!_movePoint.y) && _Self.DragEvent.Trigger([_CallBack]);
+                 
+                if (_movePoint.x > 10 || _movePoint.y > 10) {
+                //清除长按timeout
+                clearTimeout(_holdTimeout);
+                }
+                //if (!Cmn.Func.IsMobile()) {
+                //    clearTimeout(_remedyTimmer); 
+                //    _remedyTimmer = setTimeout(function () {
+                //        _EndHandle(e);
+                //    }, 1000);
+                //}
+            };
+          
+            //鼠标或手指拿起的事件句柄
+            function _EndHandle(e) {
+                ////如果鼠标弹起就删除补救措施
+                //clearTimeout(_remedyTimmer);
+
+                //清除长按timeout
+                clearTimeout(_holdTimeout);
+
+                //结束点坐标  
+                var _endPoint = _GetMousePoint(e);
+
+                //X轴滑动距离
+                var _xSwipeDistance = Math.abs(_endPoint.x - _StartPoint.x),
+                    //Y轴滑动距离
+                    _ySwipeDistance = Math.abs(_endPoint.y - _StartPoint.y),
+                    //滑动方向  用于回调
+                    _direction = "",
+                    //滑动冗余距离 
+                    _swipeRdyDistance = 20,
+                    //单击冗余距离
+                    _tapRdyDistance = 50;
+
+                //清除事件
+                $(window).off(Cg.UI.EventType.Mouseup);
+                $(jo).off(Cg.UI.EventType.Mousemove);
+
+
+                //如果X轴滑动距离大于Y轴 并且Y轴滑动距离小于冗余距离的三分之一
+                if (_xSwipeDistance > _ySwipeDistance && _ySwipeDistance < _swipeRdyDistance*3 ) {
+                    //_swipeDistance = _xSwipeDistance;
+                    //如果X轴滑动距离大于冗余距离  则判为滑动成功
+                    if (_xSwipeDistance > _swipeRdyDistance) {
+                        //如果结束点大于起点 执行fn方法  并回调left  否则执行fn方法 回调right
+                        _endPoint.x - _StartPoint.x <= 0 ? (_direction = "left") : (_direction = "right");  
+                    }
+                    //如果用户设置了Y轴方向   就过滤
+                    if (_SwipeDirection == "Y") { _direction = "";}
+                } else if (_xSwipeDistance < _ySwipeDistance && _xSwipeDistance < _swipeRdyDistance*3 ) {
+                    //如果Y轴滑动距离大于X轴  并且X轴滑动距离小于冗余距离的三分之一 
+                    //如果X轴滑动距离大于冗余距离  则判为滑动成功
+                    if (_ySwipeDistance > _swipeRdyDistance) {
+                        //如果结束点大于起点 执行fn方法  并回调left  否则执行fn方法 回调right
+                        _endPoint.y - _StartPoint.y <= 0 ? (_direction = "up") : (_direction = "down"); 
+                    }
+                    //如果用户设置了X轴方向   就过滤
+                    if (_SwipeDirection == "X") { _direction = ""; } 
+                } else {
+                    //如果X轴滑动距离与Y轴相等
+                    _direction = ""; 
+                }
+
+                //如果滑动方向为空  
+                if (_direction == "") {
+                    //如果x y轴的滑动距离都小于单击冗余距离    就触发单击事件 
+                    if (_xSwipeDistance < _tapRdyDistance && _ySwipeDistance < _tapRdyDistance) {
+                        //方向为空
+                        _CallBack.Action = "tap";
+                        //单击特有回调合并给CallBack
+                        Cmn.Extend(_CallBack, {});
+
+                    } else {
+                        _CallBack.Action = "";
+                    }
+                } else {
+                    ////把滑动方向设置给毁掉函数的Action
+                    //_CallBack.Action = _direction;
+                    //滑动特有回调合并给CallBack变量
+                    Cmn.Extend(_CallBack, { Action: _direction });
+                }
+                //如果用户操作为单击   就触发单击事件
+                _CallBack.Action == "tap"  && _Self.TapEvent.Trigger([_CallBack]);
+                //如果滑动方向不为空  就触发滑动事件
+                (!(_CallBack.Action == "") && !(_CallBack.Action == "tap")) && _Self.SwipeEvent.Trigger([_CallBack]);
+
+                if (!_xSwipeDistance && !_ySwipeDistance) {
+                    //如果x和y的距离都等于0就过滤
+                    return; 
+                }
+
+                //如果结束坐标和开始坐标不相同   就触发拖动结束事件
+                (_CallBack.Action = "dragend", _Self.DragEndEvent.Trigger([_CallBack])); 
+            };
+
+
+            //单击
+            this.Tap = function (fn) {
+                /// <param name="fn" type="function">单击结束触发的方法 回调函数为json对象 Action为动作,Selector为选择器</param>
+                if (arguments.length == 0) {
+                    this.TapEvent.Trigger();
+                }
+                else {  
+                    if (Cmn.IsType(fn, "function")) {
+                        this.TapEvent.Add(fn, "cmn_touch_tap");
+                    }
+                    else {
+                        this.TapEvent.Remove("cmn_touch_tap");
+                    }
+                }
+            };
+
+            //手指在屏幕上刷动
+            this.Swipe = function (direction, fn) { 
+                /// <param name="direction" type="String">X轴为水平滑动    Y轴为垂直滑动  默认为全局拖动</param>
+                /// <param name="dragFn" type="function">滑动结束触发的方法  回调函数为json格式 Action为动作</param> 
+
+                if (arguments.length == 0) {
+                    this.TapEvent.Trigger();
+                }
+                else {
+                    //如果参数长度为1 
+                    if (arguments.length == 1 && Cmn.IsType(direction, "function")) {
+                        _SwipeDirection = "";
+                        this.SwipeEvent.Add(direction, "cmn_touch_swipe");
+                    } else {
+                        if (Cmn.IsType(fn, "function")) {
+                            //滑动方向
+                            _SwipeDirection = Cmn.Func.FirstUppercase(direction); 
+                            this.SwipeEvent.Add(fn, "cmn_touch_swipe");
+                        }
+                        else {
+                            this.SwipeEvent.Remove("cmn_touch_swipe");
+                        }
+                    }
+                }
+            };
+
+
+
+
+            //长按
+            this.Hold = function (fn) {
+                /// <summary>长按</summary>
+                if (arguments.length == 0) {
+                    this.TapEvent.Trigger();
+                }
+                else {
+                    if (Cmn.IsType(fn, "function")) {
+                        this.HoldEvent.Add(fn, "cmn_touch_hold"); 
+                    }
+                    else {
+                        this.HoldEvent.Remove("cmn_touch_hold");
+                    }
+                }
+            };  
+
+
+            //拖动
+            this.Drag = function (Fn) {
+                /// <summary>拖拽时触发的事件</summary>
+                /// <param name="Fn" type="function">拖拽时触发的事件</param> 
+
+                if (arguments.length == 0) {
+                    this.TapEvent.Trigger();
+                } else {
+                    if (Cmn.IsType(Fn, "function")) {
+                        this.DragEvent.Add(Fn, "cmn_touch_drag");
+                    } else {
+                        this.DragEvent.Remove("cmn_touch_drag");
+                    } 
+                }
+            };
+
+            this.DragStart = function (Fn) {
+                /// <summary>准备开始拖拽</summary>
+                /// <param name="Fn" type="function">拖拽时手指或鼠标按下触发的事件 </param> 
+
+                if (arguments.length == 0) {
+                    this.TapEvent.Trigger();
+                } else {
+                    if (Cmn.IsType(Fn, "function")) {
+                        this.DragStartEvent.Add(Fn, "cmn_touch_dragstart");
+                    } else {
+                        this.DragStartEvent.Remove("cmn_touch_dragstart");
+                    }
+                }
+            };
+
+
+            this.DragEnd = function (Fn) {
+                /// <summary>拖拽结束</summary>
+                /// <param name="Fn" type="function">拖拽结束后触发的事件 </param>  
+
+                if (arguments.length == 0) {
+                    this.TapEvent.Trigger();
+                } else {
+                    if (Cmn.IsType(Fn, "function")) {
+                        this.DragEndEvent.Add(Fn, "cmn_touch_dragend");
+                    } else {
+                        this.DragEndEvent.Remove("cmn_touch_dragend");
+                    }
+                }
+            };
+
+
+        };
+        //缓存当前选择器对象
+        var _CacheSelectors = {};
+
+        Cmn.Extend(Cmn.UI, {
+          
+            //Touch
+            Touch: function (selector) {
+                /// <summary>触摸相关的事件</summary>
+                /// <param name="selector" type="String">选择器 或者 jQuery对象</param>
+
+                //指向当前对象
+                var _Self = this,
+                    //事件触发的jQuery对象
+                    _jq = $(selector);
+
+
+
+                if (!selector) {
+                    Cmn.DebugLog("当前dom对象不存在！");
+                }
+                else {
+
+                    //没绑定过的话
+                    if (!_CacheSelectors[selector]) {
+                        _CacheSelectors[selector] = new _Touch(selector);
+                    }
+
+                    return _CacheSelectors[selector];
+                }
+
+            }
+        });
+
+
+    })();
+ 
+    //=============================================================
+    //====== 图片轮播插件
+    Cmn.Extend(Cmn.UI, {
+        //图片切换模式
+        ImageCarouselModel: {
+            //3d 卡片切换
+            ThreeDCard: "ThreeDCard"
+        },
+        //图片轮播插件 默认 3 d 切换
+        ImageCarousel: function (selector, option) {
+            /// <summary>图片轮播插件 默认3d卡片切换 ThreeDCard </summary>
+            /// <param name="selector" type="String">容器选择器</param>
+            /// <param name="option" type="Json">插件配置</param>
+
+            //指向当前UI对象
+            var _Self_UI = this;
+          
+            return new function () {
+               
+                //指向当前插件
+                var _Self_IC = this,
+                    //当前插件容器对象
+                    _ic_Container = $(selector);
+
+                _Self_IC.Option = Cmn.Extend({
+                    //模式
+                    Model: _Self_UI.ImageCarouselModel.ThreeDCard,
+                    //自动
+                    Auto: false,
+                    //速度
+                    Speed: 460,
+                    //切换的项
+                    Item: ".cmn-ui-item",
+                    //控件宽度
+                    Width: 0,
+                    //高度
+                    Height:0,
+                    //项索引
+                    IndexItem: ".cmn-ui-index",
+                    //选中选择器
+                    Selected: ".Selected",
+                    //默认显示索引
+                    DefaultIndex:0
+
+                }, option);
+             
+ 
+                //获取下一个索引
+                _Self_IC.GetNextIndex = function (index) {
+                    index = (index == undefined) ? _index : index;
+                    if (index >= _ic_item.length - 1) { return 0; }
+                    else { return (index + 1); }
+                }
+
+                //获取上一个索引
+                _Self_IC.GetPrevIndex = function (index) {
+                    index = (index == undefined) ? _index : index;
+                    if (index <= 0) { return _ic_item.length - 1; }
+                    else { return (index - 1); }
+                }
+
+                //切换项
+                var _ic_item = $(selector).find(_Self_IC.Option.Item),
+                    _isRunComplete = true,
+                    //当前索引
+                    _index = _Self_IC.Option.DefaultIndex,
+                    _nextIndex = _Self_IC.GetNextIndex(),
+                    _prevIndex = _Self_IC.GetPrevIndex();
+
+                //初始化 size
+                if (_Self_IC.Option.Width == 0) {
+                    _Self_IC.Option.Width = _ic_Container.width();
+                }
+
+                if (_Self_IC.Option.Height == 0) {
+                    _Self_IC.Option.Height = _ic_Container.height();
+                }
+
+                //初始化容器视距
+                //如果是3d卡片切换的话  初始化视距
+                if (_Self_IC.Option.Model == _Self_UI.ImageCarouselModel.ThreeDCard) {
+                    TweenMax.set(_ic_Container, {
+                        perspective: 900,
+                        transformStyle: "preserve-3d",
+                        perspectiveOrigin: "50% 50%",
+                        width: _Self_IC.Option.Width,
+                        height: _Self_IC.Option.Height
+                    });
+
+                    TweenMax.set(_ic_item, {
+                        zIndex: 0, z: (_Self_IC.Option.Width/2)*-1,
+                        width: _Self_IC.Option.Width,
+                        height: _Self_IC.Option.Height
+                    });
+
+                    TweenMax.set(_ic_item.eq(_index), { zIndex: 3, z: "0px" });
+                    TweenMax.set(_ic_item.eq(_nextIndex), { zIndex: 2, x: (_Self_IC.Option.Width / 2) });
+                    TweenMax.set(_ic_item.eq(_prevIndex), { zIndex: 2, x: (_Self_IC.Option.Width / 2) * -1 });
+                    
+                }
+
+                //下一个
+                _Self_IC.Next = function () {
+                    /// <summary>下一页</summary>
+                    var _distance = _ic_item.width() / 2;
+                    var _next = function (index,callback) {
+
+                        var _param = {
+                            zIndex: 0, x: (_Self_IC.Option.Width / 2) * -1, z: (_Self_IC.Option.Width / 2) * -1, onComplete: function () {
+                                if (index == _Self_IC.GetNextIndex(_nextIndex)) {
+                                    _prevIndex = _index;
+                                    _index = _nextIndex;
+                                    _nextIndex = index;
+                                    callback && callback();
+                                }
+                            }
+                        };
+
+                        if (index == _prevIndex) {
+                            _param.zIndex = 0;
+                            _param.x = 0;
+                        }
+                        else if (index == _index) {
+                            _param.zIndex = 2;
+                            _param.x = (_Self_IC.Option.Width / 2) * -1;
+                            _param.z = _param.x;
+                        }
+                        else if (index == _nextIndex) {
+                            _param.zIndex = 3;
+                            _param.x = 0;
+                            _param.z = 0;
+                        }
+                        else {
+                            _param.zIndex = 2;
+                            _param.x = (_Self_IC.Option.Width / 2);
+                        }
+
+                        TweenMax.to(_ic_item.eq(index), _Self_IC.Option.Speed / 1000, _param);
+                        if (index != _Self_IC.GetNextIndex(_nextIndex)) {
+                            _next(_Self_IC.GetNextIndex(index), callback);
+                        }
+                    }
+
+                    if (_isRunComplete) {
+                        _isRunComplete = false;
+                        _next(_prevIndex, function () {
+                            _isRunComplete = true;
+                        }); 
+                    }
+                   
+                }
+
+                //上一个
+                _Self_IC.Prev = function () {
+                    /// <summary>上一页</summary>
+
+                    var _next = function (index, callback) {
+
+                        var _param = {
+                            zIndex: 0, x: 0, z: (_Self_IC.Option.Width / 2) * -1, onComplete: function () {
+                                if (index == _Self_IC.GetPrevIndex(_prevIndex)) {
+                                    _nextIndex = _index;
+                                    _index = _prevIndex;
+                                    _prevIndex = index;
+                                    callback && callback();
+                                }
+                            }
+                        };
+
+                        if (index == _prevIndex) {
+                            _param.zIndex = 3;
+                            _param.x = 0;
+                            _param.z = 0;
+                           
+                        }
+                        else if (index == _index) {
+                            _param.zIndex = 2;
+                            _param.x = (_Self_IC.Option.Width / 2);
+                            _param.z = _param.x*-1;
+                        }
+                        else if (index == _nextIndex) {
+                            _param.zIndex = 0;
+                            _param.x = 0;
+                        }
+                        else {
+                            _param.zIndex = 2;
+                            _param.x = (_Self_IC.Option.Width / 2)*-1;
+                        }
+
+                        TweenMax.to(_ic_item.eq(index), _Self_IC.Option.Speed / 1000, _param);
+                        if (index != _Self_IC.GetPrevIndex(_prevIndex)) {
+                            _next(_Self_IC.GetPrevIndex(index), callback);
+                        }
+                    }
+
+                    if (_isRunComplete) {
+                        _isRunComplete = false;
+                        _next(_nextIndex, function () {
+                            _isRunComplete = true;
+                        });
+                    }
+
+                }
+            }
+
+        }
+
+    });
+
+
+})(window);
+
+
+
+
+
