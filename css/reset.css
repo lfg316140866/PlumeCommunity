@@ -26,7 +26,7 @@ address, caption, cite, code, dfn, em, strong, th, var, optgroup {
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
   font-weight: normal;
-  font-family: "Microsoft YaHei"; }
+  font-family: "黑体"; }
 
 /* line 8, ../sass/reset.scss */
 abbr, acronym {
@@ -46,7 +46,7 @@ input, button, textarea, select {
 body {
   background: #fff;
   color: #5e5e5e;
-  font: 14px/2em "黑体",SimSun,Arial; }
+  font: 14px/2em "黑体",Arial; }
 
 /* line 12, ../sass/reset.scss */
 ol, ul {

@@ -5,17 +5,17 @@ Error: File to import not found or unreadable: user/custom.
         on line 18 of tobe/_base.scss
         from line 2 of style.scss
 
-13: .Main{@include position();}
-14: .Position{position:absolute;} 
-15: .PublicScenes{@include position();display:none;@extend %wh100;overflow:hidden;}
-16: /*各场景背景*\/
-17: .Bg{@include position();@extend %wh100;}
-18: .PublicScenes .Bg img{position:relative;}
-19: .Inner{@extend %center-block;position:relative;height:$Height;width:640px;}
-20: 
-21: .general-font{@include font-style($Font-Size,$Color-Black,null);}
-22: .center-vertical{vertical-align:middle;display:table-cell;}
-23: %vertically{@extend %inline-block;vertical-align:middle;}
+13: .PublicScenes{display:none;@extend %wh100;overflow:hidden;}
+14: /*各场景背景*\/
+15: .Bg{@include position();@extend %wh100;
+16:   img{width:$Width;}
+17: }
+18: .Wraps,.Mains{@extend %wh100;}
+19: .PublicScenes .Bg img{position:relative;}
+20: .Inner{@extend %center-block;position:relative;height:$Height;width:640px;}
+21: 
+22: .general-font{@include font-style($Font-Size,$Color-Black,null);}
+23: //.center-vertical{vertical-align:middle;display:table-cell;}
 
 Backtrace:
 tobe/_base.scss:18
@@ -75,4 +75,4 @@ C:/Ruby/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: user/custom.\A        Load paths:\A          \A         on line 18 of tobe/_base.scss\A         from line 2 of style.scss\A \A 13: .Main{@include position();}\A 14: .Position{position:absolute;} \A 15: .PublicScenes{@include position();display:none;@extend %wh100;overflow:hidden;}\A 16: /*各场景背景*/\A 17: .Bg{@include position();@extend %wh100;}\A 18: .PublicScenes .Bg img{position:relative;}\A 19: .Inner{@extend %center-block;position:relative;height:$Height;width:640px;}\A 20: \A 21: .general-font{@include font-style($Font-Size,$Color-Black,null);}\A 22: .center-vertical{vertical-align:middle;display:table-cell;}\A 23: %vertically{@extend %inline-block;vertical-align:middle;}"; }
+  content: "Error: File to import not found or unreadable: user/custom.\A        Load paths:\A          \A         on line 18 of tobe/_base.scss\A         from line 2 of style.scss\A \A 13: .PublicScenes{display:none;@extend %wh100;overflow:hidden;}\A 14: /*各场景背景*/\A 15: .Bg{@include position();@extend %wh100;\A 16:   img{width:$Width;}\A 17: }\A 18: .Wraps,.Mains{@extend %wh100;}\A 19: .PublicScenes .Bg img{position:relative;}\A 20: .Inner{@extend %center-block;position:relative;height:$Height;width:640px;}\A 21: \A 22: .general-font{@include font-style($Font-Size,$Color-Black,null);}\A 23: //.center-vertical{vertical-align:middle;display:table-cell;}"; }
