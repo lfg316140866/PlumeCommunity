@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/YuQianMaster.master" AutoEventWireup="true" CodeFile="Personal.aspx.cs" Inherits="Personal" %>
-
+<%@ MasterType VirtualPath="~/master/YuQianMaster.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="Js/SiteJs/SiteFunc.js"></script>
     <script src="Js/SiteJs/InformationThrows.js"></script>
@@ -11,21 +11,21 @@
             <!--个人-->
             <div class="individual" id="individual">
                 <!--<div class="Bg"><img  src="images/load.png" lazypath="images/bg/individual_bg.jpg" /></div>-->
-                <div class="Inner JscInnerOne">
+                 <div class="Inner JscInnerTwo" >
                     <div class="indal-box">
                         <div class="indal-bg ">
-                            <img class="JscBgImg" src="images/individual-box.png" alt="" /></div>
+                            <img class="JscBgImg" src="" alt="" /></div>
                         <div class="indal-top">
-                            <div class="indal-fans">
+                            <div class="indal-fans JscFansJump">
                                 <em class="fans-attion general-font pub-indal">粉丝</em>
                                 <span class="number pub-indal JscFollowedCount">888</span>
                             </div>
                             <div class="indal-portrait ">
                                 <p class="portrait JscUserImg">
-                                    <img src="images/personal-img.png" alt="" /></p>
-                                <i class="icon-tagss JscTalentLable">C</i>
+                                    <img src="images/UserImg.png" alt="" /></p>
+                                <i class="icons-tages JscTalentLable">C</i>
                             </div>
-                            <div class="indal-attention">
+                            <div class="indal-attention JscAttentionJump">
                                 <em class="fans-attion general-font pub-indal">关注</em>
                                 <span class="number pub-indal JscFollowCount">36</span>
                             </div>
@@ -49,60 +49,60 @@
                     </div>
                     <!--他人的时候隐藏-->
                     <div class="indal-btn">
-                        <div class="personal-ford JscCollectBtn"><a href="javascript:void(0)" class="btn-sprite"></a><span class="general-font JscColloctCount">105</span></div>
-                        <div class="personal-coll JscReleaseBtn"><a href="javascript:void(0)" class="btn-sprite"></a><span class="general-font JscWorkCount">55</span></div>
-                    </div>
-                    <div class="indal-con">
-                        <ul class="indal-nav JscPhotoBoxOne">
-                            <li class="JscPhotoOne dat-WorkID-cid" cid=""><a href="javascript:void(0)">
-                                <img class="dat-PicPath-src" src="images/personal-img.png" alt="" /></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="Inner JscInnerTwo" style="display: none">
-                    <div class="indal-box">
-                        <div class="indal-bg ">
-                            <img class="JscBgImg" src="images/individual-box.png" alt="" /></div>
-                        <div class="indal-top">
-                            <div class="indal-fans">
-                                <em class="fans-attion general-font pub-indal">粉丝</em>
-                                <span class="number pub-indal JscFollowedCount">888</span>
-                            </div>
-                            <div class="indal-portrait ">
-                                <p class="portrait JscUserImg">
-                                    <img src="images/personal-img.png" alt="" /></p>
-                                <i class="icon-tagss JscTalentLable">C</i>
-                            </div>
-                            <div class="indal-attention">
-                                <em class="fans-attion general-font pub-indal">关注</em>
-                                <span class="number pub-indal JscFollowCount">36</span>
-                            </div>
-                        </div>
-                        <div class="indal-body">
-                            <div class="indal-info">
-                                <!--如果性别是女的话i标签添加select-->
-                                <div class="indal-name "><span class="JscUserName">Dave</span> <i class="indal-sex icons-sprite JscUserSexs"></i></div>
-                                <div class="indal-career JscProfession">自由撰稿人</div>
-                            </div>
-                            <p class="signatures JscSignature">没有什么不可能的</p>
-                        </div>
-                        <!--个人-->
-                        <div class="personal-btn JscEditInformationBtn">
-                            <a href="javascript:void(0)">编辑</a>
-                        </div>
-                        <!--他人-->
-                        <div class="others-btn">
-                            <a href="javascript:void(0)" class="icons-sprite"></a>
-                        </div>
-                    </div>
-                    <!--他人的时候隐藏-->
-                    <div class="indal-btn">
-                        <div class="personal-ford JscCollectBtn"><a href="javascript:void(0)" class="btn-sprite"></a><span class="general-font JscColloctCount">105</span></div>
-                        <div class="personal-coll JscReleaseBtn"><a href="javascript:void(0)" class="btn-sprite"></a><span class="general-font JscWorkCount">55</span></div>
+                        <div class="personal-ford JscCollectBtn"><a href="javascript:void(0)" class="btn-sprite"></a><span style="color: #ff0a13;" class="general-font JscColloctCount">105</span></div>
+                        <div class="personal-coll JscReleaseBtn"><a href="javascript:void(0)" class="btn-sprite"></a><span style="color: #999999;" class="general-font JscWorkCount">55</span></div>
                     </div>
                     <div class="indal-con">
                         <ul class="indal-nav JscPhotoBoxTwo">
                             <li class="JscPhotoTwo dat-WorkID-cid" cid=""><a href="javascript:void(0)">
+                                <img class="dat-PicPath-src" src="images/personal-img.png" alt="" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="Inner JscInnerOne" style="display: none">
+                    <div class="indal-box">
+                        <div class="indal-bg ">
+                            <img class="JscBgImg" src="" alt="" /></div>
+                        <div class="indal-top">
+                            <div class="indal-fans JscFansJump">
+                                <em class="fans-attion general-font pub-indal">粉丝</em>
+                                <span class="number pub-indal JscFollowedCount">888</span>
+                            </div>
+                            <div class="indal-portrait ">
+                                <p class="portrait JscUserImg">
+                                    <img src="images/UserImg.png" alt="" /></p>
+                                <i class="icons-tages JscTalentLable">C</i>
+                            </div>
+                            <div class="indal-attention JscAttentionJump">
+                                <em class="fans-attion general-font pub-indal">关注</em>
+                                <span class="number pub-indal JscFollowCount">36</span>
+                            </div>
+                        </div>
+                        <div class="indal-body">
+                            <div class="indal-info">
+                                <!--如果性别是女的话i标签添加select-->
+                                <div class="indal-name "><span class="JscUserName">Dave</span> <i class="indal-sex icons-sprite JscUserSexs"></i></div>
+                                <div class="indal-career JscProfession">自由撰稿人</div>
+                            </div>
+                            <p class="signatures JscSignature">没有什么不可能的</p>
+                        </div>
+                        <!--个人-->
+                        <div class="personal-btn JscEditInformationBtn">
+                            <a href="javascript:void(0)">编辑</a>
+                        </div>
+                        <!--他人-->
+                        <div class="others-btn">
+                            <a href="javascript:void(0)" class="icons-sprite"></a>
+                        </div>
+                    </div>
+                    <!--他人的时候隐藏-->
+                    <div class="indal-btn">
+                        <div class="personal-ford JscCollectBtn"><a href="javascript:void(0)" class="btn-sprite"></a><span style="color: #999999;" class="general-font JscColloctCount">105</span></div>
+                        <div class="personal-coll JscReleaseBtn"><a href="javascript:void(0)" class="btn-sprite"></a><span style="color: #ff0a13;" class="general-font JscWorkCount">55</span></div>
+                    </div>
+                    <div class="indal-con">
+                        <ul class="indal-nav JscPhotoBoxOne">
+                            <li class="JscPhotoOne dat-WorkID-cid" cid=""><a href="javascript:void(0)">
                                 <img class="dat-PicPath-src" src="images/personal-img.png" alt="" /></a></li>
                         </ul>
                     </div>
@@ -115,9 +115,9 @@
     <!--Wrap_end-->
     <!---------------顶部菜单-------------------->
     <div class="header-box">
-        <div class="return-btn"><a href="javascript:void(0)"><i class="icons-return icons-sprite"></i></a></div>
+        <div class="return-btn JscUpLevel"><a href="javascript:void(0)"><i class="icons-return icons-sprite"></i></a></div>
         <div class="search-btn">
-            <a href="contactus.html" class="contact-us">联系我们</a>
+            <a href="javascript:void(0)" class="contact-us JscHrefContact">联系我们</a>
         </div>
     </div>
 

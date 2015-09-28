@@ -22,15 +22,21 @@ $(function () {
     var _UserID = Cmn.Func.GetParamFromUrl("uid");
     var _IsUploadImgLK = false;
     var _Switching = false;//切换
+    var _UrlPage;//跳过来的链接
+    var _UrlPage = decodeURIComponent(Cmn.Func.GetParamFromUrl("returnurl"));//返回页面
+    CallJsApiWXConfigItf("http://wechat.cagoe.com/JsApiWXConfig.aspx");
     //////////////////////页面加载调用方法///////////////////////////
-    if (_UserID != "") {
-        $(".JscEditInformationBtn").hide();
-    }
+    //if (_UserID != "") {
+    //    $(".JscEditInformationBtn").hide();
+    //}
 
     ///页面数据填充
     function PersonalInformation() {
-        CmnAjax.PostData("/Itf/CSharp/ItfOther.aspx?method=PersonalDetails", {"UserID":_UserID}, function (dat) {
-            if (dat.IsSuccess == 1) {
+        CmnAjax.PostData("/Itf/CSharp/ItfOther.aspx?method=PersonalDetails", { "UserID": _UserID }, function (dat) {
+            if (dat.IsSuccess == 1 || dat.IsSuccess == 3) {
+                if (dat.IsSuccess == 1) {
+                    $(".JscEditInformationBtn").hide();
+                }
                 _HeadImgUrl = dat.HeadImgUrl;
                 _NickName = dat.NickName;
                 _Identitys = dat.Identitys;
@@ -44,8 +50,8 @@ $(function () {
                 _FollowedCount = dat.FollowedCount;
 
                 $(".JscProfession").html(_Profession);
-                $(".JscWorkCount").html(_WorkCount);
-                $(".JscColloctCount").html(_ColloctCount);
+                $(".JscColloctCount").html(_WorkCount);
+                $(".JscWorkCount").html(_ColloctCount);
                 $(".JscFollowedCount").html(_FollowedCount);
                 $(".JscFollowCount").html(_FollowCount);
                 $(".JscUserImg img").attr("src", _HeadImgUrl);
@@ -63,82 +69,124 @@ $(function () {
                 }
                 if (_Sex == "0") {
                     //男
-                    $(".JscUserSexs").removeClass("select");
+                    $(".JscUserSexs").addClass("select");
                     $(".JscUserSex").html("男");
                     $(".JscSexChange a").eq(0).addClass("select");
                 }
                 if (_Sex == "1") {
                     //女
-                    $(".JscUserSexs").addClass("select");
+                    $(".JscUserSexs").removeClass("select");
                     $(".JscUserSex").html("女");
                     $(".JscSexChange a").eq(1).addClass("select");
                 }
             }
             else {
-                SiteFunc.JumpPage("index.html");
+                SiteFunc.JumpPage("index.aspx", location.href);
             }
         })
     }
     PersonalInformation();
- 
+    /////////////////////////////////////返回////////////////////////////////////////
+    $(".JscBackToPrevious").on("click", function () {
+        if ($(".JscHrefContact").css("display") == "none") {
+            SiteFunc.FloatOperating(".JscContactBtn,.JscHrefContact", ".JscFloatAlls,.JscSubmitPicture,.JscUploadLayer");
+        }
+        else {
+            window.history.back(-1);
+        }
+    })
+    $(".JscUpLevel").on("click", function () {
+
+        if (_UrlPage == "") {
+            window.history.back(-1);
+        }
+        else {
+            location.href = _UrlPage;
+        }
+    })
     ///////////////////////图片切换///////////////////////////////
+    //点击粉丝
+    $(".JscFansJump").on("click", function () {
+        SiteFunc.JumpPage("FollowFans.aspx?uid=" + _UserID + "&list=fans");
+    })
+    //点击收藏
+    $(".JscAttentionJump").on("click", function () {
+        SiteFunc.JumpPage("FollowFans.aspx?uid=" + _UserID);
+    })
+    $(".JscCollectBtn a").addClass("select");
     //收藏作品
-    $(".JscCollectBtn").on("touchend", function () {
-        $(".Inner").hide();
-        $(".JscInnerOne").show();
+    $(".JscCollectBtn").on("click", function () {
+        $(".JscCollectBtn a").addClass("select");
+        $(".JscReleaseBtn a").removeClass("select");
+        $(".JscInnerTwo").show();
+        $(".JscInnerOne").hide();
     })
     //发布作品
-    $(".JscReleaseBtn").on("touchend", function () {
-        $(".Inner").hide();
-        $(".JscInnerTwo").show();
+    $(".JscReleaseBtn").on("click", function () {
+        $(".JscReleaseBtn a").addClass("select");
+        $(".JscCollectBtn a").removeClass("select");
+        $(".JscInnerOne").show();
+        $(".JscInnerTwo").hide();
     })
     //跳转修改
-    $(".JscEditInformationBtn").on("touchend", function () {
+    $(".JscEditInformationBtn").on("click", function () {
+        _UrlPage = decodeURIComponent(Cmn.Func.GetParamFromUrl("returnurl"))
         SiteFunc.JumpPage("PersonalInfoEditor.aspx");
     })
-    
-    
+    //跳转留言
+    $(".JscHrefContact").on("click", function () {
+        SiteFunc.JumpPage("ContactUs.aspx");
+    })
     /////////////////////修改资料////////////////////////////
     //关闭浮层
-    $(".JscCloseFloat").on("touchend", function () {
-        SiteFunc.FloatOperating("", ".JscFloatAll,.JscInformationChangesFloat,.JscInformationHide", true);
+    $(".JscCloseFloat").on("click", function () {
+        SiteFunc.FloatOperating("", ".JscFloatAlls,.JscInformationChangesFloat,.JscInformationHide", true);
         PersonalInformation();
     })
     //姓名修改
-    $(".JscChangeDataName").on("touchend", function () {
-        SiteFunc.FloatOperating(".JscFloatAll,.JscInformationChangesFloat,.JscNameFloat", "", false);
+    $(".JscChangeDataName").on("click", function () {
+        SiteFunc.FloatOperating(".JscFloatAlls,.JscInformationChangesFloat,.JscNameFloat", ".JscInformationHide");
     })
-    
+
     //性别修改
-    $(".JscChangeDataSex").on("touchend", function () {
-        SiteFunc.FloatOperating(".JscFloatAll,.JscInformationChangesFloat,.JscSexAllFloat", "", false);
+    $(".JscChangeDataSex").on("click", function () {
+        SiteFunc.FloatOperating(".JscFloatAlls,.JscInformationChangesFloat,.JscSexAllFloat", ".JscInformationHide");
     })
     //签名修改
-    $(".JscChangeDataSigna").on("touchend", function () {
-        SiteFunc.FloatOperating(".JscFloatAll,.JscInformationChangesFloat,.JscSignatureFloat ", "", false);
+    $(".JscChangeDataSigna").on("click", function () {
+        SiteFunc.FloatOperating(".JscFloatAlls,.JscInformationChangesFloat,.JscSignatureFloat ", ".JscInformationHide");
     })
     //性别切换
-    $(".JscSexChange").on("touchend", function () {
+    $(".JscSexChange").on("click", function () {
         $(".JscSexChange a").removeClass("select");
         $(".JscSexChange a").eq($(this).index()).addClass("select");
     })
 
     /////////////////////////////背景图片修改/////////////////////////////////////
     //点击修改背景
-    BindUpload(".JscFrontCoverHerf", ".JscCoverCanvas");
+    BindUpload1(".JscFrontCoverHerf", ".JscCoverCanvas1");
     //点击修改头像
     BindUpload(".JscHeadPortraitHerf", ".JscCoverCanvas");
+    $(".JscFrontCoverHerf").on("click", function () {
+        $(".JscCoverFloat1").show();
+        $(".JscCoverFloat").hide();
+    })
+    $(".JscHeadPortraitHerf").on("click", function () {
+        $(".JscCoverFloat").show();
+        $(".JscCoverFloat1").hide();
+    })
     ///上传图片公用方法
-    function UserUploadImg(_param){
+    function UserUploadImg(_param) {
         CmnAjax.PostData("/Itf/CSharp/ItfOther.aspx?method=SubmitPictureItf", _param, function (dat) {
             if (dat.IsSuccess == 0) {
-                SiteFunc.JumpPage("index.html");
+                SiteFunc.JumpPage("index.aspx", location.href);
             }
             else if (dat.IsSuccess == 1) {
                 //修改成功
-                SiteFunc.FloatOperating(".JscContactBtn,.JscLayer,.JscUpdateLayer", ".JscFloatAll,.JscSubmitPicture,.JscUploadLayer");
+                SiteFunc.FloatOperating(".JscContactBtn,.JscLayer,.JscUpdateLayer,.JscHrefContact", ".JscFloatAlls,.JscSubmitPicture,.JscUploadLayer");
                 setTimeout(function () { $(".JscLayer").hide(); }, 1500);
                 _IsUploadImgLK = false;
+
             }
             else {
                 Cmn.alert("网络异常");
@@ -147,32 +195,72 @@ $(function () {
     }
     //点击
     //修改背景
-    $(".JscFrontCoverHerf").on("touchend", function () {
+    $(".JscFrontCoverHerf").on("click", function () {
         _Switching = false;
     })
     //修改头像
-    $(".JscHeadPortraitHerf").on("touchend", function () {
+    $(".JscHeadPortraitHerf").on("click", function () {
         _Switching = true;
     })
-    //选取图片
+    //头像选取图片
     function BindUpload(FileInput, ShowBox) {
         
-        window._Stage = Cmn.UI.CanvasTools.ImageProcess(ShowBox, 640, 490);
-        _Stage.BindSelectFileBtn(FileInput, 5);
-        _Stage.OnSelectFile.Add(function (image) {
-            //浮层显示出来
-            SiteFunc.FloatOperating(".JscFloatAll,.JscCoverCanvas,.JscCoverFloat,.JscSubmitPicture", ".JscContactBtn");
+        window._Stage = Cmn.UI.Upload($(FileInput));
+        _Stage.LimitSize = 5;
+        window._ImageEdit = Cmn.UI.CanvasTools.ImageEditing(ShowBox, 490,490);
+        CmnAjax.PostData("http://wechat.cagoe.com/AccessToken.aspx", "", function (dat) {
+            _Stage.WXAccessToken = dat.AccessToken;
+            _Stage.OnFilter.Add(function (e) {
+                if (e.State) {
+                    //浮层显示出来
+                    SiteFunc.FloatOperating(".JscFloatAlls,.JscCoverCanvas,.JscCoverFloat,.JscSubmitPicture", ".JscContactBtn,.JscHrefContact");
+                    _ImageEdit.SetImage(e.Path);
+                } else {
+                    alert("上传失败，" + e.Msg);
+                }
+            });
         });
     }
-    //背景图片修改
-    $(".JscSubmitPicture").on("touchend", function () {
-        SiteFunc.FloatOperating(".JscLayer,.JscUploadLayer", ".JscCoverCanvas,.JscCoverFloat,.JscUpdateLayer");
+
+    //背景选取图片
+    function BindUpload1(FileInput, ShowBox) {
+        
+        window._Stage1 = Cmn.UI.Upload($(FileInput));
+        _Stage1.LimitSize = 5;
+        window._ImageEdit1 = Cmn.UI.CanvasTools.ImageEditing(ShowBox, 640, 490);
+        CmnAjax.PostData("http://wechat.cagoe.com/AccessToken.aspx", "", function (dat) {
+            _Stage1.WXAccessToken = dat.AccessToken;
+            _Stage1.OnFilter.Add(function (e) {
+                if (e.State) {
+                    //浮层显示出来
+                    SiteFunc.FloatOperating(".JscFloatAlls,.JscCoverCanvas1,.JscCoverFloat1,.JscSubmitPicture", ".JscContactBtn,.JscHrefContact");
+                    _ImageEdit1.SetImage(e.Path);
+                } else {
+                    alert("上传失败，" + e.Msg);
+                }
+            });
+        });
+    }
+
+
+    //图片修改
+    $(".JscSubmitPicture").on("click", function () {
+        SiteFunc.FloatOperating(".JscLayer,.JscUploadLayer", ".JscCoverCanvas,.JscCoverCanvas1,.JscCoverFloat,.JscCoverFloat1,.JscUpdateLayer");
         if (_IsUploadImgLK) { return; }
         _IsUploadImgLK = true;
-        CmnAjax.PostData("Itf/CSharp/Upload.aspx?method=SaveFile", {
+        var _imageData;
+        if (!_Switching) {
+            _imageData = _ImageEdit1.GetCanvas().toDataURL()
+        }
+        else {
+            _imageData = _ImageEdit.GetCanvas().toDataURL()
+        }
+        var _param = {
             inputFileName: "ImageData",
-            ImageData: window._Stage.GetBase64Image()
-        }, function (dat) {
+            ImageData: _imageData
+        }
+
+        CmnAjax.PostData("Itf/CSharp/Upload.aspx?method=SaveFile", _param, function (dat) {
             _BackgroundImg = dat.path;
             var _param;
             if (!_Switching) {
@@ -195,7 +283,7 @@ $(function () {
 
 
     //提交资料
-    $(".JscSubmitInformation").on("touchend", function () {
+    $(".JscSubmitInformation").on("click", function () {
         //修改昵称
         _NickName = $(".JscNameText").val();
         //修改个性签名
@@ -229,12 +317,24 @@ $(function () {
         CmnAjax.PostData("/Itf/CSharp/ItfOther.aspx?method=InformationChanges", _param, function (dat) {
             if (dat.IsSuccess == 1) {
                 PersonalInformation();
-                SiteFunc.FloatOperating("", ".JscFloatAll,.JscInformationChangesFloat,.JscInformationHide");
+                SiteFunc.FloatOperating("", ".JscFloatAlls,.JscInformationChangesFloat,.JscInformationHide");
             }
             else {
                 Cmn.alert("网络异常！");
             }
         })
+       
     })
-    
+
+
+
+
+
+
+
+
+
+
+
+
 })
